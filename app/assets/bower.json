@@ -1,0 +1,24 @@
+{
+  "name": "web-layout-frame",
+  "description": "A layout web page frame for streamline layouting workflow using Gulp.",
+  "main": "",
+  "authors": [
+    "Emiliano Gerez"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "font-awesome": "fontawesome#^4.6.3"
+  },
+  "devDependencies": {
+    "sass-material-colors": "^0.0.5"
+  }
+}
