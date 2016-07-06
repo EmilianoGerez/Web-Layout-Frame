@@ -1,37 +1,60 @@
 {% extends "layout.html" %}
 
 {% block content %}
-<div class="container">
+<div class="container animated bounceIn">
     <div class="row">
-        <div class="col-xs-12">
-            <div class="jumbotron">
-                <h1 class="text-center">Web Layout Frame</h1>
-                <hr>
-                <h3 class="color-teal-500">
+
+        <div class="col-xs-12 jumbotron">
+            <h1 class="text-center">Web Layout Frame</h1>
+            <hr>
+        </div>
+        <div class="col-xs-12 col-md-6">
+            <div class="card">
+                <h3>
                     <i class="fa fa-star" aria-hidden="true"></i>
                     Features
                 </h3>
+                <hr>
                 <ul>
                     <li>Gulp task runner</li>
                     <li>Nunjucks template engine</li>
                     <li>Population HTML</li>
                     <li>Sass</li>
                     <li>Live server reload</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-md-6">
+            <div class="card">
+                <h3>
+                    <i class="fa fa-cubes" aria-hidden="true"></i>
+                    Libs included
+                </h3>
+                <hr>
+                <ul>
                     <li>Bootstrap 3</li>
+                    <li>Animate Css</li>
+                    <li>Bourbon Sass Lib</li>
                 </ul>
             </div>
         </div>
     </div>
 
     <div class="row">
-        <div class="col-xs-12 panel">
-            <h3>Population HTML example</h3>
-            <hr>
-            {% for fact in facts %}
-            <blockquote>
-                <p>{{fact.quote}}</p>
-            </blockquote>
-            {% endfor %}
+        <div class="col-xs-12">
+            <div class="card">
+                <h3>
+                    <i class="fa fa-list" aria-hidden="true"></i>
+                    Population HTML example
+                </h3>
+                <hr>
+                {% for fact in facts %}
+                <blockquote>
+                    <p>{{fact.quote}}</p>
+                </blockquote>
+                {% endfor %}
+            </div>
         </div>
     </div>
 </div>

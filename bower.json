@@ -10,15 +10,14 @@
   "ignore": [
     "**/.*",
     "node_modules",
-    "bower_components",
+    "app/assets/components",
     "test",
     "tests"
   ],
   "dependencies": {
     "bootstrap": "^3.3.6",
-    "font-awesome": "fontawesome#^4.6.3"
-  },
-  "devDependencies": {
-    "sass-material-colors": "^0.0.5"
+    "font-awesome": "fontawesome#^4.6.3",
+    "animate.css": "^3.5.2",
+    "bourbon": "^4.2.7"
   }
 }

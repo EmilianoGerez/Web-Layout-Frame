@@ -1,3 +1,27 @@
 body {
-  background-color: material-color('grey', '200');
+  background-color: $bg-grey-200;
+}
+
+.jumbotron h1 {
+  color: $color-lightblue-700;
+}
+
+.card {
+  background-color: white;
+  border-radius: 4px;
+  padding: 15px;
+  margin-bottom: 15px;
+  @include prefixer(box-shadow, 0 1px 4px rgba(0, 0, 0, 0.23), webkit moz spec);
+  @include transition(0.7s, ease);
+  animation: bounceIn 1s;
+
+  &:hover {
+    @include transform(scale(1.05));
+    @include prefixer(box-shadow, 0 3px 12px rgba(0, 0, 0, 0.23), webkit moz spec);
+    z-index: 99;
+  }
+
+  h3 {
+    color: $color-lightblue-500;
+  }
 }

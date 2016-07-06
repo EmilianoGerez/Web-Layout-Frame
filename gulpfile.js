@@ -7,6 +7,8 @@ var concat = require('gulp-concat');
 var rimraf = require('gulp-rimraf');
 var jshint = require('gulp-jshint');
 var data = require('gulp-data');
+var minifyCss = require('gulp-minify-css');
+var autoprefixer = require('gulp-autoprefixer');
 
 var config = require('./gulp.config');
 
@@ -33,10 +35,20 @@ gulp.task('sass', function () {
     return gulp
         .src(config.sassInput)
         .pipe(sourcemaps.init())
-        .pipe(sass())
-        .pipe(gulp.dest(config.outputCss))
+        .pipe(sass({ outputStyle: 'compressed' })
+            .on('error', sass.logError))
+        .pipe(gulp.dest(config.cssDir))
         .pipe(browserSync.stream())
-        .pipe(sourcemaps.write(config.outputCss));
+        .pipe(sourcemaps.write(config.cssDir));
+});
+
+gulp.task('css-build', function () {
+   return gulp
+       .src(config.cssBuild)
+       .pipe(minifyCss())
+       .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9'))
+       .pipe(concat('styles.min.css'))
+       .pipe(gulp.dest(config.assetsDist));
 });
 
 gulp.task('watch', function () {
@@ -54,5 +66,7 @@ gulp.task('serve', ['nunjucks', 'js-lint', 'sass', 'watch'], function () {
     });
 
 });
+
+gulp.task('build', ['css-build']);
 
 gulp.task('default', ['serve']);

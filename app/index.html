@@ -12,63 +12,91 @@
     <!-- Place favicon.ico in the root directory -->
 
     <!-- CSS Libs-->
-    <link rel="stylesheet" href="assets/bower_components/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/bower_components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/components/animate.css/animate.min.css">
 
     <!-- Custom CSS Styles-->
-    <link rel="stylesheet" href="assets/dist/styles.css">
+    <!-- files for development environment -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+    <!-- Activate on production (after run gulp build), all css files on assets/css are concat and minify -->
+    <!--<link rel="stylesheet" href="assets/dist/styles.min.css">-->
 
 </head>
 <body>
 
 <!-- Page content -->
 
-<div class="container">
+<div class="container animated bounceIn">
     <div class="row">
-        <div class="col-xs-12">
-            <div class="jumbotron">
-                <h1 class="text-center">Web Layout Frame</h1>
-                <hr>
-                <h3 class="color-teal-500">
+
+        <div class="col-xs-12 jumbotron">
+            <h1 class="text-center">Web Layout Frame</h1>
+            <hr>
+        </div>
+        <div class="col-xs-12 col-md-6">
+            <div class="card">
+                <h3>
                     <i class="fa fa-star" aria-hidden="true"></i>
                     Features
                 </h3>
+                <hr>
                 <ul>
                     <li>Gulp task runner</li>
                     <li>Nunjucks template engine</li>
                     <li>Population HTML</li>
                     <li>Sass</li>
                     <li>Live server reload</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-md-6">
+            <div class="card">
+                <h3>
+                    <i class="fa fa-cubes" aria-hidden="true"></i>
+                    Libs included
+                </h3>
+                <hr>
+                <ul>
                     <li>Bootstrap 3</li>
+                    <li>Animate Css</li>
+                    <li>Bourbon Sass Lib</li>
                 </ul>
             </div>
         </div>
     </div>
 
     <div class="row">
-        <div class="col-xs-12 panel">
-            <h3>Population HTML example</h3>
-            <hr>
-            
-            <blockquote>
-                <p>Chuck Norris can delete the Recycling Bin.</p>
-            </blockquote>
-            
-            <blockquote>
-                <p>Chuck Norris was bitten by a cobra and after five days of excruciating pain... the cobra died.</p>
-            </blockquote>
-            
-            <blockquote>
-                <p>Chuck Norris doesn&#39;t dial the wrong number. You answered the wrong phone.</p>
-            </blockquote>
-            
+        <div class="col-xs-12">
+            <div class="card">
+                <h3>
+                    <i class="fa fa-list" aria-hidden="true"></i>
+                    Population HTML example
+                </h3>
+                <hr>
+                
+                <blockquote>
+                    <p>Chuck Norris can delete the Recycling Bin.</p>
+                </blockquote>
+                
+                <blockquote>
+                    <p>Chuck Norris was bitten by a cobra and after five days of excruciating pain... the cobra died.</p>
+                </blockquote>
+                
+                <blockquote>
+                    <p>Chuck Norris doesn&#39;t dial the wrong number. You answered the wrong phone.</p>
+                </blockquote>
+                
+            </div>
         </div>
     </div>
 </div>
 
 
 <!-- Footer -->
-<script src="assets/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="assets/components/jquery/dist/jquery.min.js"></script>
 
 </body>
 </html>

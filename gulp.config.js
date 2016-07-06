@@ -4,6 +4,8 @@ module.exports = {
     outputDir: './app',
     sassFiles: './app/assets/sass/**.scss',
     sassInput: './app/assets/sass/styles.scss',
-    outputCss: './app/assets/dist',
+    cssDir: './app/assets/css',
+    cssBuild: './app/assets/css/**/*.css',
+    assetsDist: './app/assets/dist',
     jsFiles: ['./app/assets/js/*.js']
 };
