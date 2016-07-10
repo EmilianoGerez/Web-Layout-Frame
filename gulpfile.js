@@ -1,63 +1,31 @@
 var gulp = require('gulp');
-var sourcemaps = require('gulp-sourcemaps');
 var browserSync = require('browser-sync').create();
-var nunjucksRender = require('gulp-nunjucks-render');
-var sass = require('gulp-sass');
-var concat = require('gulp-concat');
-var rimraf = require('gulp-rimraf');
-var jshint = require('gulp-jshint');
-var data = require('gulp-data');
-var minifyCss = require('gulp-minify-css');
-var autoprefixer = require('gulp-autoprefixer');
+var plugins = require('gulp-load-plugins')();
+plugins.minifyCss = require('gulp-minify-css');
+plugins.browserSync = browserSync;
+plugins.nunjucksRender = require('gulp-nunjucks-render');
 
-var config = require('./gulp.config');
+var path = require('./gulp/gulp-path');
 
-gulp.task('nunjucks', function () {
-    return gulp.src(config.layoutFiles)
-        .pipe(data(function() {
-            return require('./src/data.json')
-        }))
-        .pipe(nunjucksRender({
-            path: ['./src/templates']
-        }))
-        .pipe(gulp.dest('./app'))
-        .pipe(browserSync.stream());
-});
+function getTask(task) {
+    return require('./gulp/' + task)(gulp, plugins, path);
+}
 
-gulp.task('js-lint', function () {
-    return gulp
-        .src(config.jsFiles)
-        .pipe(jshint())
-        .pipe(jshint.reporter());
-});
 
-gulp.task('sass', function () {
-    return gulp
-        .src(config.sassInput)
-        .pipe(sourcemaps.init())
-        .pipe(sass({ outputStyle: 'compressed' })
-            .on('error', sass.logError))
-        .pipe(gulp.dest(config.cssDir))
-        .pipe(browserSync.stream())
-        .pipe(sourcemaps.write(config.cssDir));
-});
 
-gulp.task('css-build', function () {
-   return gulp
-       .src(config.cssBuild)
-       .pipe(minifyCss())
-       .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9'))
-       .pipe(concat('styles.min.css'))
-       .pipe(gulp.dest(config.assetsDist));
-});
+gulp.task('js-lint', getTask('jslint-task'));
+gulp.task('njk', getTask('njk-task'));
+gulp.task('sass', getTask('sass-task'));
+gulp.task('css-build', getTask('css-task'));
+gulp.task('js-build', getTask('jsbuild-task'));
 
 gulp.task('watch', function () {
-    gulp.watch([config.jsFiles], ['js-lint']);
-    gulp.watch([config.layoutFiles, config.templateFiles], ['nunjucks']);
-    gulp.watch([config.sassFiles], ['sass']);
+    // gulp.watch([config.jsFiles], ['js-lint']);
+    gulp.watch([path.layoutFiles, path.templateFiles], ['njk']);
+    gulp.watch([path.sassFiles], ['sass']);
 });
 
-gulp.task('serve', ['nunjucks', 'js-lint', 'sass', 'watch'], function () {
+gulp.task('serve', ['njk', 'sass', 'js-lint', 'watch'], function () {
 
     browserSync.init({
         server: {
@@ -67,6 +35,6 @@ gulp.task('serve', ['nunjucks', 'js-lint', 'sass', 'watch'], function () {
 
 });
 
-gulp.task('build', ['css-build']);
+gulp.task('build', ['css-build', 'js-build']);
 
 gulp.task('default', ['serve']);

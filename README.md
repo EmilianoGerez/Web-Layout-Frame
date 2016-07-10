@@ -4,19 +4,19 @@
 - Gulp task runner
 - Nunjucks template engine
 - Population HTML
-- Sass
+- Sass (css injection)
 - Live server reload
+
+###### Libs Included
 - Bootstrap 3
+- Animate.css
+- Bourbon Sass
 
 ## Dependencies install
 
 On root path run:
 ```bash
 npm install
-```
-
-On app/asset path run:
-```bash
 bower install
 ```
 
