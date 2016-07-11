@@ -26,6 +26,7 @@ body {
     }
 
     li > button {
+      margin: 0 8px;
       margin-top: 8px;
       line-height: 30px;
     }
@@ -47,9 +48,87 @@ body {
   border-radius: 2px;
 }
 
-.btn-outline-primary {
+.outline-primary {
   background-color: rgba(0,0,0,0);
   color: $brand-primary;
+  &:hover,&:active,&:focus {
+    background-color: $brand-primary;
+    border-color: $brand-primary;
+  }
+}
+.outline-info {
+  background-color: rgba(0,0,0,0);
+  color: $brand-info;
+  &:hover,&:active,&:focus {
+    background-color: $brand-info;
+    border-color: $brand-info;
+  }
+}
+.outline-success {
+  background-color: rgba(0,0,0,0);
+  color: $brand-success;
+  &:hover,&:active,&:focus {
+    background-color: $brand-success;
+    border-color: $brand-success;
+  }
+}
+.outline-warning {
+  background-color: rgba(0,0,0,0);
+  color: $brand-warning;
+  &:hover,&:active,&:focus {
+    background-color: $brand-warning;
+    border-color: $brand-warning;
+  }
+}
+.outline-danger {
+  background-color: rgba(0,0,0,0);
+  color: $brand-danger;
+  &:hover,&:active,&:focus {
+    background-color: $brand-danger;
+    border-color: $brand-danger;
+  }
+}
+
+.link-primary {
+  background-color: rgba(0,0,0,0);
+  color: $brand-primary;
+  border: none;
+  &:hover,&:active,&:focus {
+    background-color: rgba(0,0,0,0);
+    color: darken($brand-primary, 5%);
+  }
+}
+.link-info {
+  background-color: rgba(0,0,0,0);
+  color: $brand-info;
+  &:hover,&:active,&:focus {
+    background-color: $brand-info;
+    border-color: $brand-info;
+  }
+}
+.link-success {
+  background-color: rgba(0,0,0,0);
+  color: $brand-success;
+  &:hover,&:active,&:focus {
+    background-color: $brand-success;
+    border-color: $brand-success;
+  }
+}
+.outline-warning {
+  background-color: rgba(0,0,0,0);
+  color: $brand-warning;
+  &:hover,&:active,&:focus {
+    background-color: $brand-warning;
+    border-color: $brand-warning;
+  }
+}
+.link-danger {
+  background-color: rgba(0,0,0,0);
+  color: $brand-danger;
+  &:hover,&:active,&:focus {
+    background-color: $brand-danger;
+    border-color: $brand-danger;
+  }
 }
 
 /*======================================
