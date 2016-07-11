@@ -10,6 +10,9 @@ body {
   color: $color-lightblue-700;
 }
 
+
+// Navbar
+/////////////////////////////////////
 .navbar-default.navbar-transparent {
   background-color: rgba(0, 0, 0, 0);
 
@@ -21,7 +24,32 @@ body {
     & > li > a {
       line-height: 30px;
     }
+
+    li > button {
+      margin-top: 8px;
+      line-height: 30px;
+    }
+
+    .open > a {
+      background-color: rgba(0,0,0,0);
+    }
   }
+
+  .navbar-brand {
+    height: 60px;
+    line-height: 30px;
+  }
+}
+
+// Buttons
+/////////////////////////////////////
+.btn {
+  border-radius: 2px;
+}
+
+.btn-outline-primary {
+  background-color: rgba(0,0,0,0);
+  color: $brand-primary;
 }
 
 /*======================================

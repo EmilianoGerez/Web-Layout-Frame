@@ -5,6 +5,9 @@
 // Bourbon Lib
 @import "../components/bourbon/app/assets/stylesheets/bourbon";
 
+@import "variables";
+
+@import "../components/bootstrap-sass/assets/stylesheets/bootstrap";
 // My Colors palette
 @import 'colors';
 
