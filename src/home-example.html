@@ -2,82 +2,24 @@
 <header>
     {% include 'partials/home/navbar.html' %}
 </header>
-<div class="container">
-    <div class="row">
-        <div class="col-xs-12">
-            <div class="card">
-                <h3>Buttons</h3>
-                <hr>
-                <button type="button" class="btn btn-default">
-                    Default
-                </button>
-                <button type="button" class="btn btn-primary">
-                    Primary
-                </button>
-                <button type="button" class="btn btn-info">
-                    Info
-                </button>
-                <button type="button" class="btn btn-warning">
-                    Warning
-                </button>
-                <button type="button" class="btn btn-danger">
-                    Danger
-                </button>
-                <button type="button" class="btn btn-success">
-                    Success
-                </button>
 
-                <hr>
-                <button type="button" class="btn outline-default">
-                    Default
-                </button>
-                <button type="button" class="btn outline-primary btn-primary">
-                    Primary
-                </button>
-                <button type="button" class="btn outline-info btn-info">
-                    Info
-                </button>
-                <button type="button" class="btn outline-warning btn-warning">
-                    Warning
-                </button>
-                <button type="button" class="btn outline-danger btn-danger">
-                    Danger
-                </button>
-                <button type="button" class="btn outline-success btn-success">
-                    Success
-                </button>
-
-                <hr>
-                <button type="button" class="btn link-primary btn-primary">
-                    Primary
-                </button>
-            </div>
-        </div>
-        <div class="col-xs-4">
-            <div id="DIV_1">
-                <!--Card image-->
-                <img src="http://mdbootstrap.com/images/regular/nature/img%20(28).jpg" alt="Card image cap" id="IMG_2" />
-                <!--/.Card image-->
-
-                <!--Card content-->
-
-                <div id="DIV_3">
-                    <!--Title-->
-
-                    <h4 id="H4_4">
-                        Card title
-                    </h4>
-                    <!--Text-->
-
-                    <p id="P_5">
-                        Some quick example text to build on the card title and make up the bulk of the card's content.
-                    </p> <a href="#" id="A_6">Button</a>
-                </div>
-                <!--/.Card content-->
-
-            </div>
+<section class="module parallax parallax-1"
+         style="background-image: url('http://blog.sethhancock.com/wp-content/uploads/2015/01/Silver-Lake-December-2014-Mountains-and-Stars.jpg')">
+    <div class="filter-black">
+        <div class="container">
+            <div class="header">Web Layout Frame</div>
+            <div class="sub-header">Home Example</div>
+            <button class="btn btn-info outline-info">GitHub</button>
         </div>
     </div>
-</div>
+</section>
+
+<section class="home-section">
+    {% include 'partials/home/buttons.html' %}
+</section>
+
+<section class="home-section bg-white">
+    {% include 'partials/home/cards.html' %}
+</section>
 
 {% endblock %}

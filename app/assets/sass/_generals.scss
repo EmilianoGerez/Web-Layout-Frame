@@ -1,156 +1,38 @@
-body {
-  //background-color: $bg-grey-200;
-}
-
 /*======================================
     BOOTSTRAP 3 OVERWRITE
 ======================================*/
 
-.jumbotron h1 {
-  color: $color-lightblue-700;
+html, body {
+  font-size: $font-size-base;
+}
+
+@media (min-width: $screen-sm) {
+  html, body {
+    font-size: 16px;
+  }
+}
+@media (min-width: $screen-lg) {
+  html, body {
+    font-size: 18px;
+  }
 }
 
 
-// Navbar
-/////////////////////////////////////
-.navbar-default.navbar-transparent {
-  background-color: rgba(0, 0, 0, 0);
-
-  .navbar-nav {
-    & > .active > a {
-      background-color: rgba(0, 0, 0, 0);
-      border-bottom: 2px red solid;
-    }
-    & > li > a {
-      line-height: 30px;
-    }
-
-    li > button {
-      margin: 0 8px;
-      margin-top: 8px;
-      line-height: 30px;
-    }
-
-    .open > a {
-      background-color: rgba(0,0,0,0);
-    }
-  }
-
-  .navbar-brand {
-    height: 60px;
-    line-height: 30px;
-  }
+hr {
+  margin: 15px 0;
 }
 
-// Buttons
-/////////////////////////////////////
-.btn {
-  border-radius: 2px;
-}
 
-.outline-primary {
-  background-color: rgba(0,0,0,0);
-  color: $brand-primary;
-  &:hover,&:active,&:focus {
-    background-color: $brand-primary;
-    border-color: $brand-primary;
-  }
-}
-.outline-info {
-  background-color: rgba(0,0,0,0);
-  color: $brand-info;
-  &:hover,&:active,&:focus {
-    background-color: $brand-info;
-    border-color: $brand-info;
-  }
-}
-.outline-success {
-  background-color: rgba(0,0,0,0);
-  color: $brand-success;
-  &:hover,&:active,&:focus {
-    background-color: $brand-success;
-    border-color: $brand-success;
-  }
-}
-.outline-warning {
-  background-color: rgba(0,0,0,0);
-  color: $brand-warning;
-  &:hover,&:active,&:focus {
-    background-color: $brand-warning;
-    border-color: $brand-warning;
-  }
-}
-.outline-danger {
-  background-color: rgba(0,0,0,0);
-  color: $brand-danger;
-  &:hover,&:active,&:focus {
-    background-color: $brand-danger;
-    border-color: $brand-danger;
-  }
-}
 
-.link-primary {
-  background-color: rgba(0,0,0,0);
-  color: $brand-primary;
-  border: none;
-  &:hover,&:active,&:focus {
-    background-color: rgba(0,0,0,0);
-    color: darken($brand-primary, 5%);
-  }
-}
-.link-info {
-  background-color: rgba(0,0,0,0);
-  color: $brand-info;
-  &:hover,&:active,&:focus {
-    background-color: $brand-info;
-    border-color: $brand-info;
-  }
-}
-.link-success {
-  background-color: rgba(0,0,0,0);
-  color: $brand-success;
-  &:hover,&:active,&:focus {
-    background-color: $brand-success;
-    border-color: $brand-success;
-  }
-}
-.outline-warning {
-  background-color: rgba(0,0,0,0);
-  color: $brand-warning;
-  &:hover,&:active,&:focus {
-    background-color: $brand-warning;
-    border-color: $brand-warning;
-  }
-}
-.link-danger {
-  background-color: rgba(0,0,0,0);
-  color: $brand-danger;
-  &:hover,&:active,&:focus {
-    background-color: $brand-danger;
-    border-color: $brand-danger;
-  }
-}
 
 /*======================================
-    COMPONENTS
+    GENERALS
 ======================================*/
+.home-section {
+  padding-top: 60px;
+  padding-bottom: 30px;
+}
 
-.card {
-  background-color: white;
-  border-radius: 4px;
-  padding: 15px;
-  margin-bottom: 15px;
-  @include prefixer(box-shadow, 0 1px 4px rgba(0, 0, 0, 0.23), webkit moz spec);
-  @include transition(0.7s, ease);
-  animation: bounceIn 1s;
-
-  &:hover {
-    @include transform(scale(1.05));
-    @include prefixer(box-shadow, 0 3px 12px rgba(0, 0, 0, 0.23), webkit moz spec);
-    z-index: 99;
-  }
-
-  h3 {
-    color: $color-lightblue-500;
-  }
+.bg-white {
+  background-color: #fff;
 }

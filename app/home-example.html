@@ -15,6 +15,11 @@
     <!--<link rel="stylesheet" href="assets/components/bootstrap/dist/css/bootstrap.min.css">-->
     <link rel="stylesheet" href="assets/components/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="assets/components/animate.css/animate.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,700,900,300' rel='stylesheet' type='text/css'>
+
+    <!-- Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,700,900' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,700,300' rel='stylesheet' type='text/css'>
 
     <!-- Custom CSS Styles-->
     <!-- files for development environment -->
@@ -29,129 +34,252 @@
 <!-- Page content -->
 
 <header>
-    <nav class="navbar navbar-default navbar-transparent">
+    <nav class="navbar navbar-inverse navbar-transparent navbar-fixed-top">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <button type="button" class="collapsed btn-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <i class="fa fa-bars" aria-hidden="true"></i>
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Brand</a>
+            <a class="navbar-brand" href="#">Web Layout Frame</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+                <li class="active"><a href="#">Active <span class="sr-only">(current)</span></a></li>
                 <li><a href="#">Link</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><button type="button" class="btn btn-primary">LogIn</button></li>
+                <li><button type="button" class="btn btn-primary link-primary">LogIn</button></li>
                 <li><button type="button" class="btn btn-primary outline-primary">SignUp</button></li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="#">Separated link</a></li>
-                    </ul>
-                </li>
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>
 </header>
-<div class="container">
-    <div class="row">
-        <div class="col-xs-12">
-            <div class="card">
-                <h3>Buttons</h3>
-                <hr>
-                <button type="button" class="btn btn-default">
-                    Default
-                </button>
-                <button type="button" class="btn btn-primary">
-                    Primary
-                </button>
-                <button type="button" class="btn btn-info">
-                    Info
-                </button>
-                <button type="button" class="btn btn-warning">
-                    Warning
-                </button>
-                <button type="button" class="btn btn-danger">
-                    Danger
-                </button>
-                <button type="button" class="btn btn-success">
-                    Success
-                </button>
 
-                <hr>
-                <button type="button" class="btn outline-default">
-                    Default
-                </button>
-                <button type="button" class="btn outline-primary btn-primary">
-                    Primary
-                </button>
-                <button type="button" class="btn outline-info btn-info">
-                    Info
-                </button>
-                <button type="button" class="btn outline-warning btn-warning">
-                    Warning
-                </button>
-                <button type="button" class="btn outline-danger btn-danger">
-                    Danger
-                </button>
-                <button type="button" class="btn outline-success btn-success">
-                    Success
-                </button>
-
-                <hr>
-                <button type="button" class="btn link-primary btn-primary">
-                    Primary
-                </button>
-            </div>
+<section class="module parallax parallax-1"
+         style="background-image: url('http://blog.sethhancock.com/wp-content/uploads/2015/01/Silver-Lake-December-2014-Mountains-and-Stars.jpg')">
+    <div class="filter-black">
+        <div class="container">
+            <div class="header">Web Layout Frame</div>
+            <div class="sub-header">Home Example</div>
+            <button class="btn btn-info outline-info">GitHub</button>
         </div>
-        <div class="col-xs-4">
-            <div id="DIV_1">
+    </div>
+</section>
+
+<section class="home-section">
+    <div class="container">
+    <div class="row">
+        <h2>Buttons</h2>
+        <hr>
+        <div class="col-xs-12">
+
+            <button type="button" class="btn btn-default">
+                Default
+            </button>
+            <button type="button" class="btn btn-primary">
+                Primary
+            </button>
+            <button type="button" class="btn btn-info">
+                Info
+            </button>
+            <button type="button" class="btn btn-warning">
+                Warning
+            </button>
+            <button type="button" class="btn btn-danger">
+                Danger
+            </button>
+            <button type="button" class="btn btn-success">
+                Success
+            </button>
+
+            <hr>
+            <button type="button" class="btn outline-default">
+                Default
+            </button>
+            <button type="button" class="btn outline-primary btn-primary">
+                Primary
+            </button>
+            <button type="button" class="btn outline-info btn-info">
+                Info
+            </button>
+            <button type="button" class="btn outline-warning btn-warning">
+                Warning
+            </button>
+            <button type="button" class="btn outline-danger btn-danger">
+                Danger
+            </button>
+            <button type="button" class="btn outline-success btn-success">
+                Success
+            </button>
+
+            <hr>
+            <button type="button" class="btn link-default btn-default">
+                Primary
+            </button>
+            <button type="button" class="btn link-primary btn-primary">
+                Primary
+            </button>
+            <button type="button" class="btn link-info btn-info">
+                Info
+            </button>
+            <button type="button" class="btn link-warning btn-warning">
+                Warning
+            </button>
+            <button type="button" class="btn link-danger btn-danger">
+                Danger
+            </button>
+            <button type="button" class="btn link-success btn-success">
+                Success
+            </button>
+
+        </div>
+    </div>
+</div>
+</section>
+
+<section class="home-section bg-white">
+    <div class="container">
+    <div class="row">
+        <h2>Cards</h2>
+        <hr>
+        <div class="col-xs-12 col-md-4">
+            <div class="card">
+
                 <!--Card image-->
-                <img src="http://mdbootstrap.com/images/regular/nature/img%20(28).jpg" alt="Card image cap" id="IMG_2" />
+                <div class="card-image">
+                    <img class="img-fluid" src="http://24.media.tumblr.com/tumblr_lnin5gPIkH1qc76t1o1_500.jpg"
+                         alt="Card image cap">
+                    <div class="img-overlay">
+                        <a href="">
+                            <i class="fa fa-align-left" aria-hidden="true"></i>
+                             Read more..
+                        </a>
+                    </div>
+                </div>
                 <!--/.Card image-->
 
                 <!--Card content-->
-
-                <div id="DIV_3">
+                <div class="card-block">
                     <!--Title-->
-
-                    <h4 id="H4_4">
-                        Card title
-                    </h4>
+                    <h4 class="card-title"><a href="">Card title</a></h4>
+                    <hr>
                     <!--Text-->
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                        the
+                        card's content.</p>
 
-                    <p id="P_5">
-                        Some quick example text to build on the card title and make up the bulk of the card's content.
-                    </p> <a href="#" id="A_6">Button</a>
+                    <ul class="card-list">
+                        <li>
+                            <a href="">10 <i class="fa fa-heart" aria-hidden="true"></i></a>
+                        </li>
+                        <li>
+                            <a>15 <i class="fa fa-comment" aria-hidden="true"></i></a>
+
+                        </li>
+                    </ul>
+
+                    <div class="clearfix"></div>
                 </div>
                 <!--/.Card content-->
 
             </div>
         </div>
+        <div class="col-xs-4">
+            <div class="card">
+
+                <!--Card image-->
+                <div class="card-image">
+                <img class="img-fluid" src="http://24.media.tumblr.com/tumblr_lnin5gPIkH1qc76t1o1_500.jpg"
+                     alt="Card image cap">
+                </div>
+                <!--/.Card image-->
+
+                <!--Card content-->
+                <div class="card-block">
+                    <!--Title-->
+                    <h4 class="card-title">Card title</h4>
+                    <hr>
+                    <!--Text-->
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                        the
+                        card's content.</p>
+                    <a href="#" class="btn btn-primary pull-right">Button</a>
+                    <div class="clearfix"></div>
+                </div>
+                <!--/.Card content-->
+
+            </div>
+        </div>
+        <div class="col-xs-6">
+
+            <!--Card-->
+            <div class="card testimonial-card">
+
+                <!--Bacground color-->
+                <div class="card-up default-color-dark">
+                </div>
+
+                <!--Avatar-->
+                <div class="avatar"><img
+                        src="https://www.tm-town.com/assets/default_female600x600-3702af30bd630e7b0fa62af75cd2e67c.png"
+                        class="img-circle img-responsive">
+                </div>
+
+                <div class="card-block">
+                    <!--Name-->
+                    <h4 class="card-title text-center">Anna Doe</h4>
+                    <hr>
+                    <!--Quotation-->
+                    <address>
+                        <strong>Twitter, Inc.</strong><br>
+                        1355 Market Street, Suite 900<br>
+                        San Francisco, CA 94103<br>
+                        <abbr title="Phone">P:</abbr> (123) 456-7890
+                    </address>
+
+                    <address>
+                        <strong>Full Name</strong><br>
+                        <a href="mailto:#">first.last@example.com</a>
+                    </address>
+                </div>
+
+            </div>
+            <!--/.Card-->
+
+
+        </div>
     </div>
 </div>
+</section>
 
 
 
 <!-- Footer -->
-<!--<script src="assets/components/jquery/dist/jquery.min.js"></script>-->
-<!--<script src="assets/components/bootstrap/dist/js/bootstrap.min.js"></script>-->
+<script src="assets/components/jquery/dist/jquery.min.js"></script>
+<script src="assets/components/bootstrap-sass/assets/javascripts/bootstrap.js"></script>
 
 <!-- Activate on production (after run gulp build), all js files on gulp-path[jsbuild] are concat and minify -->
-<script src="assets/dist/scripts.min.js"></script>
+<!--<script src="assets/dist/scripts.min.js"></script>-->
+
+
+<script>
+    $(window).scroll(function() {
+        if($(this).scrollTop() < 400)  /*height in pixels when the navbar becomes non opaque*/
+        {
+            $('.navbar-fixed-top').addClass('navbar-transparent');
+        } else {
+            $('.navbar-fixed-top').removeClass('navbar-transparent');
+        }
+    });
+</script>
 
 </body>
 </html>

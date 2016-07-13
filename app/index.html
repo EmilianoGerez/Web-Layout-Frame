@@ -15,6 +15,11 @@
     <!--<link rel="stylesheet" href="assets/components/bootstrap/dist/css/bootstrap.min.css">-->
     <link rel="stylesheet" href="assets/components/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="assets/components/animate.css/animate.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,700,900,300' rel='stylesheet' type='text/css'>
+
+    <!-- Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,700,900' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,700,300' rel='stylesheet' type='text/css'>
 
     <!-- Custom CSS Styles-->
     <!-- files for development environment -->
@@ -96,11 +101,23 @@
 
 
 <!-- Footer -->
-<!--<script src="assets/components/jquery/dist/jquery.min.js"></script>-->
-<!--<script src="assets/components/bootstrap/dist/js/bootstrap.min.js"></script>-->
+<script src="assets/components/jquery/dist/jquery.min.js"></script>
+<script src="assets/components/bootstrap-sass/assets/javascripts/bootstrap.js"></script>
 
 <!-- Activate on production (after run gulp build), all js files on gulp-path[jsbuild] are concat and minify -->
-<script src="assets/dist/scripts.min.js"></script>
+<!--<script src="assets/dist/scripts.min.js"></script>-->
+
+
+<script>
+    $(window).scroll(function() {
+        if($(this).scrollTop() < 400)  /*height in pixels when the navbar becomes non opaque*/
+        {
+            $('.navbar-fixed-top').addClass('navbar-transparent');
+        } else {
+            $('.navbar-fixed-top').removeClass('navbar-transparent');
+        }
+    });
+</script>
 
 </body>
 </html>
