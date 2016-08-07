@@ -39,29 +39,37 @@
 <!-- Page content -->
 
 <header>
-  <nav class="navbar navbar-custom navbar-transparent navbar-fixed-top" id="transparent-navbar">
+  <nav class="navbar navbar-custom mobile-sidebar navbar-fixed-top">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <button type="button" class="collapsed btn-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                <i class="fa fa-bars" aria-hidden="true"></i>
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
+      <button type="button" class="collapsed btn-toggle" id="btn-mobile-sidebar" aria-expanded="false">
+        <i class="fa fa-bars"></i>
+        <i class="fa fa-times"></i>
+      </button>
       <a class="navbar-brand" href="#">Web Layout Frame</a>
     </div>
-
     <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <div class="navbar-sidebar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Active <span class="sr-only">(current)</span></a></li>
+        <li class="active"><a href="#">Nuestras Casas <span class="sr-only">(current)</span></a></li>
         <li><a href="#">Link</a></li>
       </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><button type="button" class="btn btn-primary link-primary">LogIn</button></li>
-        <li><button type="button" class="btn btn-primary outline-primary">SignUp</button></li>
+      <ul class="nav navbar-nav navbar-right visible-xs-block">
+        <li>
+          <a href="#">
+            <i class="fa fa-user" aria-hidden="true"></i> LogIn
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fa fa-user-plus" aria-hidden="true"></i> SignUp
+          </a>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right hidden-xs">
+        <li><button type="button" class="btn material-warning ">LogIn</button></li>
+        <li><button type="button" class="btn material-primary">SignUp</button></li>
       </ul>
     </div>
     <!-- /.navbar-collapse -->
@@ -69,20 +77,9 @@
   <!-- /.container-fluid -->
 </nav>
 </header>
-<div id="main-wrap">
-  <section class="module parallax parallax-1" style="background-image: url('http://blog.sethhancock.com/wp-content/uploads/2015/01/Silver-Lake-December-2014-Mountains-and-Stars.jpg')">
-    <div class="filter-black">
-      <div class="container">
-        <div class="header">Web Layout Frame</div>
-        <div class="sub-header">Home Example</div>
-        <button class="btn btn-info outline-info">GitHub</button>
-      </div>
-    </div>
-  </section>
-
+<div id="main-wrapper">
 
 </div>
-
 
 <footer class="module parallax parallax-1 bg-blue">
   <div class="filter-black">

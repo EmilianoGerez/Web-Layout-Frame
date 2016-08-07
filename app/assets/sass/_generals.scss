@@ -1,38 +1,67 @@
-/*======================================
-    BOOTSTRAP 3 OVERWRITE
+/*!======================================
+    GENERALS
 ======================================*/
 
-html, body {
+html,
+body {
   font-size: $font-size-base;
+  height: 100% !important;
 }
 
 @media (min-width: $screen-sm) {
-  html, body {
+  html,
+  body {
     font-size: 16px;
   }
 }
+
 @media (min-width: $screen-lg) {
-  html, body {
+  html,
+  body {
     font-size: 18px;
   }
 }
 
+footer {
+  color: #fff;
+  padding: 2.5rem 0;
+  ul {
+    list-style: none;
+    padding-left: 0.5rem;
+  }
+  a {
+    text-decoration: none;
+    color: #fff;
+    &:hover {
+      color: $gray-light;
+      text-decoration: none;
+    }
+  }
+}
 
 hr {
   margin: 15px 0;
+  border-top: 1px solid #dedede;
+  @include prefixer(box-shadow, 0 1px 1px 0 #FFFFFF, webkit moz spec);
 }
 
-
-
-
-/*======================================
-    GENERALS
-======================================*/
 .home-section {
   padding-top: 60px;
   padding-bottom: 30px;
 }
 
-.bg-white {
-  background-color: #fff;
+.index-section {
+  padding-top: 20px;
+  padding-bottom: 50px;
+}
+
+.font-2x {
+  font-size: 2rem !important;
+}
+
+
+
+.spacer {
+  height: 20px;
+  width: 100%;
 }

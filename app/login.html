@@ -1,0 +1,93 @@
+<!-- Header -->
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Web Layout Frame</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!--<link rel="apple-touch-icon" href="apple-touch-icon.png">-->
+  <!-- Place favicon.ico in the root directory -->
+
+  <!-- CSS Libs-->
+  <!--<link rel="stylesheet" href="assets/components/bootstrap/dist/css/bootstrap.min.css">-->
+  <link rel="stylesheet" href="assets/components/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/components/animate.css/animate.min.css">
+  <link rel="stylesheet" href="assets/components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
+  <link rel="stylesheet" href="https://cdn.rawgit.com/google/code-prettify/master/styles/desert.css">
+
+
+  <!-- Fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,700,900' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,900,300' rel='stylesheet' type='text/css'>
+
+  
+  <!-- Custom CSS Styles-->
+  <!-- files for development environment -->
+  <link rel="stylesheet" href="assets/css/styles.css">
+
+  <!-- Activate on production (after run gulp build), all css files on gulp-path[cssbuild] are concat and minify -->
+  <!--<link rel="stylesheet" href="assets/dist/styles.min.css">-->
+
+</head>
+
+<body>
+
+<!-- Page content -->
+
+<div class="form-wrapper">
+  <div class="container-fluid">
+    <div class="row-fluid">
+      <div class="col-xs-12 col-md-4 vcenter">
+        <div id="loginForm" class="card">
+          <div class="card-block">
+            <form>
+              <h3 class="text-center">Login</h3>
+              <hr>
+              <div class="text-center user-avatar">
+                <i class="fa fa-user" aria-hidden="true"></i>
+              </div>
+              <div class="form-group">
+                <input type="email" class="mt-control" id="exampleInputEmail1" placeholder="Email">
+              </div>
+              <div class="form-group">
+                <input type="password" class="mt-control" id="exampleInputPassword1" placeholder="Password">
+              </div>
+              <button type="submit" id="loginBtn" class="btn material-success btn-block">Submit</button>
+            </form>
+          </div>
+        </div>
+        <div id="loginSpinner" class="spinner-circle spinner-lg">
+          <div class="double-bounce1"></div>
+          <div class="double-bounce2"></div>
+          <p>Loading</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Footer -->
+
+<!-- JS Libs-->
+<script src="assets/components/jquery/dist/jquery.min.js"></script>
+<script src="assets/components/bootstrap-sass/assets/javascripts/bootstrap.js"></script>
+<script type="text/javascript" src="assets/components/moment/min/moment.min.js"></script>
+<script type="text/javascript" src="assets/components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+
+
+<!-- My scripts -->
+<script src="assets/dist/scripts.min.js"></script>
+
+<!-- Activate on production (after run gulp build), all js files on gulp-path[jsbuild] are concat and minify -->
+<!--<script src="assets/dist/js-bundle.min.js"></script>-->
+
+</body>
+
+</html>

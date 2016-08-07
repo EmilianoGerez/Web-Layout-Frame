@@ -1,0 +1,66 @@
+{% extends 'layout.html' %} {% block content %}
+<div class="form-wrapper">
+  <div class="container-fluid">
+    <div class="row-fluid">
+      <div class="col-xs-12 col-sm-8 col-md-6 vcenter">
+        <div class="card">
+          <div class="card-block">
+            <form>
+              <h3 class="text-center">Signup</h3>
+              <hr>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="mt-control" id="exampleInputEmail1" placeholder="Email">
+              </div>
+              <div class="form-mt-group">
+                <label for="">Date</label>
+                <div class='input-group date' id='datetimepicker1'>
+                  <span class="input-group-addon">
+                        <i class="fa fa-calendar" aria-hidden="true"></i>
+                  </span>
+                  <input type='text' class="mt-control" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="">About you</label>
+                <textarea class="mt-control" rows="3"></textarea>
+              </div>
+              <div class="form-group">
+                <label for="">City</label>
+                <select class="mt-control">
+                  <option>Atlanta</option>
+                  <option>New York</option>
+                  <option>New Jersey</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="radio">Sex type</label>
+                <label class="control control--radio">Male
+                  <input type="radio" name="radio" checked="checked"/>
+                  <div class="control__indicator"></div>
+                </label>
+                <label class="control control--radio">Female
+                  <input type="radio" name="radio"/>
+                  <div class="control__indicator"></div>
+                </label>
+              </div>
+
+              <div class="form-group">
+                <label for="terms">Terms & Conditions</label>
+                <label class="control control--checkbox">I Agree
+                  <input type="checkbox" checked="checked"/>
+                  <div class="control__indicator"></div>
+                </label>
+              </div>
+
+              <button type="submit" class="btn material-primary btn-block">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

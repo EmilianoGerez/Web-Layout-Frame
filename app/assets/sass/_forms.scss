@@ -1,0 +1,239 @@
+/*=========================================
+    BOOTSTRAP FORM/INPUTS
+=========================================*/
+
+.form-control {
+  border-radius: 2px;
+}
+
+.form-mt-group {
+  margin-bottom: 15px;
+  .input-group-addon {
+    font-size: 1rem;
+    padding: 0.8rem;
+    border-radius: 50%;
+    background-color: $gray-lighter;
+    border: none;
+    &:first-child {
+      border-bottom-right-radius: none;
+      border-top-right-radius: none;
+    }
+    &:hover{
+      background-color: $brand-success;
+      color: #fff;
+    }
+  }
+}
+
+.mt-control {
+  display: block;
+  width: 100%;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857;
+  color: $gray-darker;
+  background-color: transparent;
+  background-image: none;
+  border: none;
+  border-bottom: 3px solid $gray-lighter;
+  outline: none;
+  &:focus {
+    border-bottom: 3px solid $brand-primary;
+  }
+  option {
+    font-size: 1rem;
+    outline: none;
+  }
+}
+
+textarea.mt-control {
+  height: auto;
+  width: 100%;
+}
+
+
+/*=========================================
+    LOGIN/SIGNUP FORM
+=========================================*/
+
+.form-wrapper {
+  background: $body-bg;
+  /* fallback for old browsers */
+  // @include linear-gradient(45deg, #FF8F00, #E64A19);
+  @include animation(change-bg 20s linear infinite);
+  @keyframes change-bg {
+    0% {
+      @include linear-gradient(90deg, #C62828, #FF9800);
+    }
+    25% {
+      @include linear-gradient(90deg, #6A1B9A, #E91E63);
+    }
+    50% {
+      @include linear-gradient(90deg, #303F9F, #2196F3);
+    }
+    75% {
+      @include linear-gradient(90deg, #00695C, #4CAF50);
+    }
+    100% {
+      @include linear-gradient(90deg, #33691E, #CDDC39);
+    }
+  }
+  height: 100%;
+  .container-fluid {
+    height: 100%;
+    display: table;
+    width: 100%;
+    padding: 0;
+  }
+  .row-fluid {
+    height: 100%;
+    display: table-cell;
+    vertical-align: middle;
+  }
+  .vcenter {
+    float: none;
+    margin: 0 auto;
+  }
+  form {
+    padding: 1rem;
+    // @include prefixer(box-shadow, 0 1px 4px rgba(0, 0, 0, 0.23), webkit moz spec);
+    h3 {
+      margin-top: 0;
+    }
+    .user-avatar {
+      font-size: 80px;
+      i {
+        background-color: $gray-lighter;
+        color: $gray-light;
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+        overflow: hidden;
+      }
+      .fa {
+        padding-top: 25px;
+      }
+    }
+  }
+}
+
+
+/*=========================================
+    Radio / Checkbox
+    Credits: https://codepen.io/KenanYusuf/pen/PZKEKd
+=========================================*/
+
+.control-group {
+  display: inline-block;
+  vertical-align: top;
+  background: #fff;
+  text-align: left;
+  //box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  @include prefixer(box-shadow, 0 1px 2px rgba(0, 0, 0, 0.1), webkit moz spec);
+  padding: 30px;
+  width: 200px;
+  height: 210px;
+  margin: 10px;
+}
+
+.control {
+  display: block;
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  //font-size: 18px;
+}
+
+.control input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+label.control {
+  font-weight: normal;
+  font-size: 0.95rem;
+  line-height: 20px;
+}
+
+.control__indicator {
+  position: absolute;
+  top: 0px;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background: $gray-lighter;
+}
+
+// Identation
+.form-group {
+  .control {
+    padding-left: 35px;
+  }
+  .control__indicator {
+    left: 5px
+  }
+}
+
+.control--radio .control__indicator {
+  border-radius: 50%;
+}
+
+.control:hover input~ .control__indicator,
+.control input:focus~ .control__indicator {
+  background: $gray-light;
+}
+
+.control input:checked~ .control__indicator {
+  background: $color-teal-300;
+}
+
+.control:hover input:not([disabled]):checked~ .control__indicator,
+.control input:checked:focus~ .control__indicator {
+  background: $brand-success;
+}
+
+.control input:disabled~ .control__indicator {
+  background: $gray-lighter;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.control__indicator:after {
+  content: '';
+  position: absolute;
+  display: none;
+}
+
+.control input:checked~ .control__indicator:after {
+  display: block;
+}
+
+.control--checkbox .control__indicator:after {
+  left: 8px;
+  top: 4px;
+  width: 5px;
+  height: 10px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.control--checkbox input:disabled~ .control__indicator:after {
+  border-color: #7b7b7b;
+}
+
+.control--radio .control__indicator:after {
+  left: 7px;
+  top: 7px;
+  height: 6px;
+  width: 6px;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.control--radio input:disabled~ .control__indicator:after {
+  background: #7b7b7b;
+}

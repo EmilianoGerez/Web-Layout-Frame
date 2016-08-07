@@ -1,76 +1,143 @@
 /*!======================================
-    COMPONENTS
+COMPONENTS
 ======================================*/
 
-//=============================
-//  Navbar
+#main-wrapper {
+  width: 100%;
+  min-height: 70%;
+  padding: 0;
+  @include transition(all 0.5s ease);
+}
 
-.navbar, .navbar-default, .navbar-inverse {
+menu,
+ol,
+ul {
+  padding: 0;
+}
+
+ul.indent {
+  padding: 0 30px;
+}
+
+input,
+button,
+button:active,
+button:focus,
+button:active:focus,
+.btn:active,
+.btn:active:focus,
+.btn:focus {
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+
+
+/*
+ * Row with equal height columns
+ * --------------------------------------------------
+ */
+
+.row-flexbox {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  div[class*='col-'] {
+    padding-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+
+/*======================================
+NAVBAR
+======================================*/
+
+.navbar,
+.navbar-default,
+.navbar-inverse {
   border-radius: 0;
   border: inherit;
 }
 
-.navbar-inverse, .navbar-default {
+.navbar-custom {
   margin-bottom: 0;
   @include transition(all .5s ease-in-out);
-  background-color: $color-bluegrey-900;
-
+  background-color: $color-bgrey-900;
   .navbar-nav {
-    & > .active > a {
-      background-color: rgba(0, 0, 0, 0);
+    &> .active> a {
+      background-color: transparent;
       color: $brand-primary;
       font-weight: 400;
-
-      &:hover, &:focus {
-        background-color: inherit;
-        color: $brand-primary;
-      }
     }
-    & > li > a {
+    &> li> a {
       padding: 0 10px;
       margin: 0;
       line-height: 60px;
       font-family: Lato, Roboto, Helvetica;
       font-weight: 300;
+      color: $gray-lighter;
+      &:hover,
+      &:focus {
+        background-color: transparent;
+        color: $brand-primary;
+      }
     }
-
-    li > button {
+    li> button {
       margin: 11px 8px;
       line-height: 24px;
     }
-
-    .open > a {
-      background-color: rgba(0, 0, 0, 0);
-      &:hover, &:focus {
-        background-color: inherit;
+    .open> a {
+      background-color: transparent;
+      &:hover,
+      &:focus {
+        background-color: transparent;
       }
     }
-
   }
-
   .navbar-brand {
     padding: 0 15px;
     margin: 0;
     line-height: 60px;
     font-family: Lato, Roboto, Helvetica;
     font-weight: 300;
+    color: $gray-lighter;
   }
-
-  button.btn-toggle {
+  .btn-toggle {
     position: relative;
     float: right;
     background-color: transparent;
     background-image: none;
-    margin: 10px 20px;
-    line-height: 40px;
-    padding: 0;
+    margin: 0;
+    line-height: 60px;
+    padding: 0 15px;
     border: none;
-    font-size: 2rem;
+    font-size: 32px;
     color: $gray-light;
-
-    &:hover, &:focus {
+    @include transition(all .5s ease);
+    &:hover,
+    &:focus {
       background-color: transparent;
       outline: none;
+    }
+    i:first-child {
+      display: initial;
+    }
+    i:last-child {
+      display: none;
+    }
+  }
+  .btn-toggle.toggled {
+    @include transition(all 0.5s ease);
+    @include transform(translateX(-250px));
+    i:first-child {
+      display: none;
+    }
+    i:last-child {
+      display: initial;
     }
   }
 }
@@ -79,33 +146,384 @@
   @include transition(all .5s ease-in-out);
   padding-top: 15px;
   background-color: rgba(0, 0, 0, 0);
-
   .navbar-nav {
-    & > .active > a {
+    &> .active> a {
       border-bottom: 0;
     }
-    & > li > a {
+    &> li> a {
       line-height: 60px;
-      color: #fff;
+      color: $gray-lighter;
     }
   }
 }
 
 @media (max-width: $screen-sm) {
   .navbar-transparent {
-    background-color: $color-bluegrey-900;
+    background-color: $color-bgrey-900;
   }
-
-}
-
-@media (min-width: $screen-sm) {
-  button.btn-toggle {
-    display: none;
+  //=============================
+  //  MOBILE SIDEBAR
+  .mobile-sidebar .navbar-sidebar {
+    position: fixed;
+    z-index: 1009;
+    top: 0;
+    right: 0;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    margin: 0;
+    width: 0;
+    background-color: $color-bgrey-900;
+    @include transition(width 0.5s ease);
+    @include prefixer(box-shadow, -4px 0 8px 0 rgba(0, 0, 0, .6), webkit moz spec);
+    .navbar-nav {
+      margin: 10px 0;
+      li {
+        display: block;
+        overflow: hidden;
+        padding: 0;
+        &.active {
+          background-color: rgba(255, 255, 255, .1);
+        }
+        &:hover {
+          background-color: rgba(0, 0, 0, .1);
+        }
+        a {
+          display: block;
+          padding: 0;
+          padding-left: 25px;
+          line-height: 50px;
+          height: 50px;
+          @include transition(all 0.3s ease);
+          .fa {
+            padding-right: 10px;
+          }
+          &:hover {
+            @include transform(translateX(15px));
+            color: $gray-lighter;
+          }
+        }
+        button {
+          margin: 11px 0;
+        }
+      }
+    }
+  }
+  .mobile-sidebar .navbar-sidebar.toggled {
+    width: 250px;
   }
 }
 
 //=============================
-//  Cards
+//  NAVBAR COLORS
+@mixin navbar-color ($bg-color, $active-color) {
+  background-color: $bg-color;
+  .navbar-nav {
+    &> .active> a {
+      color: $active-color;
+    }
+    &> li> a {
+      &:hover,
+      &:focus {
+        color: $active-color;
+      }
+    }
+  }
+  @media (max-width: $screen-sm) {
+    .navbar-sidebar {
+      background-color: $bg-color;
+      li a:hover {
+        color: $gray-lighter;
+      }
+    }
+  }
+}
+
+.navbar-teal {
+  @include navbar-color($color-teal-500, $color-teal-800);
+}
+
+@media (min-width: $screen-sm) {
+  nav .btn-toggle {
+    display: none;
+  }
+}
+
+
+/*======================================
+SIDEBAR
+======================================*/
+
+#main-wrapper.toggled {
+  padding-left: 250px;
+  #sidebar-wrapper {
+    left: 250px;
+  }
+  #page-content-wrapper {
+    .btn-toggle-sidebar {
+      left: 250px;
+      .fa-bars {
+        display: none;
+      }
+      .fa-times {
+        display: initial;
+      }
+    }
+  }
+}
+
+@media (max-width: $screen-sm) {
+  #main-wrapper.toggled {
+    padding-left: 0;
+    .wrapper-overlay {
+      position: fixed;
+      top: 0;
+      z-index: 1099;
+      height: 100%;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.7);
+    }
+  }
+  .admin-wrapper {
+    #page-content-wrapper .notification-bar .navbar-nav {
+      float: right !important;
+      .dropdown .dropdown-menu {
+        position: absolute;
+        left: auto;
+        right: 0;
+        background-color: #fff;
+        border: 1px solid rgba(0, 0, 0, 0.15);
+        @include prefixer(box-shadow, 0 6px 12px rgba(0, 0, 0, 0.175), webkit moz spec);
+      }
+    }
+  }
+}
+
+#sidebar-wrapper {
+  @include transition(all 0.5s ease);
+  position: fixed;
+  height: 100%;
+  left: 0;
+  //width: 0;
+  width: 250px;
+  margin: 0;
+  padding: 0;
+  margin-left: -250px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  z-index: 1999;
+  background-color: $color-teal-500;
+  .sidebar-nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    li {
+      overflow: hidden;
+      display: block;
+      line-height: 28px;
+      position: relative;
+      width: 100%;
+      &:before {
+        background-color: rgba(0, 0, 0, 0.1);
+        content: '';
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        transition: width .2s ease-in;
+        width: 0;
+        z-index: -1;
+      }
+      &:hover {
+        &:before {
+          transition: width .2s ease-in;
+          width: 100%;
+        }
+      }
+      &.active {
+        background-color: rgba(255, 255, 255, 0.1);
+        &:hover {
+          background: transparent;
+          color: $gray-lighter;
+        }
+        &:before {
+          background-color: rgba(0, 0, 0, 0.1);
+        }
+        &>a {
+          color: rgba(0, 0, 0, 0.5);
+        }
+      }
+      a {
+        color: $gray-lighter;
+        display: block;
+        padding: 10px 15px 10px 20px;
+        text-decoration: none;
+        font-size: 16px;
+        i {
+          line-height: 28px;
+          width: 24px;
+          //padding-right: 10px;
+        }
+      }
+      &.sidebar-brand {
+        height: 64px;
+        line-height: 44px;
+        &:before {
+          background-color: rgba(0, 0, 0, 0.2);
+          width: 100%;
+        }
+        a {
+          font-size: 18px;
+          font-weight: 300;
+        }
+      }
+    }
+    .sidebar-dropdown {
+      &.active {
+        background-color: transparent;
+        &:hover {
+          color: $gray-lighter;
+        }
+      }
+      .sidebar-dropdown-menu {
+        display: none;
+        //@include transition(height 0.9s ease);
+        li {
+          line-height: 20px;
+          &:hover {
+            &:before {
+              width: 0;
+            }
+          }
+          a {
+            padding: 10px 15px 10px 30px;
+            color: $gray-light;
+            &:hover {
+              color: $gray-lighter;
+            }
+          }
+        }
+        &.open {
+          display: block;
+        }
+      }
+    }
+  }
+  .sidebar-nav li a:hover,
+  .sidebar-nav li a:active,
+  .sidebar-nav li a:focus,
+  .sidebar-nav li.open a:hover,
+  .sidebar-nav li.open a:active,
+  .sidebar-nav li.open a:focus {
+    background-color: transparent;
+    color: #ffffff;
+    text-decoration: none;
+  }
+}
+
+#sidebar-wrapper.bg-admin {
+  background-color: $db-primary;
+  color: $gray-light;
+  .sidebar-nav {
+    li {
+      a {
+        color: $gray-light;
+        &:hover {
+          color: $gray-lighter;
+        }
+      }
+      &.active {
+        background-color: $color-teal-500;
+        &:hover {
+          color: $gray-lighter;
+        }
+        &>a {
+          color: $gray-lighter;
+        }
+      }
+      &:before {
+        background-color: rgba(0, 0, 0, 0.15);
+      }
+    }
+    .sidebar-dropdown {
+      &.active {
+        background-color: transparent;
+      }
+      .sidebar-dropdown-menu {
+        li {
+          &.active:hover {
+            color: $gray-lighter;
+          }
+          &:hover {
+            color: $color-teal-500;
+          }
+        }
+      }
+    }
+  }
+}
+
+#page-content-wrapper {
+  padding-top: 50px;
+  width: 100%;
+  .container {
+    width: auto;
+    padding: 0 30px;
+  }
+  .btn-toggle-sidebar {
+    text-decoration: none;
+    position: fixed;
+    z-index: 1999;
+    line-height: 64px;
+    width: auto;
+    font-size: 32px;
+    padding: 0 15px;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .4);
+    color: rgba(255, 255, 255, 0.6);
+    @include transition(left 0.5s ease);
+    //@include prefixer(text-shadow, 1px 1px 1px rgba(0,0,0,0.4), webkit moz spec);
+    .fa-bars {
+      display: initial;
+    }
+    .fa-times {
+      display: none;
+    }
+    &.darker {
+      color: rgba(0, 0, 0, 0.5);
+    }
+  }
+}
+
+.admin-wrapper {
+  #page-content-wrapper {
+    padding-top: 0;
+    .notification-bar {
+      height: 64px;
+      padding: 0 20px 0 60px;
+      margin-bottom: 30px;
+      .navbar-nav {
+        margin: 0;
+        &>li {
+          display: inline-block;
+          height: 64px;
+          &>a {
+            line-height: 44px;
+            padding: 10px 15px;
+            color: $gray;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+/*======================================
+CARDS
+======================================*/
 
 .card {
   border: 0;
@@ -114,23 +532,21 @@
   display: block;
   background-color: #fff;
   margin-bottom: 1.2rem;
-  box-shadow: rgba(0, 0, 0, 0.156863) 0px 2px 5px 0px, rgba(0, 0, 0, 0.117647) 0px 2px 10px 0px;
-
+  $card-shadow: rgba(0, 0, 0, 0.156863) 0px 2px 5px 0px, rgba(0, 0, 0, 0.117647) 0px 2px 10px 0px;
+  @include prefixer(box-shadow, $card-shadow, webkit moz spec);
   .card-image {
     width: 100%;
     height: 260px;
     overflow: hidden;
-
     .img-overlay {
       background-color: transparent;
       position: absolute;
-      z-index: 99;
+      z-index: 1000;
       top: 0;
       left: 0;
       width: 100%;
       height: 260px;
       @include transition(all .5s ease-in-out);
-
       a {
         text-decoration: none;
         color: $gray-lighter;
@@ -142,21 +558,18 @@
         left: 50%;
         @include transform(translateX(-50%) translateY(-50%));
       }
-
       &:hover {
         background-color: rgba(0, 0, 0, .6);
         a {
           visibility: visible;
           opacity: 1;
           @include transition(visibility 0s, opacity 0.5s linear);
-
           &:hover {
             color: $brand-primary;
           }
         }
       }
     }
-
     .img-fluid {
       width: 100%;
       height: auto;
@@ -164,16 +577,14 @@
       border-radius: 2px 2px 0 0;
     }
   }
-
   .card-block {
     padding: 1.1rem;
   }
-
   .card-title {
     margin-bottom: 0.7rem;
     margin-top: 0;
     font-weight: 400;
-    font-size: 1.35rem;
+    //font-size: 1.35rem;
     a {
       text-decoration: none;
       color: inherit;
@@ -182,20 +593,16 @@
       }
     }
   }
-
   .card-text {
     margin-bottom: 1.5rem;
   }
-
   .card-list {
     list-style: none;
-
     li {
       float: right;
       padding: 0 10px;
       display: block;
     }
-
     a {
       text-decoration: none;
       display: block;
@@ -206,7 +613,23 @@
       font-size: 1.3rem;
     }
   }
+}
 
+.card-full {
+  @extend .card;
+  height: 100%;
+  .card-block {
+    height: 100%;
+  }
+  .card-block-center {
+    padding: 1.1rem;
+    height: 100%;
+    justify-content: center;
+    /* align horizontal */
+    align-items: center;
+    /* align vertical */
+    display: flex;
+  }
 }
 
 // user card
@@ -216,7 +639,6 @@
     height: 150px;
     background-color: $brand-success;
   }
-
   .avatar {
     border-radius: 50%;
     height: 120px;
@@ -231,19 +653,28 @@
   }
 }
 
-//=============================
-//  Parallax
+
+/*======================================
+PARALLAX
+======================================*/
 
 section.parallax {
+  position: relative;
   margin-top: -80px;
   height: 600px;
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
-
   .container {
-    padding-top: 250px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 50%;
+    height: 30%;
+    margin: auto;
     text-align: center;
     .header {
       font-size: 3rem;
@@ -264,141 +695,404 @@ section.parallax {
       font-size: 1.3rem;
     }
   }
-
   .filter-black {
     height: 100%;
     width: 100%;
     background-color: rgba(0, 0, 0, .65);
   }
+  .soft-filter-black {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, .25);
+  }
 }
 
-//=============================
-//  Buttons
+
+/*======================================
+BUTTONS
+======================================*/
+
 .btn {
   border-radius: 2px;
   font-size: 1rem;
 }
 
+.btn-lg {
+  padding: 0.6rem 1.6rem;
+  font-size: 1.1rem;
+}
+
+.btn-xs {
+  font-size: 0.85rem;
+}
+
 .btn-default {
-  background-color: $body-bg;
-  color: $gray-dark;
-  border-color: $gray-dark;
-  &:hover, &:active, &:focus {
-    background-color: $gray-lighter;
-    border-color: $gray-dark;
+  background-color: #fff;
+  color: $gray;
+  border-color: $gray;
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: darken(#fff, 5%);
+    border-color: $gray;
   }
 }
 
-.outline-default {
+@mixin btn-outline($color, $hover-color) {
   background-color: transparent;
-  color: $gray-dark;
-  border-color: $gray-dark;
-  &:hover, &:active, &:focus {
-    background-color: $gray-lighter;
+  color: $color;
+  border-color: $color;
+  &:hover,
+  &:active,
+  &:focus {
+    color: #fff;
+    background-color: $hover-color;
+    border-color: $color;
+  }
+}
+
+@mixin btn-link($color, $hover-color) {
+  background-color: transparent;
+  color: $color;
+  border: 1px solid transparent;
+  &:hover,
+  &:active,
+  &:focus {
+    color: #fff;
+    background-color: $hover-color;
+    border: 1px solid transparent;
+  }
+}
+
+@mixin btn-material($color) {
+  background-color: $color;
+  color: #fff;
+  //box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .35);
+  @include prefixer(box-shadow, 0 2px 5px 0 rgba(0, 0, 0, .35), webkit moz spec);
+  &:hover,
+  &:active,
+  {
+    color: #fff;
+    background-color: $color;
+    //box-shadow: 0 4px 6px 0 rgba(0, 0, 0, .5);
+    @include prefixer(box-shadow, 0 4px 6px 0 rgba(0, 0, 0, .5), webkit moz spec);
+    transform: translate3d(0, -2px, 0);
+  }
+}
+
+// Outlines Buttons
+.outline-default {
+  @include btn-outline($gray, $gray-lighter);
+  &:hover,
+  &:active,
+  &:focus {
+    color: $gray;
   }
 }
 
 .outline-primary {
-  background-color: transparent;
-  color: $brand-primary;
-  &:hover, &:active, &:focus {
-    background-color: $brand-primary;
-    border-color: $brand-primary;
-  }
+  @include btn-outline($brand-primary, $brand-primary);
 }
 
 .outline-info {
-  background-color: transparent;
-  color: $brand-info;
-  &:hover, &:active, &:focus {
-    background-color: $brand-info;
-    border-color: $brand-info;
-  }
+  @include btn-outline($brand-info, $brand-info);
 }
 
 .outline-success {
-  background-color: transparent;
-  color: $brand-success;
-  &:hover, &:active, &:focus {
-    background-color: $brand-success;
-    border-color: $brand-success;
-  }
+  @include btn-outline($brand-success, $brand-success);
 }
 
 .outline-warning {
-  background-color: transparent;
-  color: $brand-warning;
-  &:hover, &:active, &:focus {
-    background-color: $brand-warning;
-    border-color: $brand-warning;
-  }
+  @include btn-outline($brand-warning, $brand-warning);
 }
 
 .outline-danger {
-  background-color: transparent;
-  color: $brand-danger;
-  &:hover, &:active, &:focus {
-    background-color: $brand-danger;
-    border-color: $brand-danger;
-  }
+  @include btn-outline($brand-danger, $brand-danger);
 }
 
+// Link Buttons
 .link-default {
-  background-color: transparent;
-  color: $gray-dark;
-  border: 1px solid transparent;
-  &:hover, &:active, &:focus {
-    background-color: $gray-lighter;
-    border: 1px solid transparent;
+  @include btn-link($gray, $gray-lighter);
+  &:hover,
+  &:active,
+  &:focus {
+    color: $gray;
   }
 }
 
 .link-primary {
-  background-color: transparent;
-  color: $brand-primary;
-  border: 1px solid transparent;
-  &:hover, &:active, &:focus {
-    background-color: $brand-primary;
-    border: 1px solid transparent;
-  }
+  @include btn-link($brand-primary, $brand-primary);
 }
 
 .link-info {
-  background-color: transparent;
-  color: $brand-info;
-  border: 1px solid transparent;
-  &:hover, &:active, &:focus {
-    background-color: $brand-info;
-    border: 1px solid transparent;
-  }
+  @include btn-link($brand-info, $brand-info);
 }
 
 .link-success {
-  background-color: transparent;
-  color: $brand-success;
-  border: 1px solid transparent;
-  &:hover, &:active, &:focus {
-    background-color: $brand-success;
-    border: 1px solid transparent;
-  }
+  @include btn-link($brand-success, $brand-success);
 }
 
 .link-warning {
-  background-color: transparent;
-  color: $brand-warning;
-  border: 1px solid transparent;
-  &:hover, &:active, &:focus {
-    background-color: $brand-warning;
-    border: 1px solid transparent;
-  }
+  @include btn-link($brand-warning, $brand-warning);
 }
 
 .link-danger {
-  background-color: transparent;
-  color: $brand-danger;
-  border: 1px solid transparent;
-  &:hover, &:active, &:focus {
-    background-color: $brand-danger;
-    border: 1px solid transparent;
+  @include btn-link($brand-danger, $brand-danger);
+}
+
+// Material buttons
+.material-default {
+  @include btn-material(#FFF);
+  color: $gray;
+  &:hover,
+  &:active,
+  &:focus {
+    color: $gray;
+  }
+}
+
+.material-info {
+  @include btn-material($brand-info);
+}
+
+.material-warning {
+  @include btn-material($brand-warning);
+}
+
+.material-danger {
+  @include btn-material($brand-danger);
+}
+
+.material-success {
+  @include btn-material($brand-success);
+}
+
+.material-primary {
+  @include btn-material($brand-primary);
+}
+
+// Floating button
+.floating-btn,
+.floating-btn-hover {
+  position: inherit;
+  width: 60px;
+  height: 60px;
+  z-index: 1009;
+  &> i {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    text-align: center;
+    width: 60px;
+    line-height: 60px;
+    background-color: $color-red-500;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    color: #fff;
+    @include prefixer(box-shadow, 0 2px 5px 0 rgba(0, 0, 0, .35), webkit moz spec);
+    &:hover,
+    &:active,
+    {
+      cursor: pointer;
+      @include prefixer(box-shadow, 0 4px 6px 0 rgba(0, 0, 0, .5), webkit moz spec);
+      transform: translate3d(0, -2px, 0);
+    }
+  }
+  ul {
+    padding: 50px 10px 0 10px;
+    margin: 0;
+    position: absolute;
+    z-index: 1000;
+    bottom: 62px;
+    display: none;
+    list-style: none;
+    overflow: hidden;
+    li {
+      padding-bottom: 15px;
+    }
+    a {
+      text-decoration: none;
+      color: $gray-dark;
+      text-shadow: 0 2px 5px rgba(0, 0, 0, .35);
+      i {
+        padding-left: 0.6rem;
+        padding-right: 0.6rem;
+        text-align: center;
+        width: 40px;
+        line-height: 40px;
+        background-color: $color-red-500;
+        border-radius: 50%;
+        font-size: 0.9rem;
+        color: #fff;
+        text-shadow: none;
+        @include prefixer(box-shadow, 0 2px 5px 0 rgba(0, 0, 0, .35), webkit moz spec);
+      }
+      &:hover,
+      &:active,
+      {
+        i {
+          cursor: pointer;
+          @include prefixer(box-shadow, 0 4px 6px 0 rgba(0, 0, 0, .5), webkit moz spec);
+          transform: translate3d(0, -2px, 0);
+        }
+      }
+    }
+  }
+  &:hover ul,
+  & ul.open {
+    display: block;
+    li:nth-child(1) {
+      animation: zoomInUp 1.25s;
+    }
+    li:nth-child(2) {
+      animation: zoomInUp 1s;
+    }
+    li:nth-child(3) {
+      animation: zoomInUp 0.75s;
+    }
+    li:nth-child(4) {
+      animation: zoomInUp .5s;
+    }
+  }
+  // variants
+  &.fixed-bottom-right {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+  }
+  &.fixed-bottom-left {
+    position: fixed;
+    bottom: 40px;
+    left: 40px;
+  }
+  &.horizontal {
+    ul {
+      width: 300px;
+      padding: 10px 50px 10px 0px;
+      bottom: -10px;
+      left: 60px;
+      li {
+        float: left;
+        padding: 0;
+        padding-left: 15px;
+        a {
+          line-height: 60px;
+        }
+      }
+    }
+    &:hover ul,
+    & ul.open {
+      display: block;
+      li:nth-child(4) {
+        animation: zoomInLeft 1.25s;
+      }
+      li:nth-child(3) {
+        animation: zoomInLeft 1s;
+      }
+      li:nth-child(2) {
+        animation: zoomInLeft 0.75s;
+      }
+      li:nth-child(1) {
+        animation: zoomInLeft .5s;
+      }
+    }
+  }
+}
+
+// disable hover effect
+.floating-btn {
+  &:hover ul {
+    display: none;
+  }
+  &:hover ul.open {
+    display: initial;
+  }
+}
+
+
+/*======================================
+SPINNERS
+======================================*/
+
+.spinner-circle {
+  display: none;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  margin: 100px auto;
+  .double-bounce1,
+  .double-bounce2 {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: #eee;
+    opacity: 0.6;
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+    animation: sk-bounce 2.0s infinite ease-in-out;
+  }
+  .double-bounce2 {
+    -webkit-animation-delay: -1.0s;
+    animation-delay: -1.0s;
+  }
+  p {
+    text-align: center;
+    color: #eee;
+    position: absolute;
+    top: 85px;
+    display: inline-block;
+    width: 100%;
+    text-transform: uppercase;
+  }
+}
+
+.spinner-circle.spinner-lg {
+  width: 80px;
+  height: 80px;
+}
+
+@-webkit-keyframes sk-bounce {
+  0%,
+  100% {
+    -webkit-transform: scale(0.0)
+  }
+  50% {
+    -webkit-transform: scale(1.0)
+  }
+}
+
+@keyframes sk-bounce {
+  0%,
+  100% {
+    transform: scale(0.0);
+    -webkit-transform: scale(0.0);
+  }
+  50% {
+    transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+  }
+}
+
+//=============================
+//  Modal Bootstrap overwrite
+.modal-content {
+  border-radius: 2px;
+  .modal-header {
+    background-color: $brand-success;
+    color: #fff;
+    h4 {
+      line-height: 2.5rem;
+    }
+    .close {
+      color: $gray;
+      opacity: 1;
+      text-shadow: none;
+      font-size: 1.5rem;
+      line-height: 2.5rem;
+      &:hover {
+        color: $gray-dark;
+      }
+    }
   }
 }
