@@ -1279,47 +1279,59 @@ LIST
   list-style: none;
   padding: 0 15px;
   li.list-view-item {
-    padding-left: 0;
+    padding: 0;
     display: block;
     height: 5rem;
     width: 100%;
-    border-top: 1px solid rgba(0, 0, 0, 0.3);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
     .img-wrapper {
       background-color: $gray-lighter;
       position: absolute;
       width: 5rem;
       height: 5rem;
-      padding-right: 15px;
       line-height: 5rem;
       text-align: center;
-      font-size: 3rem;
+      font-size: 2rem;
       &.circle {
         border-radius: 50%;
       }
     }
+    .item-content {
+      position: relative;
+      height: 5rem;
+      padding: 10px 0;
+      margin-left: 6rem;
+      border-top: 1px solid rgba(0, 0, 0, 0.2);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    }
     .item-title {
       position: absolute;
-      left: 5rem;
-      height: 5rem;
-      width: auto;
-      padding: 1rem 1rem 1rem 0;
+      //left: 6rem;
+      width: 100%;
+      padding-right: 16.5rem;
     }
     .item-price {
       position: absolute;
       right: 8rem;
       width: 8rem;
-      height: 5rem;
-      padding: 1rem 1rem 1rem 0;
       text-align: center;
+      color: $color-red-500;
+      .price {
+        font-weight: bold;
+      }
+      .credit {
+        font-size: 0.8rem;
+        font-weight: 300;
+      }
     }
     .item-info {
       position: absolute;
       right: 0;
       width: 8rem;
-      height: 5rem;
-      padding: 1rem 1rem 1rem 0;
       text-align: center;
+      font-size: 0.8rem;
+    }
+    p {
+      margin: 0;
     }
   }
 }
