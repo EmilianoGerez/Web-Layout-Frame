@@ -13,10 +13,10 @@
   <!-- Place favicon.ico in the root directory -->
 
   <!-- CSS Libs-->
-  <!--<link rel="stylesheet" href="assets/components/bootstrap/dist/css/bootstrap.min.css">-->
-  <link rel="stylesheet" href="assets/components/font-awesome/css/font-awesome.min.css">
-  <link rel="stylesheet" href="assets/components/animate.css/animate.min.css">
-  <link rel="stylesheet" href="assets/components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
+  <!--<link rel="stylesheet" href="../assets/components/bootstrap/dist/css/bootstrap.min.css">-->
+  <link rel="stylesheet" href="../assets/components/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../assets/components/animate.css/animate.min.css">
+  <link rel="stylesheet" href="../assets/components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
   <link rel="stylesheet" href="https://cdn.rawgit.com/google/code-prettify/master/styles/desert.css">
 
 
@@ -27,10 +27,10 @@
   
   <!-- Custom CSS Styles-->
   <!-- files for development environment -->
-  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
 
   <!-- Activate on production (after run gulp build), all css files on gulp-path[cssbuild] are concat and minify -->
-  <!--<link rel="stylesheet" href="assets/dist/styles.min.css">-->
+  <!--<link rel="stylesheet" href="../assets/dist/styles.min.css">-->
 
 </head>
 
@@ -39,37 +39,29 @@
 <!-- Page content -->
 
 <header>
-  <nav class="navbar navbar-custom mobile-sidebar navbar-fixed-top">
+  <nav class="navbar navbar-custom navbar-transparent navbar-fixed-top" id="transparent-navbar">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <button type="button" class="collapsed btn-toggle" id="btn-mobile-sidebar" aria-expanded="false">
-        <i class="fa fa-bars"></i>
-        <i class="fa fa-times"></i>
-      </button>
+      <button type="button" class="collapsed btn-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <i class="fa fa-bars" aria-hidden="true"></i>
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
       <a class="navbar-brand" href="#">Web Layout Frame</a>
     </div>
+
     <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="navbar-sidebar">
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Nuestras Casas <span class="sr-only">(current)</span></a></li>
+        <li class="active"><a href="#">Active <span class="sr-only">(current)</span></a></li>
         <li><a href="#">Link</a></li>
       </ul>
-      <ul class="nav navbar-nav navbar-right visible-xs-block">
-        <li>
-          <a href="#">
-            <i class="fa fa-user" aria-hidden="true"></i> LogIn
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <i class="fa fa-user-plus" aria-hidden="true"></i> SignUp
-          </a>
-        </li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right hidden-xs">
-        <li><button type="button" class="btn material-warning ">LogIn</button></li>
-        <li><button type="button" class="btn material-primary">SignUp</button></li>
+      <ul class="nav navbar-nav navbar-right">
+        <li><button type="button" class="btn btn-primary link-primary">LogIn</button></li>
+        <li><button type="button" class="btn btn-primary outline-primary">SignUp</button></li>
       </ul>
     </div>
     <!-- /.navbar-collapse -->
@@ -77,9 +69,20 @@
   <!-- /.container-fluid -->
 </nav>
 </header>
-<div id="main-wrapper">
+<div id="main-wrap">
+  <section class="module parallax parallax-1" style="background-image: url('http://blog.sethhancock.com/wp-content/uploads/2015/01/Silver-Lake-December-2014-Mountains-and-Stars.jpg')">
+    <div class="filter-black">
+      <div class="container">
+        <div class="header">Web Layout Frame</div>
+        <div class="sub-header">Home Example</div>
+        <button class="btn btn-info outline-info">GitHub</button>
+      </div>
+    </div>
+  </section>
+
 
 </div>
+
 
 <footer class="module parallax parallax-1 bg-blue">
   <div class="filter-black">
@@ -120,18 +123,18 @@
 <!-- Footer -->
 
 <!-- JS Libs-->
-<script src="assets/components/jquery/dist/jquery.min.js"></script>
-<script src="assets/components/bootstrap-sass/assets/javascripts/bootstrap.js"></script>
-<script type="text/javascript" src="assets/components/moment/min/moment.min.js"></script>
-<script type="text/javascript" src="assets/components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+<script src="../assets/components/jquery/dist/jquery.min.js"></script>
+<script src="../assets/components/bootstrap-sass/assets/javascripts/bootstrap.js"></script>
+<script type="text/javascript" src="../assets/components/moment/min/moment.min.js"></script>
+<script type="text/javascript" src="../assets/components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
 <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
 
 
 <!-- My scripts -->
-<script src="assets/dist/scripts.min.js"></script>
+<script src="../assets/dist/scripts.min.js"></script>
 
 <!-- Activate on production (after run gulp build), all js files on gulp-path[jsbuild] are concat and minify -->
-<!--<script src="assets/dist/js-bundle.min.js"></script>-->
+<!--<script src="../assets/dist/js-bundle.min.js"></script>-->
 
 </body>
 

@@ -1,0 +1,955 @@
+<!-- Header -->
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Web Layout Frame</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!--<link rel="apple-touch-icon" href="apple-touch-icon.png">-->
+  <!-- Place favicon.ico in the root directory -->
+
+  <!-- CSS Libs-->
+  <!--<link rel="stylesheet" href="../assets/components/bootstrap/dist/css/bootstrap.min.css">-->
+  <link rel="stylesheet" href="../assets/components/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../assets/components/animate.css/animate.min.css">
+  <link rel="stylesheet" href="../assets/components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
+  <link rel="stylesheet" href="https://cdn.rawgit.com/google/code-prettify/master/styles/desert.css">
+
+
+  <!-- Fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,700,900' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,900,300' rel='stylesheet' type='text/css'>
+
+  
+  <!-- Custom CSS Styles-->
+  <!-- files for development environment -->
+  <link rel="stylesheet" href="../assets/css/styles.css">
+
+  <!-- Activate on production (after run gulp build), all css files on gulp-path[cssbuild] are concat and minify -->
+  <!--<link rel="stylesheet" href="../assets/dist/styles.min.css">-->
+
+</head>
+
+<body>
+
+<!-- Page content -->
+
+<!--Main wrapp-->
+<div id="main-wrapper" class="toggled">
+  <!--sidebar-->
+  <!-- Sidebar -->
+<nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
+  <ul class="nav sidebar-nav">
+    <li class="sidebar-brand">
+      <a href="#">
+          Web Layout Frame
+      </a>
+    </li>
+    <li>
+      <a href="#">Home</a>
+    </li>
+    <li><a href="#buttons-section">Buttons</a></li>
+    <li class="active"><a href="">Cards</a></li>
+    <li><a href="">Navbar</a></li>
+    <li><a href="">Modal</a></li>
+  </ul>
+</nav>
+  <!--/sidebar-->
+  <!--Page content-->
+  <div id="page-content-wrapper">
+
+    <div class="wrapper-overlay"></div>
+
+    <button class="btn-toggle-sidebar" id="btn-toggle-sidebar">
+      <i class="fa fa-bars" aria-hidden="true"></i>
+      <i class="fa fa-times" aria-hidden="true"></i>
+    </button>
+
+    <section class="parallax gradient-red" style="height: 400px">
+      <div class="soft-filter-black">
+        <div class="container">
+          <div class="header">Web Layout Frame</div>
+          <button class="btn btn-info outline-info">GitHub</button>
+        </div>
+      </div>
+    </section>
+
+    <!--Buttons section-->
+    <section class="index-section" id='buttons-section'>
+      <div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h2>Buttons</h2>
+      <hr>
+    </div>
+    <div class="col-xs-12">
+      <h6>Default buttons</h6>
+      <button type="button" class="btn btn-default">Default</button>
+      <button type="button" class="btn btn-primary">Primary</button>
+      <button type="button" class="btn btn-info">Info</button>
+      <button type="button" class="btn btn-warning">Warning</button>
+      <button type="button" class="btn btn-danger">Danger</button>
+      <button type="button" class="btn btn-success">Success</button>
+
+      <div class="spacer"></div>
+      <button class="btn link-default btn-block" type="button" data-toggle="collapse" data-target="#buttonsRW" aria-expanded="false" aria-controls="buttonsRW">
+      View Code
+      </button>
+      <div class="spacer"></div>
+      <div class="collapse" id="buttonsRW">
+        <pre class="prettyprint">
+    <xmp>
+    <button type="button" class="btn btn-default">Default</button>
+    <button type="button" class="btn btn-primary">Primary</button>
+    <button type="button" class="btn btn-info">Info</button>
+    <button type="button" class="btn btn-warning">Warning</button>
+    <button type="button" class="btn btn-danger">Danger</button>
+    <button type="button" class="btn btn-success">Success</button>
+    </xmp>
+    </pre>
+      </div>
+
+      <hr>
+
+      <h6>Outline buttons</h6>
+      <button type="button" class="btn outline-default">Default</button>
+      <button type="button" class="btn outline-primary">Primary</button>
+      <button type="button" class="btn outline-info">Info</button>
+      <button type="button" class="btn outline-warning">Warning</button>
+      <button type="button" class="btn outline-danger">Danger</button>
+      <button type="button" class="btn outline-success">Success</button>
+
+      <div class="spacer"></div>
+      <button class="btn link-default btn-block" type="button" data-toggle="collapse" data-target="#buttonsOutline" aria-expanded="false" aria-controls="buttonsOutline">
+      View Code
+      </button>
+      <div class="spacer"></div>
+      <div class="collapse" id="buttonsOutline">
+        <pre class="prettyprint">
+    <xmp>
+    <button type="button" class="btn outline-default">Default</button>
+    <button type="button" class="btn outline-primary">Primary</button>
+    <button type="button" class="btn outline-info">Info</button>
+    <button type="button" class="btn outline-warning">Warning</button>
+    <button type="button" class="btn outline-danger">Danger</button>
+    <button type="button" class="btn outline-success">Success</button>
+    </xmp>
+    </pre>
+      </div>
+
+      <hr>
+
+      <h6>Link buttons</h6>
+      <button type="button" class="btn link-default">Primary</button>
+      <button type="button" class="btn link-primary">Primary</button>
+      <button type="button" class="btn link-info">Info</button>
+      <button type="button" class="btn link-warning">Warning</button>
+      <button type="button" class="btn link-danger">Danger</button>
+      <button type="button" class="btn link-success">Success</button>
+      <div class="spacer"></div>
+      <button class="btn link-default btn-block" type="button" data-toggle="collapse" data-target="#buttonsLink" aria-expanded="false" aria-controls="buttonsLink">
+      View Code
+      </button>
+      <div class="spacer"></div>
+      <div class="collapse" id="buttonsLink">
+        <pre class="prettyprint">
+    <xmp>
+    <button type="button" class="btn link-default">Primary</button>
+    <button type="button" class="btn link-primary">Primary</button>
+    <button type="button" class="btn link-info">Info</button>
+    <button type="button" class="btn link-warning">Warning</button>
+    <button type="button" class="btn link-danger">Danger</button>
+    <button type="button" class="btn link-success">Success</button>
+    </xmp>
+    </pre>
+      </div>
+
+      <hr>
+
+      <h6>Material buttons</h6>
+      <button type="button" class="btn material-default">Primary</button>
+      <button type="button" class="btn material-primary">Primary</button>
+      <button type="button" class="btn material-info">Info</button>
+      <button type="button" class="btn material-warning">Warning</button>
+      <button type="button" class="btn material-danger">Danger</button>
+      <button type="button" class="btn material-success">Success</button>
+      <div class="spacer"></div>
+      <button class="btn link-default btn-block" type="button" data-toggle="collapse" data-target="#buttonsMaterial" aria-expanded="false" aria-controls="buttonsMaterial">
+      View Code
+      </button>
+      <div class="spacer"></div>
+      <div class="collapse" id="buttonsMaterial">
+        <pre class="prettyprint">
+        <xmp>
+        <button type="button" class="btn material-default">Primary</button>
+        <button type="button" class="btn material-primary">Primary</button>
+        <button type="button" class="btn material-info">Info</button>
+        <button type="button" class="btn material-warning">Warning</button>
+        <button type="button" class="btn material-danger">Danger</button>
+        <button type="button" class="btn material-success">Success</button>
+        </xmp>
+        </pre>
+      </div>
+
+      <hr>
+
+      <h6>Floating button</h6>
+      <p>Types available:</p>
+      <ul class='indent text-danger'>
+        <li>.floating-btn</li>
+        <li>.floating-btn-hover</li>
+      </ul>
+      <p>Position available:</p>
+      <ul class='indent text-danger'>
+        <li>.fixed-bottom-right</li>
+        <li>.fixed-bottom-left</li>
+      </ul>
+      <p>Horizontal:</p>
+      <ul class='indent text-danger'>
+        <li>.horizontal right</li>
+        <li>.horizontal left</li>
+      </ul>
+      <div class="floating-btn fixed-bottom-right">
+        <i class="fa fa-bars" aria-hidden="true"></i>
+        <ul>
+          <li>
+            <a href="" data-toggle="tooltip" data-placement="left" title="Tooltip on left">
+              <i class="fa fa-plus bg-teal" aria-hidden="true"></i>
+              <span></span>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <i class="fa fa-pencil bg-orange" aria-hidden="true"></i>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <i class="fa fa-archive bg-blue" aria-hidden="true"></i>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <i class="fa fa-trash bg-red" aria-hidden="true"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="floating-btn-hover horizontal">
+        <i class="fa fa-bars" aria-hidden="true"></i>
+        <ul>
+          <li>
+            <a href="" data-toggle="tooltip" data-placement="left" title="Tooltip on left">
+              <i class="fa fa-plus bg-teal" aria-hidden="true"></i>
+              <span></span>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <i class="fa fa-pencil bg-orange" aria-hidden="true"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="spacer"></div>
+      <button class="btn link-default btn-block" type="button" data-toggle="collapse" data-target="#floatingButton" aria-expanded="false" aria-controls="floatingButton">
+  View Code
+</button>
+      <div class="spacer"></div>
+      <div class="collapse" id="floatingButton">
+        <pre class="prettyprint">
+    <xmp>
+    // example on bottom-right corner
+    <div class="floating-btn fixed-bottom-right">
+      <i class="fa fa-bars" aria-hidden="true"></i>
+      <ul>
+        <li>
+          <a href="" data-toggle="tooltip" data-placement="left" title="Tooltip on left">
+            <i class="fa fa-plus bg-teal" aria-hidden="true"></i>
+          </a>
+        </li>
+        ...
+      </ul>
+    </div>
+    </xmp>
+    </pre>
+      </div>
+    </div>
+  </div>
+</div>
+    </section>
+    <!--Cards section-->
+    <section class="index-section" id='cards-section'>
+      <div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h2>Cards</h2>
+      <hr>
+      <h6>Flex Cards</h6>
+    </div>
+  </div>
+  <div class="row row-flexbox">
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <div class="card">
+        <!--Card image-->
+        <div class="card-image">
+          <img class="img-fluid" src="http://24.media.tumblr.com/tumblr_lnin5gPIkH1qc76t1o1_500.jpg" alt="Card image cap">
+        </div>
+        <!--/.Card image-->
+        <!--Card content-->
+        <div class="card-block">
+          <!--Title-->
+          <h4 class="card-title">Card title</h4>
+          <hr>
+          <!--Text-->
+          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat illum animi, tempora. Exercitationem earum minima impedit officiis sint molestiae quae unde, cupiditate perspiciatis! Dolorem iste quibusdam modi, sunt sit velit..</p>
+        </div>
+        <!--/.Card content-->
+        <!--Card Footer-->
+        <div class="card-footer">
+          <a href="#" class="btn material-primary pull-right">Read</a>
+        </div>
+        <!--/Card Footer-->
+      </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <!--Card Container-->
+      <div class="card">
+        <!--Card image-->
+        <div class="card-image">
+          <img class="img-fluid" src="http://24.media.tumblr.com/tumblr_lnin5gPIkH1qc76t1o1_500.jpg" alt="Card image cap">
+          <div class="img-overlay">
+            <a href="">
+              <i class="fa fa-align-left" aria-hidden="true"></i> Read more..
+            </a>
+          </div>
+        </div>
+        <!--/.Card image-->
+        <!--Card content-->
+        <div class="card-block">
+          <!--Title-->
+          <h4 class="card-title"><a href="">Card title</a></h4>
+          <hr>
+          <!--Text-->
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+        <!--/.Card content-->
+        <!--Card Footer-->
+        <div class="card-footer">
+          <ul class="card-list">
+            <li>
+              <a href="">10 <i class="fa fa-heart text-danger" aria-hidden="true"></i></a>
+            </li>
+            <li>
+              <a>15 <i class="fa fa-comment" aria-hidden="true"></i></a>
+            </li>
+          </ul>
+        </div>
+        <!--/Card Footer-->
+      </div>
+      <!--/.Card container-->
+    </div>
+    <!--View code-->
+    <div class="col-xs-12">
+      <div class="spacer"></div>
+      <button class="btn link-default btn-block" type="button" data-toggle="collapse" data-target="#cards" aria-expanded="false" aria-controls="cards">
+  View Code
+  </button>
+      <div class="spacer"></div>
+      <div class="collapse" id="cards">
+        <pre class="prettyprint">
+    <xmp>
+      <!--Card Container-->
+      <div class="card">
+        <!--Card image-->
+        <div class="card-image">
+          <img class="img-fluid" src="">
+          <div class="img-overlay">
+            <a href="">
+              <i class="fa fa-align-left" aria-hidden="true"></i> Read more..
+            </a>
+          </div>
+        </div>
+        <!--/.Card image-->
+        <!--Card content-->
+        <div class="card-block">
+          <!--Title-->
+          <h4 class="card-title"><a href="">Card title</a></h4>
+          <hr>
+          <!--Text-->
+          <p class="card-text">...</p>
+        </div>
+        <!--/.Card content-->
+        <!--Card Footer-->
+        <div class="card-footer">
+          <ul class="card-list">
+            ...
+          </ul>
+        </div>
+        <!--/Card Footer-->
+      </div>
+      <!--/.Card container-->
+    </xmp>
+    </pre>
+      </div>
+    </div>
+    <!--/view code-->
+  </div>
+  <!--/row cards-->
+  <div class="row">
+    <div class="col-xs-12">
+      <hr>
+      <h6>User Card</h6>
+    </div>
+    <div class="col-xs-8 col-xs-offset-2">
+      <!--Card-->
+      <div class="card testimonial-card">
+        <!--Bacground color-->
+        <div class="card-header">
+        </div>
+        <!--Avatar-->
+        <div class="avatar"><img src="https://www.tm-town.com/assets/default_female600x600-3702af30bd630e7b0fa62af75cd2e67c.png" class="img-circle img-responsive">
+        </div>
+        <div class="card-block">
+          <!--Name-->
+          <h4 class="card-title text-center">Anna Doe</h4>
+          <hr>
+          <!--Quotation-->
+          <address>
+            <strong>Twitter, Inc.</strong><br>
+            1355 Market Street, Suite 900<br>
+            San Francisco, CA 94103<br>
+            <abbr title="Phone">P:</abbr> (123) 456-7890
+        </address>
+
+          <address>
+        <strong>Full Name</strong><br>
+        <a href="mailto:#">first.last@example.com</a>
+    </address>
+        </div>
+      </div>
+      <!--/.Card-->
+    </div>
+    <!--View code-->
+    <div class="col-xs-12">
+      <div class="spacer"></div>
+      <button class="btn link-default btn-block" type="button" data-toggle="collapse" data-target="#usercard" aria-expanded="false" aria-controls="usercard">
+  View Code
+  </button>
+      <div class="spacer"></div>
+      <div class="collapse" id="usercard">
+        <pre class="prettyprint">
+    <xmp>
+      <!--Card-->
+      <div class="card testimonial-card">
+        <!--Bacground color-->
+        <div class="card-up default-color-dark"></div>
+        <!--Avatar-->
+        <div class="avatar"><img src="" class="img-circle img-responsive">
+        </div>
+        <div class="card-block">
+          <!--Name-->
+          <h4 class="card-title text-center">Anna Doe</h4>
+          <hr>
+          <!--Quotation-->
+          <address>
+            ...
+        </address>
+        </div>
+      </div>
+      <!--/.Card-->
+    </xmp>
+    </pre>
+      </div>
+    </div>
+    <!--/view code-->
+  </div>
+</div>
+    </section>
+    <!--Navbars section-->
+    <section class="index-section" id='navbars-section'>
+      <div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h2>Navbars</h2>
+      <hr>
+    </div>
+    <div class="col-xs-12">
+      <h6>Navbar with mobile sidebar</h6>
+      <div class="spacer"></div>
+      <button class="btn link-default btn-block" type="button" data-toggle="collapse" data-target="#mobileNav" aria-expanded="false" aria-controls="mobileNav">
+        View Code
+        </button>
+      <div class="spacer"></div>
+      <div class="collapse" id="mobileNav">
+        <pre class="prettyprint">
+          <xmp>
+          <nav class="navbar navbar-custom mobile-sidebar navbar-fixed-top">
+            <div class="container-fluid">
+              <!-- Brand and toggle get grouped for better mobile display -->
+              <div class="navbar-header">
+                <button type="button" 
+                class="collapsed btn-toggle"
+                id="btn-mobile-sidebar"
+                aria-expanded="false">
+                  <i class="fa fa-bars"></i>
+                  <i class="fa fa-times"></i>
+                </button>
+                <a class="navbar-brand" href="#">Web Layout Frame</a>
+              </div>
+              <!-- Collect the nav links, forms, and other content for toggling -->
+              <div class="navbar-sidebar">
+                <ul class="nav navbar-nav">
+                  ..
+                </ul>
+                <ul class="nav navbar-nav navbar-right visible-xs-block">
+                  ...
+                </ul>
+                <ul class="nav navbar-nav navbar-right hidden-xs">
+                  ..
+                </ul>
+              </div>
+              <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+          </nav>
+          </xmp>
+          </pre>
+      </div>
+    </div>
+    <div class="col-xs-12">
+      <h6>Transparent Navbar</h6>
+      <div class="spacer"></div>
+      <button class="btn link-default btn-block" 
+      type="button" 
+      data-toggle="collapse" 
+      data-target="#transparentNav" 
+      aria-expanded="false" 
+      aria-controls="transparentNav">
+        View Code
+      </button>
+      <div class="spacer"></div>
+      <div class="collapse" id="transparentNav">
+        <pre class="prettyprint">
+          <xmp>
+          <nav class="navbar navbar-custom navbar-transparent navbar-fixed-top" id="transparent-navbar">
+            <div class="container-fluid">
+              <!-- Brand and toggle get grouped for better mobile display -->
+              <div class="navbar-header">
+                <button type="button"
+                class="collapsed btn-toggle"
+                data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                  <i class="fa fa-bars" aria-hidden="true"></i>
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Web Layout Frame</a>
+              </div>
+              <!-- Collect the nav links, forms, and other content for toggling -->
+              <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                  ..
+                </ul>
+              </div>
+              <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+          </nav>
+          </xmp>
+          </pre>
+      </div>
+    </div>
+    <div class="col-xs-12">
+      <h6>Sidebar Navbar</h6>
+      <div class="spacer"></div>
+      <button class="btn link-default btn-block" 
+      type="button" 
+      data-toggle="collapse" 
+      data-target="#sidebarNav" 
+      aria-expanded="false" 
+      aria-controls="sidebarNav">
+        View Code
+      </button>
+      <div class="spacer"></div>
+      <div class="collapse" id="sidebarNav">
+        <pre class="prettyprint">
+          <xmp>
+          <!--Main wrapp-->
+          <div id="main-wrapper" class="toggled">
+            <!-- Sidebar -->
+            <nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
+              <ul class="nav sidebar-nav">
+                <li class="sidebar-brand">
+                  <a href="#">
+                      Web Layout Frame
+                  </a>
+                </li>
+                <li>
+                  <a href="#">Home</a>
+                </li>
+                ...
+              </ul>
+            </nav>
+            <!--/sidebar-->
+            <!--Page content-->
+            <div id="page-content-wrapper">
+              <!--black overlay-->
+              <div class="wrapper-overlay"></div>
+              <!--button toggle sidebar-->
+              <button class="btn-toggle-sidebar" id="btn-toggle-sidebar">
+                <i class="fa fa-bars" aria-hidden="true"></i>
+                <i class="fa fa-times" aria-hidden="true"></i>
+              </button>
+              <!--
+                Content here
+              -->
+            </div>
+            <!--/page content-->
+          </div>
+          <!--/main wrapper-->
+          </xmp>
+          </pre>
+      </div>
+    </div>
+  </div>
+</div>
+    </section>
+    <!--Modal section-->
+    <section class="index-section" id='modal-section'>
+      <div class="container">
+  <div class="row">
+    <h2>Modal</h2>
+    <hr>
+    <div class="col-xs-12">
+      <!-- Button trigger modal -->
+      <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+        Launch demo modal
+      </button>
+    </div>
+    <div class="col-xs-12">
+      <div class="spacer"></div>
+      <button class="btn link-default btn-block" 
+      type="button" 
+      data-toggle="collapse" 
+      data-target="#modalexample" 
+      aria-expanded="false" 
+      aria-controls="modalexample">
+        View Code
+      </button>
+      <div class="spacer"></div>
+      <div class="collapse" id="modalexample">
+        <pre class="prettyprint">
+          <xmp>
+          <!-- Modal -->
+          <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+              <!--modal content-->
+              <div class="modal-content">
+                <!--modal header-->
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                </div>
+                <!--/ modal header-->
+                <!--modal body-->
+                <div class="modal-body">
+                  ...
+                </div>
+                <!--/modal body-->
+                <!--modal footer-->
+                <div class="modal-footer">
+                  <button type="button" class="btn material-success" data-dismiss="modal">Close</button>
+                </div>
+                <!--/modal footer-->
+              </div>
+              <!--/modal content-->
+            </div>
+          </div>
+          <!--/modal-->
+          </xmp>
+          </pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis, est? Inventore a, laboriosam sint autem quod earum assumenda ullam repellat, harum illum consequatur. Expedita, iure modi aliquid minus eum ex.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn material-success" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+    </section>
+    <!--Price table section-->
+    <section class="index-section" id='modal-section'>
+      <div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h2>Price Table</h2>
+      <hr>
+      <p>Use <span class="text-danger">.highlighted</span> class for highlight plan</p>
+      <div class="spacer"></div>
+    </div>
+  </div>
+  <!--row-flexbox-->
+  <div class="row row-flexbox">
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <!--Card-->
+      <div class="card price-table blue">
+        <!--Card Header-->
+        <div class="card-header text-center">
+          Standard
+        </div>
+        <!--Card Price-->
+        <div class="card-price">
+          $29
+        </div>
+        <!--Card Content-->
+        <div class="card-block text-center">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi iste odit, possimus nesciunt in ratione pariatur, similique nobis corporis.</p>
+        </div>
+        <!--Card Footer-->
+        <div class="card-footer text-center">
+          <button class="btn btn-primary">
+            Sign Up
+          </button>
+        </div>
+      </div>
+      <!--/card-->
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <div class="card price-table highlighted">
+        <div class="card-header text-center">
+          Proffesional
+        </div>
+        <div class="card-price">
+          $99
+        </div>
+        <div class="card-block text-center">
+          <p><strong>5GB</strong> disk storage</p>
+          <p><strong>1GB</strong> ram memory</p>
+          <p><strong>1TB</strong> data transfer</p>
+          <p><strong>Unlimited</strong> domains</p>
+        </div>
+        <div class="card-footer text-center">
+          <button class="btn btn-success">
+            Sign Up
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <!--View Code-->
+    <div class="col-xs-12">
+      <div class="spacer"></div>
+      <button class="btn link-default btn-block" type="button" data-toggle="collapse" data-target="#priceTable" aria-expanded="false" aria-controls="priceTable">
+      View Code
+      </button>
+      <div class="spacer"></div>
+      <div class="collapse" id="priceTable">
+        <pre class="prettyprint">
+        <xmp>
+        <!--row-flexbox-->
+        <div class="row row-flexbox">
+          <div class="col-xs-12 col-sm-6 col-md-4">
+            <!--Card-->
+            highlight: card price-table highlighted
+            <div class="card price-table blue">
+              <!--Card Header-->
+              <div class="card-header text-center">
+                Title
+              </div>
+              <!--Card Price-->
+              <div class="card-price">
+                price
+              </div>
+              <!--Card Content-->
+              <div class="card-block text-center">
+                <p><strong>content</strong> content</p>
+                ...
+              </div>
+              <!--Card Footer-->
+              <div class="card-footer text-center">
+                <button class="btn btn-primary">
+                  Sign Up
+                </button>
+              </div>
+            </div>
+            <!--/card-->
+          </div>
+        </div>
+        <!--/row-flexbox-->
+        </xmp>
+        </pre>
+      </div>
+    </div>
+    <!--/view code-->
+  </div>
+</div>
+    </section>
+    <!--Service section-->
+    <section class="index-section" id='service-section'>
+      <div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h2>Service features</h2>
+      <hr>
+    </div>
+    <div class="col-xs-12 col-md-3">
+      <div class="service dark">
+        <div class="circle-wrapper primary">
+          <i class="fa fa-rocket" aria-hidden="true"></i>
+        </div>
+        <hr>
+        <h3>Landing Page</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit!</p>
+      </div>
+    </div>
+    <div class="col-xs-12 col-md-3 gradient-blue-green">
+      <div class="service">
+        <div class="circle-wrapper">
+          <i class="fa fa-rocket" aria-hidden="true"></i>
+        </div>
+        <hr>
+        <h3>Landing Page</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit!</p>
+      </div>
+    </div>
+  </div>
+</div>
+    </section>
+    <!--List view section-->
+    <section class="index-section" id='service-section'>
+      <div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h2>List view</h2>
+      <hr>
+    </div>
+  </div>
+  <ul class="row list-view">
+    <li class="col-xs-12 list-view-item">
+      <div class="img-wrapper circle">
+        <i class="fa fa-rocket" aria-hidden="true"></i>
+      </div>
+      <div class="item-title">
+        The title of the product
+      </div>
+      <div class="item-price">
+        $999,99
+      </div>
+      <div class="item-info">
+        Mendoza, Arg.
+      </div>
+    </li>
+  </ul>
+</div>
+    </section>
+
+    <section class="index-section" id='modal-section'>
+      <div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h2>Responsive GMap</h2>
+      <hr>
+    </div>
+    <!--View Code-->
+    <div class="col-xs-12">
+      <div id="gmaps">
+        <pre class="prettyprint">
+        <xmp>
+        <!--map container-->
+        <div class="google-maps">
+            <iframe src="" allowfullscreen></iframe>
+        </div>
+        <!--/map container-->
+        </xmp>
+        </pre>
+      </div>
+    </div>
+    <!--/view code-->
+  </div>
+</div>
+    </section>
+
+
+    <!--Footer-->
+    <footer class="bg-blue">
+      <div class="filter-black">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-xs-12 col-md-4">
+              <h3>Logo</h3>
+              <p>Suspendisse hendrerit tellus laoreet luctus pharetra. Aliquam porttitor vitae orci nec ultricies. Curabitur vehicula, libero eget faucibus faucibus, purus erat eleifend enim, porta pellentesque ex mi ut sem.</p>
+              <p>© 2014 BS3 UI Kit, All rights reserved</p>
+            </div>
+            <div class="col-xs-12 col-md-3">
+              <h3>Follow Us</h3>
+              <ul>
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Twitter</a></li>
+                <li><a href="#">Instagram</a></li>
+                <li><a href="#">RSS</a></li>
+              </ul>
+            </div>
+            <div class="col-xs-12 col-md-5">
+              <h3>Newsletter</h3>
+              <p>A rover wearing a fuzzy suit doesn’t alarm the real penguins</p>
+              <div class="form-group">
+                <div class='input-group'>
+                  <span class="input-group-addon">
+                        <i class="fa fa-envelope" aria-hidden="true"></i>
+                  </span>
+                  <input type='email' class="form-control" placeholder="Email" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <!--/page content-->
+</div>
+<!--/main wrapp-->
+
+
+<!-- Footer -->
+
+<!-- JS Libs-->
+<script src="../assets/components/jquery/dist/jquery.min.js"></script>
+<script src="../assets/components/bootstrap-sass/assets/javascripts/bootstrap.js"></script>
+<script type="text/javascript" src="../assets/components/moment/min/moment.min.js"></script>
+<script type="text/javascript" src="../assets/components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+
+
+<!-- My scripts -->
+<script src="../assets/dist/scripts.min.js"></script>
+
+<!-- Activate on production (after run gulp build), all js files on gulp-path[jsbuild] are concat and minify -->
+<!--<script src="../assets/dist/js-bundle.min.js"></script>-->
+
+</body>
+
+</html>

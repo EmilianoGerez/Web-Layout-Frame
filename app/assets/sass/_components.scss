@@ -32,6 +32,19 @@ button:active:focus,
   box-shadow: none;
 }
 
+h6 {
+  text-transform: uppercase;
+  font-weight: 300;
+}
+
+footer {
+  overflow: hidden;
+}
+
+.modal {
+  z-index: 9999;
+}
+
 
 /*
  * Row with equal height columns
@@ -260,6 +273,10 @@ SIDEBAR
     left: 250px;
   }
   #page-content-wrapper {
+    .container {
+      width: auto;
+      padding: 0 30px;
+    }
     .btn-toggle-sidebar {
       left: 250px;
       .fa-bars {
@@ -467,10 +484,6 @@ SIDEBAR
 #page-content-wrapper {
   padding-top: 50px;
   width: 100%;
-  .container {
-    width: auto;
-    padding: 0 30px;
-  }
   .btn-toggle-sidebar {
     text-decoration: none;
     position: fixed;
@@ -526,6 +539,7 @@ CARDS
 ======================================*/
 
 .card {
+  height: 100%;
   border: 0;
   border-radius: 2px;
   position: relative;
@@ -535,6 +549,7 @@ CARDS
   $card-shadow: rgba(0, 0, 0, 0.156863) 0px 2px 5px 0px, rgba(0, 0, 0, 0.117647) 0px 2px 10px 0px;
   @include prefixer(box-shadow, $card-shadow, webkit moz spec);
   .card-image {
+    border-radius: 2px 2px 0 0;
     width: 100%;
     height: 260px;
     overflow: hidden;
@@ -577,24 +592,42 @@ CARDS
       border-radius: 2px 2px 0 0;
     }
   }
+  .card-header {
+    border-radius: 2px 2px 0 0;
+    line-height: 30px;
+    font-size: 1.2rem;
+    padding: 10px 15px;
+    background-color: $color-teal-500;
+    color: $gray-lighter;
+  }
   .card-block {
     padding: 1.1rem;
-  }
-  .card-title {
-    margin-bottom: 0.7rem;
-    margin-top: 0;
-    font-weight: 400;
-    //font-size: 1.35rem;
-    a {
-      text-decoration: none;
-      color: inherit;
-      &:hover {
-        color: $brand-primary;
+    margin-bottom: 40px;
+    overflow: auto;
+    zoom: 1;
+    .card-title {
+      margin-bottom: 0.7rem;
+      margin-top: 0;
+      font-weight: 400;
+      //font-size: 1.35rem;
+      a {
+        text-decoration: none;
+        color: inherit;
+        &:hover {
+          color: $brand-primary;
+        }
       }
     }
+    .card-text {
+      margin-bottom: 1.5rem;
+    }
   }
-  .card-text {
-    margin-bottom: 1.5rem;
+  .card-footer {
+    position: absolute;
+    bottom: 0;
+    padding: 1.1rem;
+    padding-top: 0;
+    width: 100%;
   }
   .card-list {
     list-style: none;
@@ -617,7 +650,6 @@ CARDS
 
 .card-full {
   @extend .card;
-  height: 100%;
   .card-block {
     height: 100%;
   }
@@ -632,12 +664,13 @@ CARDS
   }
 }
 
-// user card
+//==========================
+//  User card
 .testimonial-card {
-  .card-up {
+  .card-header {
     overflow: hidden;
     height: 150px;
-    background-color: $brand-success;
+    background-color: $color-teal-500;
   }
   .avatar {
     border-radius: 50%;
@@ -650,6 +683,57 @@ CARDS
       background: #FFF;
       width: 100%;
     }
+  }
+}
+
+//==========================
+//  Price table
+.price-table {
+  .card-header {
+    line-height: 60px;
+    padding: 10px 15px 60px 15px;
+    font-size: 1.5rem;
+    color: #fff;
+  }
+  .card-price {
+    border-radius: 50%;
+    line-height: 112px;
+    height: 120px;
+    width: 120px;
+    margin: -60px auto 0;
+    padding: 0;
+    overflow: hidden;
+    text-align: center;
+    border: 4px $gray-lighter solid;
+    background-color: $color-teal-500;
+    font-size: 2.2rem;
+    font-weight: 300;
+    color: #fff;
+    @include prefixer(box-shadow, 0 2px 5px 0 rgba(0, 0, 0, .35), webkit moz spec);
+  }
+  .card-block {
+    padding-bottom: 2rem;
+    p {
+      margin: 0;
+      padding: 10px;
+      border-bottom: 1px solid $color-grey-500;
+    }
+  }
+}
+
+@media(min-width: $screen-sm) {
+  .price-table {
+    &.highlighted {
+      @include transform(scale(1.07));
+      @include prefixer(box-shadow, 0 8px 10px 1px rgba(0, 0, 0, .3), webkit moz spec);
+    }
+  }
+}
+
+.price-table.blue {
+  .card-header,
+  .card-price {
+    background-color: $color-blue-500;
   }
 }
 
@@ -668,12 +752,12 @@ section.parallax {
   background-size: cover;
   .container {
     position: absolute;
-    top: 0;
+    top: 25%;
     bottom: 0;
     left: 0;
     right: 0;
-    width: 50%;
-    height: 30%;
+    width: 80%;
+    height: 60%;
     margin: auto;
     text-align: center;
     .header {
@@ -1093,6 +1177,149 @@ SPINNERS
       &:hover {
         color: $gray-dark;
       }
+    }
+  }
+}
+
+
+/*======================================
+GOOGLE MAPS
+======================================*/
+
+.google-maps {
+  position: relative;
+  padding-bottom: 400px; // This is the aspect ratio
+  height: 0;
+  overflow: hidden;
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 400px !important;
+  }
+}
+
+
+/*======================================
+SERVICES
+======================================*/
+
+.service {
+  text-align: center;
+  color: $gray-lighter;
+  font-weight: 300;
+  padding: 30px 15px;
+  .circle-wrapper {
+    margin: 0 auto;
+    height: 150px;
+    width: 150px;
+    line-height: 150px;
+    border: 4px solid #fff;
+    border-radius: 50%;
+    text-align: center;
+    color: #fff;
+    font-size: 75px;
+    background-color: transparent;
+    @include transition(all 0.5s ease);
+    &:hover {
+      @include transform(scale(1.07));
+    }
+  }
+  hr {
+    border-top: 2px solid rgba(0, 0, 0, 0.2);
+    box-shadow: none;
+    width: 80px;
+    margin: 20px auto;
+  }
+  h3 {
+    font-weight: 300;
+    color: #fff;
+  }
+}
+
+.service.dark {
+  color: $gray-dark;
+  .circle-wrapper {
+    border: 4px solid $gray-dark;
+    color: $gray-dark;
+    &.teal {
+      border: 4px solid $color-teal-500;
+      color: $color-teal-500;
+    }
+    &.red {
+      border: 4px solid $color-red-500;
+      color: $color-red-500;
+    }
+    &.orange {
+      border: 4px solid $color-orange-500;
+      color: $color-orange-500;
+    }
+    &.lgreen {
+      border: 4px solid $color-lgreen-500;
+      color: $color-lgreen-500;
+    }
+    &.primary {
+      border: 4px solid $brand-primary;
+      color: $brand-primary;
+    }
+  }
+  h3 {
+    font-weight: 300;
+    color: $gray-dark;
+  }
+}
+
+
+/*======================================
+LIST
+======================================*/
+
+.list-view {
+  list-style: none;
+  padding: 0 15px;
+  li.list-view-item {
+    padding-left: 0;
+    display: block;
+    height: 5rem;
+    width: 100%;
+    border-top: 1px solid rgba(0, 0, 0, 0.3);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    .img-wrapper {
+      background-color: $gray-lighter;
+      position: absolute;
+      width: 5rem;
+      height: 5rem;
+      padding-right: 15px;
+      line-height: 5rem;
+      text-align: center;
+      font-size: 3rem;
+      &.circle {
+        border-radius: 50%;
+      }
+    }
+    .item-title {
+      position: absolute;
+      left: 5rem;
+      height: 5rem;
+      width: auto;
+      padding: 1rem 1rem 1rem 0;
+    }
+    .item-price {
+      position: absolute;
+      right: 8rem;
+      width: 8rem;
+      height: 5rem;
+      padding: 1rem 1rem 1rem 0;
+      text-align: center;
+    }
+    .item-info {
+      position: absolute;
+      right: 0;
+      width: 8rem;
+      height: 5rem;
+      padding: 1rem 1rem 1rem 0;
+      text-align: center;
     }
   }
 }

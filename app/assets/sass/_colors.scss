@@ -54,6 +54,7 @@ $color-dorange-800: #D84315;
 $color-brown-500: #795548;
 $color-brown-800: #4E342E;
 // Grey
+$color-grey-200: #EEE;
 $color-grey-500: #9E9E9E;
 $color-grey-800: #424242;
 // Blue Grey
@@ -101,4 +102,7 @@ $db-primary-light: #34495e;
 // Gradients
 .gradient-red {
   @include linear-gradient(0deg, $color-purple-800, $color-red-500);
+}
+.gradient-blue-green {
+  @include linear-gradient(90deg, $color-blue-500, $color-cyan-800);
 }
