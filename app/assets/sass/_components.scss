@@ -1360,6 +1360,16 @@ LIST
   padding: 15px;
   &>li {
     background-color: #fff;
+    width: 100%;
+    padding: 0 15px;
+    overflow: hidden;
+    zoom: 1;
+  }
+  &>li:first-child{
+    //padding-top: 15px;
+  }
+  &>li:last-child{
+    //padding-bottom: 15px;
   }
   .list-view-item {
     height: 8rem;
@@ -1401,16 +1411,18 @@ LIST
   }
 }
 
-%product-column {
+@mixin product-column (){
   &>li {
-    padding-bottom: 15px;
-  }
+      background-color: transparent;
+      padding: 15px;
+      float: left;
+    }
   .list-view-item {
     float: left;
     padding: 0;
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 2px;
-    height: 340px;
+    height: 342px;
     //overflow: hidden;
     &:hover {
       background-color: initial;
@@ -1418,8 +1430,7 @@ LIST
         position: absolute;
         bottom: 0;
         height: 75%;
-        background-color: #fff;
-        @include transition(height 0.7s ease);
+        @include transition(height 0.5s ease);
       }
       .item-title {
         white-space: normal;
@@ -1445,7 +1456,9 @@ LIST
       padding: 15px;
       margin-left: 0;
       height: 140px;
+      width: 100%;
       overflow: hidden;
+      background-color: #fff;
     }
     .item-title {
       font-size: 0.95rem;
@@ -1453,7 +1466,9 @@ LIST
       padding: 0;
       padding-bottom: 10px;
       height: auto;
-      @extend .ellipsis;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
     }
     .item-price {
       position: relative;
@@ -1484,70 +1499,22 @@ LIST
   }
 }
 
-.list-view.product.column {
-  @extend %product-column;
+
+@media (min-width: $screen-md) {
+  .list-view.product.column {
+    @include product-column;
+    &>li {
+      width: 33.333333%;
+      padding: 15px;
+      float: left;
+    }
+  }
 }
+
+
 
 @media (max-width: $screen-sm) {
   .list-view.product {
-    li.list-view-item {
-      height: auto;
-      padding: 0;
-      border: 1px solid rgba(0, 0, 0, 0.1);
-      border-radius: 2px;
-      &:hover {
-        background-color: transparent;
-        .item-info {
-          display: block;
-        }
-      }
-      .img-wrapper {
-        position: relative;
-        background-color: $gray-lighter;
-        width: auto;
-        height: 200px;
-        line-height: 200px;
-        margin: 0;
-        font-size: 4rem;
-        img {
-          width: 100%;
-          height: 200px;
-        }
-      }
-      .item-content {
-        padding: 15px;
-        margin-left: 0;
-      }
-      .item-title {
-        position: relative;
-        padding: 0;
-        padding-bottom: 10px;
-      }
-      .item-price {
-        position: relative;
-        right: auto;
-        width: 100%;
-        padding: 0;
-        padding-bottom: 10px;
-        text-align: left;
-        color: $color-red-500;
-        .price {
-          font-weight: bold;
-        }
-        .credit {
-          font-size: 0.8rem;
-          font-weight: 300;
-        }
-      }
-      .item-info {
-        display: none;
-        position: relative;
-        width: auto;
-        height: auto;
-        padding: 0;
-        text-align: left;
-        font-size: 0.8rem;
-      }
-    }
+    @include product-column;
   }
 }
