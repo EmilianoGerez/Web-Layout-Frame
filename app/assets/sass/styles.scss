@@ -9,6 +9,9 @@
 @import "variables";
 @import "../components/bootstrap-sass/assets/stylesheets/bootstrap";
 
+// Mixins, Functions, Helpers
+@import 'helpers';
+
 // My Colors palette
 @import 'colors';
 
@@ -23,3 +26,6 @@
 
 // Generals styles
 @import "generals";
+
+// Example styles (remove this)
+@import "example";

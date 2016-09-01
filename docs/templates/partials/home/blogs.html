@@ -1,0 +1,48 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 text-center">
+      <h2>Lastest Articles</h2>
+    </div>
+  </div>
+  <div class="row row-flexbox">
+    {% for article in blogs %}
+    <div class="col-xs-12 col-sm-6 col-md-3">
+      <!--Card Container-->
+      <div class="card">
+        <!--Card image-->
+        <div class="card-image">
+          <i class="fa fa-file-text" aria-hidden="true"></i>
+          <div class="img-overlay">
+            <a href="">
+              <i class="fa fa-align-left" aria-hidden="true"></i> Read more..
+            </a>
+          </div>
+        </div>
+        <!--/.Card image-->
+        <!--Card content-->
+        <div class="card-block">
+          <!--Title-->
+          <h4 class="card-title"><a href="">{{article.title}}</a></h4>
+          <hr>
+          <!--Text-->
+          <!--<p class="card-text">...</p>-->
+        </div>
+        <!--/.Card content-->
+        <!--Card Footer-->
+        <div class="card-footer">
+          <ul class="card-list">
+            <li>
+              <i class="fa fa-pencil" aria-hidden="true"></i> {{article.autor}}
+            </li>
+            <li>
+              <i class="fa fa-clock-o" aria-hidden="true"></i> {{article.date}}
+            </li>
+          </ul>
+        </div>
+        <!--/Card Footer-->
+      </div>
+      <!--/.Card container-->
+    </div>
+    {% endfor %}
+  </div>
+</div>

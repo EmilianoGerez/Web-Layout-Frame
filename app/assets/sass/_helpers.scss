@@ -1,0 +1,166 @@
+/*======================================
+MATERIAL SHADOWS
+======================================*/
+%mt-shadow-1 {
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  //transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+%mt-shadow-hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+%mt-shadow-2 {
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+%mt-shadow-2-hover {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.16), 0 4px 8px rgba(0,0,0,0.4);
+}
+
+%mt-shadow-3 {
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+%mt-shadow-4 {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+%mt-shadow-5 {
+  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+}
+
+/*======================================
+COLORS - MIXIN
+======================================*/
+@mixin bg-color ($color) {
+  background-color: $color !important;
+  color: #fff;
+  ul li {
+    a {
+      color: $gray-lighter;
+    }
+  }
+}
+
+@mixin color-overlay ($opacity, $color, $color2: null, $deg: 90deg) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: $opacity;
+  @if($color2) {
+    background: $color;
+    /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient($deg, $color, $color2);
+    /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient($deg, $color, $color2);
+    /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient($deg, $color, $color2);
+    /* For Firefox 3.6 to 15 */
+    background: linear-gradient($deg, $color, $color2);
+    /* Standard syntax */
+  }
+  @else {
+    background-color: $color;
+  }
+}
+
+/*======================================
+BUTTONS - MIXIN
+======================================*/
+@mixin btn-outline($color, $hover-color) {
+  background-color: transparent;
+  color: $color;
+  border-color: $color;
+  &:hover,
+  &:active,
+  &:focus {
+    color: #fff;
+    background-color: $hover-color;
+    border-color: $color;
+  }
+}
+
+@mixin btn-link($color, $hover-color) {
+  background-color: transparent;
+  color: $color;
+  border: 1px solid transparent;
+  &:hover,
+  &:active,
+  &:focus {
+    color: #fff;
+    background-color: $hover-color;
+    border: 1px solid transparent;
+  }
+}
+
+@mixin btn-material($color) {
+  background-color: $color;
+  color: #fff;
+  @extend %mt-shadow-2;
+  &:hover,
+  &:active,
+  {
+    color: #fff;
+    background-color: $color;
+    @extend %mt-shadow-2-hover;
+    transform: translateY(-2px);
+  }
+}
+
+@mixin rounded-button($color, $size){
+  position: inherit;
+  z-index: 1009;
+  background-color: transparent;
+  padding: 0 5px;
+  &> i {
+    @include transition(all .2s cubic-bezier(.25, .8, .25, 1));
+    text-align: center;
+    width: $size;
+    line-height: $size;
+    background-color: $color;
+    border-radius: 50%;
+    font-size: 1.7rem;
+    color: #fff;
+    @extend %mt-shadow-2;
+    &:hover,
+    &:active,
+    {
+      cursor: pointer;
+      @extend %mt-shadow-2-hover;
+      transform: translateY(-2px);
+    }
+  }
+}
+/*======================================
+NAVBAR
+======================================*/
+@mixin navbar-color ($bg-color, $active-color) {
+  background-color: $bg-color;
+  .navbar-nav {
+    &> .active> a {
+      color: $active-color;
+    }
+    &> li> a {
+      &:hover,
+      &:focus {
+        color: $active-color;
+      }
+    }
+  }
+  @media (max-width: $screen-sm) {
+    .navbar-sidebar {
+      background-color: $bg-color;
+      li a:hover {
+        color: $gray-lighter;
+      }
+      .navbar-nav {
+        li.active>a {
+          color: rgba(0, 0, 0, 0.6);
+        }
+      }
+    }
+  }
+}

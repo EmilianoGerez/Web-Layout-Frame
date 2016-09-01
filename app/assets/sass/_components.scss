@@ -4,7 +4,7 @@ COMPONENTS
 
 #main-wrapper {
   width: 100%;
-  min-height: 70%;
+  min-height: 80%;
   padding: 0;
   @include transition(all 0.5s ease);
 }
@@ -97,7 +97,7 @@ NAVBAR
       padding: 0 10px;
       margin: 0;
       line-height: 60px;
-      font-family: Lato, Roboto, Helvetica;
+      font-family: Roboto, Helvetica;
       font-weight: 300;
       color: $gray-lighter;
       &:hover,
@@ -119,12 +119,15 @@ NAVBAR
     }
   }
   .navbar-brand {
-    padding: 0 15px;
+    padding: 0 10px;
     margin: 0;
+    min-width: 230px;
     line-height: 60px;
-    font-family: Lato, Roboto, Helvetica;
+    font-family: Roboto, Helvetica;
     font-weight: 300;
+    text-align: center;
     color: $gray-lighter;
+    @include transition(all 0.5s ease);
   }
   .btn-toggle {
     position: relative;
@@ -132,16 +135,18 @@ NAVBAR
     background-color: transparent;
     background-image: none;
     margin: 0;
-    line-height: 60px;
     padding: 0 15px;
     border: none;
-    font-size: 32px;
     color: $gray-light;
     @include transition(all .5s ease);
     &:hover,
     &:focus {
       background-color: transparent;
       outline: none;
+    }
+    i {
+      line-height: 60px;
+      font-size: 38px;
     }
     i:first-child {
       display: initial;
@@ -166,6 +171,9 @@ NAVBAR
   @include transition(all .5s ease-in-out);
   padding-top: 15px;
   background-color: rgba(0, 0, 0, 0);
+  .navbar-brand {
+    font-size: 1.3rem;
+  }
   .navbar-nav {
     &> .active> a {
       border-bottom: 0;
@@ -178,14 +186,18 @@ NAVBAR
 }
 
 @media (max-width: $screen-sm) {
+  .navbar-custom,
   .navbar-transparent {
     background-color: $color-bgrey-900;
+    .navbar-brand {
+      min-width: 0;
+    }
   }
   //=============================
   //  MOBILE SIDEBAR
   .mobile-sidebar .navbar-sidebar {
     position: fixed;
-    z-index: 1009;
+    z-index: 1999;
     top: 0;
     right: 0;
     height: 100%;
@@ -202,11 +214,35 @@ NAVBAR
         display: block;
         overflow: hidden;
         padding: 0;
-        &.active {
-          background-color: rgba(255, 255, 255, .1);
+        &:before {
+          background-color: rgba(0, 0, 0, 0.1);
+          content: '';
+          height: 100%;
+          left: 0;
+          position: absolute;
+          top: 0;
+          transition: width .2s ease-in;
+          width: 0;
+          z-index: -1;
         }
         &:hover {
-          background-color: rgba(0, 0, 0, .1);
+          &:before {
+            transition: width .2s ease-in;
+            width: 100%;
+          }
+        }
+        &.active {
+          background-color: rgba(255, 255, 255, 0.1);
+          &:hover {
+            background: transparent;
+            color: $gray-lighter;
+          }
+          &:before {
+            background-color: rgba(0, 0, 0, 0.1);
+          }
+          &>a {
+            color: $brand-primary;
+          }
         }
         a {
           display: block;
@@ -215,50 +251,80 @@ NAVBAR
           line-height: 50px;
           height: 50px;
           @include transition(all 0.3s ease);
-          .fa {
-            padding-right: 10px;
-          }
-          &:hover {
-            @include transform(translateX(15px));
-            color: $gray-lighter;
+          i {
+            line-height: 28px;
+            width: 24px;
+            //padding-right: 10px;
           }
         }
         button {
           margin: 11px 0;
         }
       }
+      .sidebar-dropdown {
+        &.active {
+          background-color: transparent;
+          &:hover {
+            color: $gray-lighter;
+          }
+        }
+        .sidebar-dropdown-menu {
+          display: none;
+          //@include transition(height 0.9s ease);
+          li {
+            line-height: 20px;
+            &:hover {
+              &:before {
+                width: 0;
+              }
+            }
+            a {
+              padding: 10px 15px 10px 30px;
+              color: $gray-light;
+              &:hover {
+                color: $gray-lighter;
+              }
+            }
+          }
+          &.open {
+            display: block;
+          }
+        }
+      }
+    }
+    .navbar-nav li a:hover,
+    .navbar-nav li a:active,
+    .navbar-nav li a:focus,
+    .navbar-nav li.open a:hover,
+    .navbar-nav li.open a:active,
+    .navbar-nav li.open a:focus {
+      background-color: transparent;
+      color: #ffffff;
+      text-decoration: none;
     }
   }
-  .mobile-sidebar .navbar-sidebar.toggled {
-    width: 250px;
+  .mobile-sidebar.toggled {
+    .container-fluid {
+      position: fixed;
+      top: 0;
+      z-index: 1099;
+      height: 100%;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.7);
+    }
+    .navbar-brand {
+      pointer-events: none;
+      cursor: default;
+      opacity: 0.1;
+    }
+    .navbar-sidebar {
+      width: 250px;
+    }
   }
 }
 
 //=============================
 //  NAVBAR COLORS
-@mixin navbar-color ($bg-color, $active-color) {
-  background-color: $bg-color;
-  .navbar-nav {
-    &> .active> a {
-      color: $active-color;
-    }
-    &> li> a {
-      &:hover,
-      &:focus {
-        color: $active-color;
-      }
-    }
-  }
-  @media (max-width: $screen-sm) {
-    .navbar-sidebar {
-      background-color: $bg-color;
-      li a:hover {
-        color: $gray-lighter;
-      }
-    }
-  }
-}
-
 .navbar-teal {
   @include navbar-color($color-teal-500, $color-teal-800);
 }
@@ -286,10 +352,10 @@ SIDEBAR
     }
     .btn-toggle-sidebar {
       left: 250px;
-      .fa-bars {
+      i:first-child {
         display: none;
       }
-      .fa-times {
+      i:last-child {
         display: initial;
       }
     }
@@ -369,13 +435,13 @@ SIDEBAR
         background-color: rgba(255, 255, 255, 0.1);
         &:hover {
           background: transparent;
-          color: $gray-lighter;
+          //color: $gray-lighter;
         }
         &:before {
           background-color: rgba(0, 0, 0, 0.1);
         }
         &>a {
-          color: rgba(0, 0, 0, 0.5);
+          color: rgba(0, 0, 0, 0.6);
         }
       }
       a {
@@ -495,24 +561,32 @@ SIDEBAR
     text-decoration: none;
     position: fixed;
     z-index: 1999;
-    line-height: 64px;
     width: auto;
     font-size: 32px;
     padding: 0 15px;
     top: 0;
     left: 0;
     background-color: rgba(0, 0, 0, .4);
-    color: rgba(255, 255, 255, 0.6);
     @include transition(left 0.5s ease);
-    //@include prefixer(text-shadow, 1px 1px 1px rgba(0,0,0,0.4), webkit moz spec);
-    .fa-bars {
+    color: rgba(255, 255, 255, 0.7);
+    &:hover {
+      color: rgba(255, 255, 255, 0.8);
+    }
+    i {
+      font-size: 38px;
+      line-height: 64px;
+    }
+    i:first-child {
       display: initial;
     }
-    .fa-times {
+    i:last-child {
       display: none;
     }
     &.darker {
       color: rgba(0, 0, 0, 0.5);
+      &:hover {
+        color: rgba(0, 0, 0, 0.65);
+      }
     }
   }
 }
@@ -553,13 +627,14 @@ CARDS
   display: block;
   background-color: #fff;
   margin-bottom: 1.2rem;
-  $card-shadow: rgba(0, 0, 0, 0.156863) 0px 2px 5px 0px, rgba(0, 0, 0, 0.117647) 0px 2px 10px 0px;
-  @include prefixer(box-shadow, $card-shadow, webkit moz spec);
+  @extend %mt-shadow-2;
   .card-image {
     border-radius: 2px 2px 0 0;
     width: 100%;
     height: 260px;
     overflow: hidden;
+    background-color: $gray-lighter;
+    text-align: center;
     .img-overlay {
       background-color: transparent;
       position: absolute;
@@ -572,7 +647,7 @@ CARDS
       a {
         text-decoration: none;
         color: $gray-lighter;
-        font-size: 1.2rem;
+        font-size: 1rem;
         visibility: hidden;
         opacity: 0;
         position: absolute;
@@ -597,6 +672,11 @@ CARDS
       height: auto;
       min-height: 260px;
       border-radius: 2px 2px 0 0;
+    }
+    &>i {
+      line-height: 260px;
+      font-size: 4rem;
+      color: $gray-light;
     }
   }
   .card-header {
@@ -642,15 +722,17 @@ CARDS
       float: right;
       padding: 0 10px;
       display: block;
+      font-size: 0.8rem;
+      color: $gray
     }
     a {
       text-decoration: none;
       display: block;
-      font-size: 0.9rem;
+      font-size: 0.8rem;
       color: $gray-light
     }
     .fa {
-      font-size: 1.3rem;
+      font-size: 0.9rem;
     }
   }
 }
@@ -696,6 +778,7 @@ CARDS
 //==========================
 //  Price table
 .price-table {
+  margin: 15px 0;
   .card-header {
     line-height: 60px;
     padding: 10px 15px 60px 15px;
@@ -716,7 +799,7 @@ CARDS
     font-size: 2.2rem;
     font-weight: 300;
     color: #fff;
-    @include prefixer(box-shadow, 0 2px 5px 0 rgba(0, 0, 0, .35), webkit moz spec);
+    @extend %mt-shadow-1;
   }
   .card-block {
     padding-bottom: 2rem;
@@ -724,6 +807,7 @@ CARDS
       margin: 0;
       padding: 10px;
       border-bottom: 1px solid $color-grey-500;
+      color: #000;
     }
   }
 }
@@ -731,8 +815,8 @@ CARDS
 @media(min-width: $screen-sm) {
   .price-table {
     &.highlighted {
-      @include transform(scale(1.07));
-      @include prefixer(box-shadow, 0 8px 10px 1px rgba(0, 0, 0, .3), webkit moz spec);
+      @include transform(scale(1.06));
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
     }
   }
 }
@@ -751,20 +835,22 @@ PARALLAX
 
 section.parallax {
   position: relative;
-  margin-top: -80px;
   height: 600px;
-  background-position: 50% 50%;
+  margin-top: -70px;
+  background-position: 100% auto;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
+  overflow: hidden;
   .container {
     position: absolute;
-    top: 25%;
+    overflow: hidden;
+    //top: 0;
     bottom: 0;
     left: 0;
     right: 0;
     width: 80%;
-    height: 60%;
+    height: 70%;
     margin: auto;
     text-align: center;
     .header {
@@ -806,6 +892,8 @@ BUTTONS
 .btn {
   border-radius: 2px;
   font-size: 1rem;
+  padding: 6px 1.1rem;
+  @include transition(all .2s cubic-bezier(.25, .8, .25, 1));
 }
 
 .btn-lg {
@@ -826,48 +914,6 @@ BUTTONS
   &:focus {
     background-color: darken(#fff, 5%);
     border-color: $gray;
-  }
-}
-
-@mixin btn-outline($color, $hover-color) {
-  background-color: transparent;
-  color: $color;
-  border-color: $color;
-  &:hover,
-  &:active,
-  &:focus {
-    color: #fff;
-    background-color: $hover-color;
-    border-color: $color;
-  }
-}
-
-@mixin btn-link($color, $hover-color) {
-  background-color: transparent;
-  color: $color;
-  border: 1px solid transparent;
-  &:hover,
-  &:active,
-  &:focus {
-    color: #fff;
-    background-color: $hover-color;
-    border: 1px solid transparent;
-  }
-}
-
-@mixin btn-material($color) {
-  background-color: $color;
-  color: #fff;
-  //box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .35);
-  @include prefixer(box-shadow, 0 2px 5px 0 rgba(0, 0, 0, .35), webkit moz spec);
-  &:hover,
-  &:active,
-  {
-    color: #fff;
-    background-color: $color;
-    //box-shadow: 0 4px 6px 0 rgba(0, 0, 0, .5);
-    @include prefixer(box-shadow, 0 4px 6px 0 rgba(0, 0, 0, .5), webkit moz spec);
-    transform: translate3d(0, -2px, 0);
   }
 }
 
@@ -962,32 +1008,39 @@ BUTTONS
   @include btn-material($brand-primary);
 }
 
+// Rounded button
+////////////////////
+.rounded-default {
+  @include rounded-button($gray-lighter, 50px);
+  &> i {
+    color: $gray;
+  }
+}
+
+.rounded-primary {
+  @include rounded-button($brand-primary, 50px);
+}
+
+.rounded-info {
+  @include rounded-button($brand-info, 50px);
+}
+
+.rounded-warning {
+  @include rounded-button($brand-warning, 50px);
+}
+.rounded-danger {
+  @include rounded-button($brand-danger, 50px);
+}
+.rounded-success {
+  @include rounded-button($brand-success, 50px);
+}
+
+
 // Floating button
 .floating-btn,
 .floating-btn-hover {
-  position: inherit;
   width: 60px;
-  height: 60px;
-  z-index: 1009;
-  &> i {
-    padding-left: 1rem;
-    padding-right: 1rem;
-    text-align: center;
-    width: 60px;
-    line-height: 60px;
-    background-color: $color-red-500;
-    border-radius: 50%;
-    font-size: 1.2rem;
-    color: #fff;
-    @include prefixer(box-shadow, 0 2px 5px 0 rgba(0, 0, 0, .35), webkit moz spec);
-    &:hover,
-    &:active,
-    {
-      cursor: pointer;
-      @include prefixer(box-shadow, 0 4px 6px 0 rgba(0, 0, 0, .5), webkit moz spec);
-      transform: translate3d(0, -2px, 0);
-    }
-  }
+  @include rounded-button($color-red-500, 60px);
   ul {
     padding: 50px 10px 0 10px;
     margin: 0;
@@ -1015,33 +1068,33 @@ BUTTONS
         font-size: 0.9rem;
         color: #fff;
         text-shadow: none;
-        @include prefixer(box-shadow, 0 2px 5px 0 rgba(0, 0, 0, .35), webkit moz spec);
+        @extend %mt-shadow-2;
       }
       &:hover,
       &:active,
       {
         i {
           cursor: pointer;
-          @include prefixer(box-shadow, 0 4px 6px 0 rgba(0, 0, 0, .5), webkit moz spec);
+          @extend %mt-shadow-2-hover;
           transform: translate3d(0, -2px, 0);
         }
       }
     }
-  }
-  &:hover ul,
-  & ul.open {
-    display: block;
-    li:nth-child(1) {
-      animation: zoomInUp 1.25s;
-    }
-    li:nth-child(2) {
-      animation: zoomInUp 1s;
-    }
-    li:nth-child(3) {
-      animation: zoomInUp 0.75s;
-    }
-    li:nth-child(4) {
-      animation: zoomInUp .5s;
+    &:hover,
+    &.open {
+      display: block;
+      li:nth-child(1) {
+        animation: zoomInUp 1.25s;
+      }
+      li:nth-child(2) {
+        animation: zoomInUp 1s;
+      }
+      li:nth-child(3) {
+        animation: zoomInUp 0.75s;
+      }
+      li:nth-child(4) {
+        animation: zoomInUp .5s;
+      }
     }
   }
   // variants
@@ -1293,8 +1346,9 @@ LIST
     display: block;
     height: 4rem;
     width: 100%;
+    overflow: hidden;
     &:hover {
-      background-color: rgba(0, 0, 0, 0.03);
+      background-color: $gray-lighter;
     }
     .img-wrapper {
       color: rgba(0, 0, 0, 0.15);
@@ -1317,6 +1371,7 @@ LIST
       img {
         width: 100%;
         height: 4rem;
+        vertical-align: inherit;
       }
     }
     .item-content {
@@ -1361,19 +1416,13 @@ LIST
   &>li {
     background-color: #fff;
     width: 100%;
-    padding: 0 15px;
+    //padding: 0 15px;
     overflow: hidden;
     zoom: 1;
   }
-  &>li:first-child{
-    //padding-top: 15px;
-  }
-  &>li:last-child{
-    //padding-bottom: 15px;
-  }
   .list-view-item {
     height: 8rem;
-    padding-left: 0;
+    padding-left: 10px;
     .img-wrapper {
       background-color: $gray-lighter;
       width: 7rem;
@@ -1383,7 +1432,7 @@ LIST
       font-size: 3rem;
       img {
         width: 100%;
-        height: 4rem;
+        height: 7rem;
       }
     }
     .item-content {
@@ -1391,14 +1440,13 @@ LIST
       overflow: hidden;
     }
     .item-title {
-      padding-right: 18.5rem;
+      padding-right: 18rem;
     }
     .item-price {
       position: absolute;
       right: 8rem;
-      width: 10rem;
+      width: 9rem;
       padding: 10px 0;
-      text-align: center;
       color: $color-red-500;
       .price {
         font-weight: bold;
@@ -1407,16 +1455,21 @@ LIST
         font-size: 0.8rem;
         font-weight: 300;
       }
+      .shipping {
+        font-size: 0.9rem;
+        font-weight: 300;
+        color: $brand-success;
+      }
     }
   }
 }
 
-@mixin product-column (){
+@mixin product-column () {
   &>li {
-      background-color: transparent;
-      padding: 15px;
-      float: left;
-    }
+    background-color: transparent;
+    padding: 15px;
+    float: left;
+  }
   .list-view-item {
     float: left;
     padding: 0;
@@ -1430,7 +1483,8 @@ LIST
         position: absolute;
         bottom: 0;
         height: 75%;
-        @include transition(height 0.5s ease);
+        @include prefixer(box-shadow, 0px -1px 6px 0 rgba(0, 0, 0, .35), webkit moz spec);
+        @include transition(all 0.5s ease);
       }
       .item-title {
         white-space: normal;
@@ -1449,7 +1503,7 @@ LIST
       font-size: 4rem;
       img {
         width: 100%;
-        height: 200px;
+        height: auto;
       }
     }
     .item-content {
@@ -1499,22 +1553,150 @@ LIST
   }
 }
 
-
 @media (min-width: $screen-md) {
   .list-view.product.column {
     @include product-column;
     &>li {
-      width: 33.333333%;
-      padding: 15px;
+      width: 25%;
+      padding: 5px;
       float: left;
     }
   }
 }
 
-
-
 @media (max-width: $screen-sm) {
   .list-view.product {
     @include product-column;
+  }
+}
+
+
+/*======================================
+CAROUSEL / SLIDER
+======================================*/
+
+.carousel {
+  overflow: hidden;
+  //item wrapper
+  .item {
+    min-height: 400px;
+    height: auto;
+    width: 100%;
+  }
+  //conten wrapper
+  .carousel-caption {
+    text-shadow: none;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 15px 15%;
+    padding-bottom: 50px;
+    &.vcenter {
+      height: 60%;
+    }
+  }
+  //position indicator
+  .carousel-indicators {
+    bottom: 10px;
+    li {
+      border: none;
+      border-radius: 50%;
+      background-color: #fff;
+      @extend %mt-shadow-2;
+      &.active {
+        width: 15px;
+        height: 15px;
+      }
+    }
+  }
+  //control
+  .carousel-control {
+    z-index: 999;
+    opacity: .7;
+    &:hover {
+      opacity: .9;
+    }
+    &.right {
+      background-image: none;
+      display: none;
+      animation: slideInRight 1s;
+    }
+    &.left {
+      background-image: none;
+      display: none;
+      animation: slideInLeft 1s;
+    }
+  }
+  &:hover .carousel-control.right,
+  &:hover .carousel-control.left {
+    display: block;
+  }
+}
+
+//for testimonial slider
+.carousel.testimonial {
+  .carousel-caption {
+    height: 85%;
+  }
+  .avatar {
+    margin: 0 auto;
+    border-radius: 50%;
+    overflow: hidden;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    background-color: $gray-lighter;
+    img {
+      width: 100%;
+      height: auto;
+    }
+    i {
+      line-height: 100px;
+      font-size: 4rem;
+      color: $gray-light;
+    }
+  }
+  .quote {
+    font-weight: 300;
+    color: #000;
+    padding: 10px 0;
+    i {
+      color: $gray;
+    }
+  }
+  .signature {
+    color: $gray;
+  }
+}
+
+
+/* Animation delays */
+
+.carousel-caption:first-child {
+  animation-delay: 1s;
+}
+
+.carousel-caption:nth-child(2) {
+  animation-delay: 2s;
+}
+
+.carousel-caption:nth-child(3) {
+  animation-delay: 2.5s;
+}
+
+
+/*======================================
+PANELS
+======================================*/
+
+.panel {
+  border-radius: 2px;
+  .panel-heading {
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+    i {
+      padding-right: 10px;
+    }
   }
 }

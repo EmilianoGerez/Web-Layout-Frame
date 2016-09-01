@@ -9,12 +9,16 @@
 
     <div class="wrapper-overlay"></div>
 
+    <!--toggle sidebar button-->
     <button class="btn-toggle-sidebar" id="btn-toggle-sidebar">
-      <i class="fa fa-bars" aria-hidden="true"></i>
-      <i class="fa fa-times" aria-hidden="true"></i>
+      <i class="material-icons">menu</i>
+      <i class="material-icons">close</i>
     </button>
 
-    <section class="parallax gradient-red" style="height: 400px">
+    <section class="parallax gradient-red">
+      <div class="background-shape">
+        <i class="material-icons">settings</i>
+      </div>
       <div class="soft-filter-black">
         <div class="container">
           <div class="header">Web Layout Frame</div>
@@ -35,12 +39,8 @@
     <section class="index-section" id='navbars-section'>
       {% include 'partials/index/navbars.html' %}
     </section>
-    <!--Modal section-->
-    <section class="index-section" id='modal-section'>
-      {% include 'partials/index/modal.html' %}
-    </section>
     <!--Price table section-->
-    <section class="index-section" id='modal-section'>
+    <section class="index-section" id='pricetable-section'>
       {% include 'partials/index/price-table.html' %}
     </section>
     <!--Service section-->
@@ -48,12 +48,28 @@
       {% include 'partials/index/service.html' %}
     </section>
     <!--List view section-->
-    <section class="index-section" id='service-section'>
+    <section class="index-section" id='listview-section'>
       {% include 'partials/index/list-view.html' %}
     </section>
-
+    <!--panels section-->
+    <section class="index-section" id='panels-section'>
+      {% include 'partials/index/panels.html' %}
+    </section>
+    <!--Modal section-->
     <section class="index-section" id='modal-section'>
+      {% include 'partials/index/modal.html' %}
+    </section>
+    <!--Parallax section-->
+    <section class="index-section" id='parallax-section'>
+      {% include 'partials/index/parallax.html' %}
+    </section>
+    <!--Maps section-->
+    <section class="index-section" id='maps-section'>
       {% include 'partials/index/maps.html' %}
+    </section>
+    <!--Forms section-->
+    <section class="index-section" id='forms-section'>
+      {% include 'partials/index/forms.html' %}
     </section>
 
 

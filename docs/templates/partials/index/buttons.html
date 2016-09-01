@@ -115,6 +115,47 @@
 
       <hr>
 
+      <h6>Rounded buttons</h6>
+      <button type="button" class="btn rounded-default">
+        <i class="material-icons">expand_more</i>
+      </button>
+      <button type="button" class="btn rounded-primary">
+        <i class="material-icons">file_download</i>
+      </button>
+      <button type="button" class="btn rounded-info">
+        <i class="material-icons">info_outline</i>
+      </button>
+      <button type="button" class="btn rounded-warning">
+        <i class="material-icons">create</i>
+      </button>
+      <button type="button" class="btn rounded-danger">
+        <i class="material-icons">delete</i>
+      </button>
+      <button type="button" class="btn rounded-success">
+        <i class="fa">A</i>
+      </button>
+      <div class="spacer"></div>
+      <button class="btn link-default btn-block" type="button" data-toggle="collapse" data-target="#roundedButtons" aria-expanded="false" aria-controls="roundedButtons">
+      View Code
+      </button>
+      <div class="spacer"></div>
+      <div class="collapse" id="roundedButtons">
+        <pre class="prettyprint">
+        <xmp>
+        //.rounded-default/.rounded-primary/.rounded-warning
+        <button type="button" class="btn rounded-danger">
+        <i class="material-icons">delete</i>
+        </button>
+        //letter
+        <button type="button" class="btn rounded-success">
+          <i class="fa">A</i>
+        </button>
+        </xmp>
+        </pre>
+      </div>
+
+      <hr>
+
       <h6>Floating button</h6>
       <p>Types available:</p>
       <ul class='indent text-danger'>
@@ -132,7 +173,7 @@
         <li>.horizontal left</li>
       </ul>
       <div class="floating-btn fixed-bottom-right">
-        <i class="fa fa-bars" aria-hidden="true"></i>
+        <i class="material-icons">menu</i>
         <ul>
           <li>
             <a href="" data-toggle="tooltip" data-placement="left" title="Tooltip on left">
@@ -158,7 +199,7 @@
         </ul>
       </div>
       <div class="floating-btn-hover horizontal">
-        <i class="fa fa-bars" aria-hidden="true"></i>
+        <i class="material-icons">menu</i>
         <ul>
           <li>
             <a href="" data-toggle="tooltip" data-placement="left" title="Tooltip on left">

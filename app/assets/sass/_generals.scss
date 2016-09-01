@@ -45,23 +45,6 @@ hr {
   @include prefixer(box-shadow, 0 1px 1px 0 #FFFFFF, webkit moz spec);
 }
 
-.home-section {
-  padding-top: 60px;
-  padding-bottom: 30px;
-}
-
-.index-section {
-  padding-top: 20px;
-  padding-bottom: 50px;
-}
-
-.font-2x {
-  font-size: 2rem !important;
-}
-
-
-
-.spacer {
-  height: 20px;
-  width: 100%;
+small {
+  font-size: 0.85rem;
 }

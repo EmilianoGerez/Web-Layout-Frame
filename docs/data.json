@@ -1,16 +1,89 @@
 {
-  "facts": [
+  "features": [
     {
-      "num": 1,
-      "quote": "Chuck Norris can delete the Recycling Bin."
+      "icon": "fa-cloud-upload",
+      "title": "Deploy in seconds",
+      "description": "Spin up a Droplet and get root access to a compute instance in only 55 seconds"
     },
     {
-      "num": 2,
-      "quote": "Chuck Norris was bitten by a cobra and after five days of excruciating pain... the cobra died."
+      "icon": "fa-cloud-upload",
+      "title": "Deploy in seconds",
+      "description": "Spin up a Droplet and get root access to a compute instance in only 55 seconds"
     },
     {
-      "num": 3,
-      "quote": "Chuck Norris doesn't dial the wrong number. You answered the wrong phone."
+      "icon": "fa-cloud-upload",
+      "title": "Deploy in seconds",
+      "description": "Spin up a Droplet and get root access to a compute instance in only 55 seconds"
+    },
+    {
+      "icon": "fa-cloud-upload",
+      "title": "Deploy in seconds",
+      "description": "Spin up a Droplet and get root access to a compute instance in only 55 seconds"
+    },
+    {
+      "icon": "fa-cloud-upload",
+      "title": "Deploy in seconds",
+      "description": "Spin up a Droplet and get root access to a compute instance in only 55 seconds"
+    },
+    {
+      "icon": "fa-cloud-upload",
+      "title": "Deploy in seconds",
+      "description": "Spin up a Droplet and get root access to a compute instance in only 55 seconds"
+    }
+  ],
+  "plans": [
+    {
+      "title": "Basic",
+      "price": "$5",
+      "memory": "512MB",
+      "processor": "1 Core",
+      "disk": "20GB",
+      "transfer": "1TB",
+      "highlight": false
+    },
+    {
+      "title": "Popular",
+      "price": "$20",
+      "memory": "2GB",
+      "processor": "2 Core",
+      "disk": "40GB",
+      "transfer": "3TB",
+      "highlight": true
+    },
+    {
+      "title": "Proffesional",
+      "price": "$80",
+      "memory": "8GB",
+      "processor": "4 Core",
+      "disk": "20GB",
+      "transfer": "5TB",
+      "highlight": false
+    }
+  ],
+  "blogs": [
+    {
+      "title": "How To Move the Data Directory for ownCloud on Ubuntu 16.04",
+      "autor": "Woody",
+      "likes": "12",
+      "date": "today"
+    },
+    {
+      "title": "How To Move the Data Directory for ownCloud on Ubuntu 16.04",
+      "autor": "Woody",
+      "likes": "12",
+      "date": "today"
+    },
+    {
+      "title": "How To Move the Data Directory for ownCloud on Ubuntu 16.04",
+      "autor": "Woody",
+      "likes": "12",
+      "date": "today"
+    },
+    {
+      "title": "How To Move the Data Directory for ownCloud on Ubuntu 16.04",
+      "autor": "Woody",
+      "likes": "12",
+      "date": "today"
     }
   ]
 }

@@ -1,6 +1,11 @@
 /*=========================================
     BOOTSTRAP FORM/INPUTS
 =========================================*/
+.form-group, .form-mt-group {
+  label {
+    font-size: 0.9rem;
+  }
+}
 
 .form-control {
   border-radius: 2px;

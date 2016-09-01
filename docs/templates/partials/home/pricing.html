@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 text-center">
+      <h2>Pricing</h2>
+    </div>
+  </div>
+  <div class="row row-flexbox">
+    {% for plan in plans %}
+    <div class="col-xs-12 col-sm-4">
+      <!--Card-->
+      {% if plan.highlight %}
+      <div class="card price-table highlighted">
+        {% else %}
+        <div class="card price-table blue">
+          {% endif %}
+          <!--Card Header-->
+          <div class="card-header text-center">
+            {{plan.title}}
+          </div>
+          <!--Card Price-->
+          <div class="card-price">
+            {{plan.price}}<small>/mo</small>
+          </div>
+          <!--Card Content-->
+          <div class="card-block text-center">
+            <p><strong>{{plan.memory}}</strong> Memory</p>
+            <p><strong>{{plan.processor}}</strong> Processor</p>
+            <p><strong>{{plan.disk}}</strong> SSD Disk</p>
+            <p><strong>{{plan.transfer}}</strong> Transfer</p>
+          </div>
+          <!--Card Footer-->
+          <div class="card-footer text-center">
+            {% if plan.highlight %}
+            <button class="btn btn-success">
+                  Sign Up
+                </button> {% else %}
+            <button class="btn btn-primary">
+                  Sign Up
+                </button> {% endif %}
+          </div>
+        </div>
+        <!--/card-->
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>

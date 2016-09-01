@@ -1,20 +1,43 @@
 {% extends "layout.html" %} {% block content %}
 <header>
-  {% include 'partials/home/navbar.html' %}
+  {% include 'partials/home/sidebar.html' %}
 </header>
-<div id="main-wrap">
-  <section class="module parallax parallax-1" style="background-image: url('http://blog.sethhancock.com/wp-content/uploads/2015/01/Silver-Lake-December-2014-Mountains-and-Stars.jpg')">
-    <div class="filter-black">
-      <div class="container">
-        <div class="header">Web Layout Frame</div>
-        <div class="sub-header">Home Example</div>
-        <button class="btn btn-info outline-info">GitHub</button>
-      </div>
+<div id="main-wrapper">
+  <!--header-->
+  <section class="module parallax parallax-1" style="background-image: url('http://blog.sethhancock.com/wp-content/uploads/2015/01/Silver-Lake-December-2014-Mountains-and-Stars.jpg'); height: 800px">
+    <div class="black-overlay"></div>
+    <div class="container">
+      <div class="header">Web Layout Frame</div>
+      <div class="sub-header">Home Example</div>
+      <button class="btn btn-info outline-info">GitHub</button>
     </div>
+  </section>
+  <!--/header-->
+
+  <!--features section-->
+  <section class="home-section bg-white">
+    {% include 'partials/home/features.html' %}
+  </section>
+  <!--/features section-->
+
+  <!--pricing section-->
+  <section class="home-section bg-blue">
+    {% include 'partials/home/pricing.html' %}
+  </section>
+
+  <!--testimonial slider-->
+  <section>
+    {% include 'partials/home/testimonial.html' %}
+  </section>
+
+  <!--lastest post-->
+  <section class="home-section bg-white">
+    {% include 'partials/home/blogs.html' %}
   </section>
 
 
 </div>
+<!--/main-wrapper-->
 
 
 <footer class="module parallax parallax-1 bg-blue">

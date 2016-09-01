@@ -23,6 +23,8 @@
   <!-- Fonts -->
   <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,700,900' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700,900,300' rel='stylesheet' type='text/css'>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
 
   
   <!-- Custom CSS Styles-->
@@ -50,12 +52,17 @@
       </a>
     </li>
     <li>
-      <a href="#">Home</a>
+      <a>Home</a>
     </li>
     <li><a href="#buttons-section">Buttons</a></li>
-    <li class="active"><a href="">Cards</a></li>
-    <li><a href="">Navbar</a></li>
-    <li><a href="">Modal</a></li>
+    <li class="active"><a href="#cards-section">Cards</a></li>
+    <li><a href="#navbars-section">Navbar</a></li>
+    <li><a href="#modal-section">Modal</a></li>
+    <li><a href="#pricetable-section">Price table</a></li>
+    <li><a href="#service-section">Service</a></li>
+    <li><a href="#listview-section">List View</a></li>
+    <li><a href="#maps-section">Maps</a></li>
+    <li><a href="#forms-section">Forms</a></li>
   </ul>
 </nav>
   <!--/sidebar-->
@@ -64,12 +71,16 @@
 
     <div class="wrapper-overlay"></div>
 
+    <!--toggle sidebar button-->
     <button class="btn-toggle-sidebar" id="btn-toggle-sidebar">
-      <i class="fa fa-bars" aria-hidden="true"></i>
-      <i class="fa fa-times" aria-hidden="true"></i>
+      <i class="material-icons">menu</i>
+      <i class="material-icons">close</i>
     </button>
 
-    <section class="parallax gradient-red" style="height: 400px">
+    <section class="parallax gradient-red">
+      <div class="background-shape">
+        <i class="material-icons">settings</i>
+      </div>
       <div class="soft-filter-black">
         <div class="container">
           <div class="header">Web Layout Frame</div>
@@ -197,6 +208,47 @@
 
       <hr>
 
+      <h6>Rounded buttons</h6>
+      <button type="button" class="btn rounded-default">
+        <i class="material-icons">expand_more</i>
+      </button>
+      <button type="button" class="btn rounded-primary">
+        <i class="material-icons">file_download</i>
+      </button>
+      <button type="button" class="btn rounded-info">
+        <i class="material-icons">info_outline</i>
+      </button>
+      <button type="button" class="btn rounded-warning">
+        <i class="material-icons">create</i>
+      </button>
+      <button type="button" class="btn rounded-danger">
+        <i class="material-icons">delete</i>
+      </button>
+      <button type="button" class="btn rounded-success">
+        <i class="fa">A</i>
+      </button>
+      <div class="spacer"></div>
+      <button class="btn link-default btn-block" type="button" data-toggle="collapse" data-target="#roundedButtons" aria-expanded="false" aria-controls="roundedButtons">
+      View Code
+      </button>
+      <div class="spacer"></div>
+      <div class="collapse" id="roundedButtons">
+        <pre class="prettyprint">
+        <xmp>
+        //.rounded-default/.rounded-primary/.rounded-warning
+        <button type="button" class="btn rounded-danger">
+        <i class="material-icons">delete</i>
+        </button>
+        //letter
+        <button type="button" class="btn rounded-success">
+          <i class="fa">A</i>
+        </button>
+        </xmp>
+        </pre>
+      </div>
+
+      <hr>
+
       <h6>Floating button</h6>
       <p>Types available:</p>
       <ul class='indent text-danger'>
@@ -214,7 +266,7 @@
         <li>.horizontal left</li>
       </ul>
       <div class="floating-btn fixed-bottom-right">
-        <i class="fa fa-bars" aria-hidden="true"></i>
+        <i class="material-icons">menu</i>
         <ul>
           <li>
             <a href="" data-toggle="tooltip" data-placement="left" title="Tooltip on left">
@@ -240,7 +292,7 @@
         </ul>
       </div>
       <div class="floating-btn-hover horizontal">
-        <i class="fa fa-bars" aria-hidden="true"></i>
+        <i class="material-icons">menu</i>
         <ul>
           <li>
             <a href="" data-toggle="tooltip" data-placement="left" title="Tooltip on left">
@@ -621,86 +673,8 @@
   </div>
 </div>
     </section>
-    <!--Modal section-->
-    <section class="index-section" id='modal-section'>
-      <div class="container">
-  <div class="row">
-    <h2>Modal</h2>
-    <hr>
-    <div class="col-xs-12">
-      <!-- Button trigger modal -->
-      <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-        Launch demo modal
-      </button>
-    </div>
-    <div class="col-xs-12">
-      <div class="spacer"></div>
-      <button class="btn link-default btn-block" 
-      type="button" 
-      data-toggle="collapse" 
-      data-target="#modalexample" 
-      aria-expanded="false" 
-      aria-controls="modalexample">
-        View Code
-      </button>
-      <div class="spacer"></div>
-      <div class="collapse" id="modalexample">
-        <pre class="prettyprint">
-          <xmp>
-          <!-- Modal -->
-          <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-            <div class="modal-dialog" role="document">
-              <!--modal content-->
-              <div class="modal-content">
-                <!--modal header-->
-                <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                  <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-                </div>
-                <!--/ modal header-->
-                <!--modal body-->
-                <div class="modal-body">
-                  ...
-                </div>
-                <!--/modal body-->
-                <!--modal footer-->
-                <div class="modal-footer">
-                  <button type="button" class="btn material-success" data-dismiss="modal">Close</button>
-                </div>
-                <!--/modal footer-->
-              </div>
-              <!--/modal content-->
-            </div>
-          </div>
-          <!--/modal-->
-          </xmp>
-          </pre>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-      </div>
-      <div class="modal-body">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis, est? Inventore a, laboriosam sint autem quod earum assumenda ullam repellat, harum illum consequatur. Expedita, iure modi aliquid minus eum ex.</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn material-success" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
-    </section>
     <!--Price table section-->
-    <section class="index-section" id='modal-section'>
+    <section class="index-section" id='pricetable-section'>
       <div class="container">
   <div class="row">
     <div class="col-xs-12">
@@ -839,7 +813,7 @@
 </div>
     </section>
     <!--List view section-->
-    <section class="index-section" id='service-section'>
+    <section class="index-section" id='listview-section'>
       <div class="container">
   <div class="row">
     <div class="col-xs-12">
@@ -851,17 +825,18 @@
     <div class="col-xs-12">
       <h6>Default List</h6>
     </div>
-    <ul class="col-xs-12 col-md-6 list-view">
+    <ul class="col-xs-12 col-md-6 col-md-offset-3 list-view">
       <li class="list-view-item">
         <div class="img-wrapper circle">
           <img src="http://yeux.com.mx/ColumnaUniversitaria/wp-content/uploads/2014/06/selfie-1.jpg">
         </div>
         <div class="item-content">
           <a href="#" class="item-title">
-          Anna Doe
-        </a>
+          Woody <br>
+          <small>bla bla bla</small>
+          </a>
           <div class="item-info">
-            Yestarday
+            Yesterday
           </div>
         </div>
       </li>
@@ -871,105 +846,225 @@
         </div>
         <div class="item-content">
           <a href="#" class="item-title">
-          Anna Doe
+          Folder
         </a>
           <div class="item-info">
-            Yestarday
+            10 Files
           </div>
         </div>
       </li>
     </ul>
+    <div class="spacer"></div>
+    <button class="btn link-default btn-block" type="button" data-toggle="collapse" data-target="#listview" aria-expanded="false" aria-controls="listview">
+      View Code
+      </button>
+    <div class="spacer"></div>
+    <div class="collapse" id="listview">
+      <pre class="prettyprint">
+        <xmp>
+        <!--list view-->
+        <ul class="list-view">
+          <!--list item-->
+          <li class="list-view-item">
+            <div class="img-wrapper circle">
+              <img src="...">
+            </div>
+            <div class="item-content">
+              <a href="#" class="item-title">
+              Anna Doe
+            </a>
+              <div class="item-info">
+                Yesterday
+              </div>
+            </div>
+          </li>
+          <!--/list item-->
+        </ul>
+        <!--/list view-->
+        </xmp>
+        </pre>
+    </div>
   </div>
-  <ul class="row list-view product column">
-    <li>
-      <div class="list-view-item">
-        <div class="img-wrapper text-primary">
-          <i class="fa fa-camera-retro" aria-hidden="true"></i>
-        </div>
-        <div class="item-content">
-          <div class="item-title">
-            <a href="">The title of the product always is longer than this title.</a>
-            
-          </div>
-          <div class="item-price">
-            <p class="price">$ 999</p>
-            <p class="credit"><i class="fa fa-credit-card text-primary" aria-hidden="true"></i> 12x $ 99</p>
-          </div>
-          <div class="item-info">
-            Capital Federal
-          </div>
-        </div>
+
+  <div class="row">
+    <div class="col-xs-12">
+      <hr>
+      <h6>Product List</h6>
+      <p>For product list use <span class="text-danger">.product</span> class, and you can combine this with <span class="text-danger">.column</span> class for grid view.</p>
+      <a href="/home-example/#products" class="btn link-primary">Example</a>
+      <div class="spacer"></div>
+      <button class="btn link-default btn-block" type="button" data-toggle="collapse" data-target="#productview" aria-expanded="false" aria-controls="productview">
+      View Code
+      </button>
+      <div class="spacer"></div>
+      <div class="collapse" id="productview">
+        <pre class="prettyprint">
+        <xmp>
+        <!--list view-->
+        // use comlum class for grid view
+        <ul class="list-view product">
+          <!--list item-->
+          <li class="list-view-item">
+            <!--image wrapper-->
+            <div class="img-wrapper circle">
+              <img src="...">
+            </div>
+            <!--content-->
+            <div class="item-content">
+              <!--link title-->
+              <div class="item-title">
+              <a href="">The title always is longer than this title.</a>
+              </div>
+              <!--price/credit/shipping info-->
+              <div class="item-price">
+                <p class="price">$ 999</p>
+                <p class="credit"><i class="fa fa-credit-card text-primary" aria-hidden="true"></i> 12x $ 99</p>
+              </div>
+              <!--additional info-->
+              <div class="item-info">
+                <ul>
+                  <li>Capital Federal</li>
+                  <li>120 vendidos</li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <!--/list item-->
+        </ul>
+        <!--/list view-->
+        </xmp>
+        </pre>
       </div>
-    </li>
-    <li>
-      <div class="list-view-item">
-        <div class="img-wrapper text-primary">
-          <i class="fa fa-camera-retro" aria-hidden="true"></i>
-        </div>
-        <div class="item-content">
-          <div class="item-title">
-            <a href="">The title of the product always is longer than this title.</a>
-            
-          </div>
-          <div class="item-price">
-            <p class="price">$ 999,99</p>
-            <p class="credit"><i class="fa fa-credit-card text-primary" aria-hidden="true"></i> 12x $ 99</p>
-            <p>Envio gratis</p>
-          </div>
-          <div class="item-info">
-            <ul>
-              <li>Capital Federal</li>
-              <li>120 vendidos</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </li>
-    <li>
-      <div class="list-view-item">
-        <div class="img-wrapper text-primary">
-          <i class="fa fa-camera-retro" aria-hidden="true"></i>
-        </div>
-        <div class="item-content">
-          <div class="item-title">
-            <a href="">The title of the product always is longer than this title.</a>
-            
-          </div>
-          <div class="item-price">
-            <p class="price">$ 999,99</p>
-            <p class="credit"><i class="fa fa-credit-card text-primary" aria-hidden="true"></i> 12x $ 99</p>
-          </div>
-          <div class="item-info">
-            Capital Federal
-          </div>
-        </div>
-      </div>
-    </li>
-    <li>
-      <div class="list-view-item">
-        <div class="img-wrapper text-primary">
-          <i class="fa fa-camera-retro" aria-hidden="true"></i>
-        </div>
-        <div class="item-content">
-          <div class="item-title">
-            <a href="">The title of the product always is longer than this title.</a>
-            
-          </div>
-          <div class="item-price">
-            <p class="price">$ 999,99</p>
-            <p class="credit"><i class="fa fa-credit-card text-primary" aria-hidden="true"></i> 12x $ 99</p>
-          </div>
-          <div class="item-info">
-            Capital Federal
-          </div>
-        </div>
-      </div>
-    </li>
-  </ul>
+    </div>
+  </div>
 </div>
     </section>
-
+    <!--panels section-->
+    <section class="index-section" id='panels-section'>
+      <div class="container bg-white">
+  <div class="row">
+    <div class="col-xs-12">
+      <h2>Panels</h2>
+      <hr>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <i class="fa fa-file-text" aria-hidden="true"></i> Panel heading without title
+        </div>
+        <div class="panel-body">
+          Panel content
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    </section>
+    <!--Modal section-->
     <section class="index-section" id='modal-section'>
+      <div class="container">
+  <div class="row">
+    <h2>Modal</h2>
+    <hr>
+    <div class="col-xs-12">
+      <!-- Button trigger modal -->
+      <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+        Launch demo modal
+      </button>
+    </div>
+    <div class="col-xs-12">
+      <div class="spacer"></div>
+      <button class="btn link-default btn-block" 
+      type="button" 
+      data-toggle="collapse" 
+      data-target="#modalexample" 
+      aria-expanded="false" 
+      aria-controls="modalexample">
+        View Code
+      </button>
+      <div class="spacer"></div>
+      <div class="collapse" id="modalexample">
+        <pre class="prettyprint">
+          <xmp>
+          <!-- Modal -->
+          <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+              <!--modal content-->
+              <div class="modal-content">
+                <!--modal header-->
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                </div>
+                <!--/ modal header-->
+                <!--modal body-->
+                <div class="modal-body">
+                  ...
+                </div>
+                <!--/modal body-->
+                <!--modal footer-->
+                <div class="modal-footer">
+                  <button type="button" class="btn material-success" data-dismiss="modal">Close</button>
+                </div>
+                <!--/modal footer-->
+              </div>
+              <!--/modal content-->
+            </div>
+          </div>
+          <!--/modal-->
+          </xmp>
+          </pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis, est? Inventore a, laboriosam sint autem quod earum assumenda ullam repellat, harum illum consequatur. Expedita, iure modi aliquid minus eum ex.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn material-success" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+    </section>
+    <!--Parallax section-->
+    <section class="index-section" id='parallax-section'>
+      <div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h2>Parallax</h2>
+      <hr>
+    </div>
+    <div class="col-xs-12">
+      <pre class="prettyprint">
+        <xmp>
+        // style="height: ..px" set a custom height (600px default)
+        // style="background-image: url()" use background image
+        <section class="parallax">
+          <div class="soft-filter-black">
+            <div class="container">
+              <div class="header">Web Layout Frame</div>
+              <button class="btn btn-info outline-info">GitHub</button>
+            </div>
+          </div>
+        </section>
+        </xmp>
+        </pre>
+    </div>
+  </div>
+</div>
+    </section>
+    <!--Maps section-->
+    <section class="index-section" id='maps-section'>
       <div class="container">
   <div class="row">
     <div class="col-xs-12">
@@ -992,6 +1087,194 @@
     </div>
     <!--/view code-->
   </div>
+</div>
+    </section>
+    <!--Forms section-->
+    <section class="index-section" id='forms-section'>
+      <div class="container">
+
+  <div class="row">
+    <div class="col-xs-12">
+      <h2>Forms</h2>
+      <hr>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12">
+      <h6>Inputs / Textarea</h6>
+    </div>
+    <div class="col-xs-12 col-md-6 col-md-offset-3 bg-white">
+      <form>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" class="mt-control" id="exampleInputEmail1" placeholder="Email">
+        </div>
+        <div class="form-group">
+          <label for="">About you</label>
+          <textarea class="mt-control" rows="3"></textarea>
+        </div>
+      </form>
+    </div>
+    <div class="col-xs-12">
+      <div class="spacer"></div>
+      <button class="btn link-default btn-block" type="button" data-toggle="collapse" data-target="#inputs" aria-expanded="false" aria-controls="inputs">
+      View Code
+      </button>
+      <div class="spacer"></div>
+      <div class="collapse" id="inputs">
+        <pre class="prettyprint">
+        <xmp>
+        //input
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" class="mt-control" id="exampleInputEmail1" placeholder="Email">
+        </div>
+        //text area
+        <div class="form-group">
+          <label for="">About you</label>
+          <textarea class="mt-control" rows="3"></textarea>
+        </div>
+        </xmp>
+        </pre>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12">
+      <h6>Select</h6>
+    </div>
+    <div class="col-xs-12 col-md-6 col-md-offset-3 bg-white">
+      <div class="form-group">
+        <label for="">City</label>
+        <select class="mt-control">
+          <option>Atlanta</option>
+          <option>New York</option>
+          <option>New Jersey</option>
+        </select>
+      </div>
+    </div>
+    <div class="col-xs-12">
+      <div class="spacer"></div>
+      <button class="btn link-default btn-block" type="button" data-toggle="collapse" data-target="#select" aria-expanded="false" aria-controls="select">
+      View Code
+      </button>
+      <div class="spacer"></div>
+      <div class="collapse" id="select">
+        <pre class="prettyprint">
+        <xmp>
+        <div class="form-group">
+          <label for="">City</label>
+          <select class="mt-control">
+            <option>...</option>
+          </select>
+        </div>
+        </xmp>
+        </pre>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12">
+      <h6>Radio / Checkbox</h6>
+    </div>
+    <div class="col-xs-12 col-md-6 col-md-offset-3 bg-white">
+      <div class="form-group">
+        <label for="radio">Sex type</label>
+        <label class="control control--radio">Male
+          <input type="radio" name="radio" checked="checked"/>
+          <div class="control__indicator"></div>
+        </label>
+        <label class="control control--radio">Female
+          <input type="radio" name="radio"/>
+          <div class="control__indicator"></div>
+        </label>
+      </div>
+
+      <div class="form-group">
+        <label for="terms">Terms & Conditions</label>
+        <label class="control control--checkbox">I Agree
+          <input type="checkbox" checked="checked"/>
+          <div class="control__indicator"></div>
+        </label>
+      </div>
+    </div>
+    <div class="col-xs-12">
+      <div class="spacer"></div>
+      <button class="btn link-default btn-block" type="button" data-toggle="collapse" data-target="#radio" aria-expanded="false" aria-controls="radio">
+      View Code
+      </button>
+      <div class="spacer"></div>
+      <div class="collapse" id="radio">
+        <pre class="prettyprint">
+        <xmp>
+        //radio
+        <div class="form-group">
+          <label for="radio">Sex type</label>
+          <label class="control control--radio">Male
+            <input type="radio" name="radio" checked="checked"/>
+            <div class="control__indicator"></div>
+          </label>
+          <label class="control control--radio">Female
+            <input type="radio" name="radio"/>
+            <div class="control__indicator"></div>
+          </label>
+        </div>
+        //checkbox
+        <div class="form-group">
+          <label for="terms">Terms & Conditions</label>
+          <label class="control control--checkbox">I Agree
+            <input type="checkbox" checked="checked"/>
+            <div class="control__indicator"></div>
+          </label>
+        </div>
+        </xmp>
+        </pre>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12">
+      <h6>Date</h6>
+    </div>
+    <div class="col-xs-12 col-md-6 col-md-offset-3 bg-white">
+      <div class="form-mt-group">
+        <label for="">Date</label>
+        <div class='input-group date' id='datetimepicker1'>
+          <span class="input-group-addon">
+                        <i class="fa fa-calendar" aria-hidden="true"></i>
+                  </span>
+          <input type='text' class="mt-control" />
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12">
+      <div class="spacer"></div>
+      <button class="btn link-default btn-block" type="button" data-toggle="collapse" data-target="#date" aria-expanded="false" aria-controls="date">
+      View Code
+      </button>
+      <div class="spacer"></div>
+      <div class="collapse" id="date">
+        <pre class="prettyprint">
+        <xmp>
+        <div class="form-mt-group">
+          <label for="">Date</label>
+          <div class='input-group date' id='datetimepicker1'>
+            <span class="input-group-addon">
+                  <i class="fa fa-calendar" aria-hidden="true"></i>
+            </span>
+            <input type='text' class="mt-control" />
+          </div>
+        </div>
+        </xmp>
+        </pre>
+      </div>
+    </div>
+  </div>
+
 </div>
     </section>
 
