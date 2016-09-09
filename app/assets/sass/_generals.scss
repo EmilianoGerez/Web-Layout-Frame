@@ -25,6 +25,7 @@ body {
 footer {
   color: #fff;
   padding: 2.5rem 0;
+  overflow: hidden;
   ul {
     list-style: none;
     padding-left: 0.5rem;
@@ -39,12 +40,54 @@ footer {
   }
 }
 
+h6 {
+  text-transform: uppercase;
+  font-weight: 300;
+}
+
 hr {
   margin: 15px 0;
-  border-top: 1px solid #dedede;
-  @include prefixer(box-shadow, 0 1px 1px 0 #FFFFFF, webkit moz spec);
+  border-top: 1px solid rgba(0,0,0,0.1);
+  box-shadow: 0 2px 2px rgba(255,255,255,0.1);
 }
 
 small {
   font-size: 0.85rem;
+}
+
+menu,
+ol,
+ul {
+  padding: 0;
+}
+
+ul.indent {
+  padding: 0 30px;
+}
+
+input,
+button,
+button:active,
+button:focus,
+button:active:focus {
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+
+.btn:active,
+.btn:active:focus,
+.btn:focus {
+  outline: none;
+  //border: none;
+}
+
+// material icons
+.material-icons {
+  line-height: inherit;
+  font-size: inherit;
+  vertical-align: middle;
+}
+.btn .material-icons {
+  vertical-align: top;
 }

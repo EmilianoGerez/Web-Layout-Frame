@@ -52,8 +52,9 @@
       </a>
     </li>
     <li>
-      <a>Home</a>
+      <a href="#"><i class="fa fa-user-plus" aria-hidden="true"></i> Home</a>
     </li>
+    <li class="divider">UI Kit</li>
     <li><a href="#buttons-section">Buttons</a></li>
     <li class="active"><a href="#cards-section">Cards</a></li>
     <li><a href="#navbars-section">Navbar</a></li>
@@ -63,6 +64,15 @@
     <li><a href="#listview-section">List View</a></li>
     <li><a href="#maps-section">Maps</a></li>
     <li><a href="#forms-section">Forms</a></li>
+    <li class="sidebar-dropdown">
+      <a href="#" class="sidebar-dropdown-toggle">
+        <i class="fa fa-barcode" aria-hidden="true"></i> Dropdown <span class="caret"></span></a>
+      <ul class="sidebar-dropdown-menu">
+        <li><a href="#">Action</a></li>
+        <li><a href="#">Another action</a></li>
+        <li><a href="#">Something else here</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
   <!--/sidebar-->
@@ -83,7 +93,7 @@
       </div>
       <div class="soft-filter-black">
         <div class="container">
-          <div class="header">Web Layout Frame</div>
+          <div class="header">Bootstrap 3 UI Kit</div>
           <button class="btn btn-info outline-info">GitHub</button>
         </div>
       </div>
@@ -341,12 +351,80 @@
     <div class="col-xs-12">
       <h2>Cards</h2>
       <hr>
-      <h6>Flex Cards</h6>
+      <h6>Cards</h6>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <!--card-->
+      <div class="card">
+        <!--card content-->
+        <div class="card-block">
+          <div class="card-header">
+            <h4 class="card-title">Lorem ipsum dolor sitt.</h4>
+            <div class="dropdown mt-dropdown">
+              <button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="">
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+              </button>
+              <ul class="dropdown-menu mt-menu open-bottom-right" aria-labelledby="dLabel">
+                <div class="arrow-up-left"></div>
+                <h6 class="text-center">Shared</h6>
+                <hr>
+                <li><a href=""><i class="fa fa-twitter twitter-color" aria-hidden="true"></i>Twitter</a></li>
+                <li><a href=""><i class="fa fa-facebook-official fb-color" aria-hidden="true"></i>Facebook</a></li>
+                <li><a href=""><i class="fa fa-google-plus gplus-color" aria-hidden="true"></i>Google +</a></li>
+              </ul>
+            </div>
+          </div>
+          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet iusto, quos doloribus? Et cupiditate iusto maxime aperiam, eum, consequatur labore reprehenderit doloremque asperiores dolore architecto impedit ea totam a quidem.</p>
+        </div>
+        <!--/card content-->
+        <!--card footer-->
+        <div class="card-footer">
+          <ul class="card-action-list right">
+            <li><a href="#">MORE</a></li>
+          </ul>
+        </div>
+        <!--/card footer-->
+      </div>
+      <!--/card-->
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <!--card-->
+      <div class="card card-blue">
+        <!--card content-->
+        <div class="card-block">
+          <h4 class="card-title">Card title</h4>
+          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet iusto, quos doloribus?.</p>
+        </div>
+        <!--/card content-->
+        <!--card footer-->
+        <div class="card-footer">
+          <hr>
+          <ul class="card-action-list right">
+            <li><a href="#">MORE</a></li>
+          </ul>
+        </div>
+        <!--/card footer-->
+      </div>
+      <!--/card-->
+    </div>
+  </div>
+
+
+
+
+
+  <div class="row">
+    <div class="col-xs-12">
+      <hr>
+      <h6>Post Cards / Flex</h6>
     </div>
   </div>
   <div class="row row-flexbox">
     <div class="col-xs-12 col-sm-6 col-md-4">
-      <div class="card">
+      <!--card-->
+      <div class="card flex-card">
         <!--Card image-->
         <div class="card-image">
           <img class="img-fluid" src="http://24.media.tumblr.com/tumblr_lnin5gPIkH1qc76t1o1_500.jpg" alt="Card image cap">
@@ -356,22 +434,26 @@
         <div class="card-block">
           <!--Title-->
           <h4 class="card-title">Card title</h4>
-          <hr>
+          <ul class="card-info">
+            <li><i class="material-icons">create</i> by Woody</li>
+            <li><i class="fa fa-calendar" aria-hidden="true"></i> Today</li>
+          </ul>
           <!--Text-->
-          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat illum animi, tempora. Exercitationem earum minima impedit officiis sint molestiae quae unde, cupiditate perspiciatis! Dolorem iste quibusdam modi, sunt sit velit..</p>
+          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat illum animi, tempora. Exercitationem earum minima impedit officiis sint molestiae.</p>
         </div>
         <!--/.Card content-->
         <!--Card Footer-->
         <div class="card-footer">
-          <a href="#" class="btn material-primary pull-right">Read</a>
+          <a href="#" class="btn btn-block material-primary"><i class="material-icons">dns</i> Read</a>
         </div>
         <!--/Card Footer-->
       </div>
+      <!--/card-->
     </div>
 
     <div class="col-xs-12 col-sm-6 col-md-4">
       <!--Card Container-->
-      <div class="card">
+      <div class="card flex-card">
         <!--Card image-->
         <div class="card-image">
           <img class="img-fluid" src="http://24.media.tumblr.com/tumblr_lnin5gPIkH1qc76t1o1_500.jpg" alt="Card image cap">
@@ -386,23 +468,29 @@
         <div class="card-block">
           <!--Title-->
           <h4 class="card-title"><a href="">Card title</a></h4>
-          <hr>
           <!--Text-->
           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
         </div>
         <!--/.Card content-->
+
         <!--Card Footer-->
         <div class="card-footer">
-          <ul class="card-list">
-            <li>
+          <ul class="card-action-list">
+            <li class="rounded">
               <a href="">10 <i class="fa fa-heart text-danger" aria-hidden="true"></i></a>
             </li>
-            <li>
+            <li class="rounded">
               <a>15 <i class="fa fa-comment" aria-hidden="true"></i></a>
+            </li>
+          </ul>
+          <ul class="card-action-list right">
+            <li class="rounded">
+              <a href="#">More</a>
             </li>
           </ul>
         </div>
         <!--/Card Footer-->
+
       </div>
       <!--/.Card container-->
     </div>
@@ -439,7 +527,7 @@
         <!--/.Card content-->
         <!--Card Footer-->
         <div class="card-footer">
-          <ul class="card-list">
+          <ul class="card-action-list">
             ...
           </ul>
         </div>
@@ -452,6 +540,38 @@
     </div>
     <!--/view code-->
   </div>
+
+
+  <div class="row">
+    <div class="col-xs-12">
+      <!--card-->
+      <div class="card horizontal-card">
+        <!--Card image-->
+        <div class="card-image">
+          
+        </div>
+        <!--/.Card image-->
+        <!--Card content-->
+        <div class="card-block">
+          <!--Title-->
+          <h4 class="card-title">Card title</h4>
+          <ul class="card-info">
+            <li><i class="material-icons">create</i> by Woody</li>
+            <li><i class="fa fa-calendar" aria-hidden="true"></i> Today</li>
+          </ul>
+          <!--Text-->
+          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat illum animi, tempora. Exercitationem earum minima impedit officiis sint molestiae.</p>
+        </div>
+        <!--/.Card content-->
+      </div>
+      <!--/card-->
+    </div>
+  </div>
+
+
+
+
+
   <!--/row cards-->
   <div class="row">
     <div class="col-xs-12">
@@ -520,6 +640,89 @@
       </div>
     </div>
     <!--/view code-->
+  </div>
+
+  <!--imgae card-->
+  <div class="row">
+    <div class="col-xs-12">
+      <hr>
+      <h6>Image Card</h6>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-6">
+      <!--image card-->
+      <div class="card image-card">
+        <!--Card image-->
+        <div class="card-image">
+          <img class="img-fluid" src="http://s3.amazonaws.com/digitaltrends-uploads-prod/2015/10/Selfie-34.jpg">
+          <div class="img-overlay"></div>
+        </div>
+        <!--Card content-->
+        <div class="card-block">
+          <!--Title-->
+          <h4 class="card-title"><a href="">Card title</a></h4>
+          <!--post info-->
+          <ul class="card-info">
+            <li><i class="material-icons">create</i> by Woody</li>
+            <li><i class="fa fa-calendar" aria-hidden="true"></i> Today</li>
+          </ul>
+          <!--Text-->
+          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum illum, error quibusdam est excepturi magni recusandae doloremque eaque perspiciatis.</p>
+          <ul class="card-action-list right">
+            <li class="rounded">
+              <a href="">10 <i class="fa fa-heart text-danger" aria-hidden="true"></i></a>
+            </li>
+            <li class="rounded">
+              <a>15 <i class="fa fa-comment" aria-hidden="true"></i></a>
+            </li>
+          </ul>
+          <ul class="card-action-list">
+            <li><span class="label label-small label-warning">HOT</span></li>
+          </ul>
+        </div>
+        <!--/.Card content-->
+        <!--/.Card image-->
+      </div>
+      <!--/image card-->
+    </div>
+
+    <div class="col-xs-12 col-sm-6">
+      <!--image card-->
+      <div class="card image-card">
+        <!--Card image-->
+        <div class="card-image">
+          <img class="img-fluid" src="http://s3.amazonaws.com/digitaltrends-uploads-prod/2015/10/Selfie-34.jpg">
+          <div class="img-overlay"></div>
+        </div>
+        <!--Card content-->
+        <div class="card-block">
+          <!--Title-->
+          <h4 class="card-title"><a href="">Card title</a></h4>
+          <!--post info-->
+          <ul class="card-info">
+            <li><i class="material-icons">create</i> by Woody</li>
+            <li><i class="fa fa-calendar" aria-hidden="true"></i> Today</li>
+          </ul>
+          <!--Text-->
+          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          <ul class="card-action-list right">
+            <li class="rounded">
+              <a href="">10 <i class="fa fa-heart text-danger" aria-hidden="true"></i></a>
+            </li>
+            <li class="rounded">
+              <a>15 <i class="fa fa-comment" aria-hidden="true"></i></a>
+            </li>
+          </ul>
+          <ul class="card-action-list">
+            <li><span class="label label-small label-warning">HOT</span></li>
+          </ul>
+        </div>
+        <!--/.Card content-->
+        <!--/.Card image-->
+      </div>
+      <!--/image card-->
+    </div>
   </div>
 </div>
     </section>
@@ -688,7 +891,7 @@
   <div class="row row-flexbox">
     <div class="col-xs-12 col-sm-6 col-md-4">
       <!--Card-->
-      <div class="card price-table blue">
+      <div class="card flex-card price-table blue">
         <!--Card Header-->
         <div class="card-header text-center">
           Standard
@@ -711,7 +914,7 @@
       <!--/card-->
     </div>
     <div class="col-xs-12 col-sm-6 col-md-4">
-      <div class="card price-table highlighted">
+      <div class="card flex-card price-table highlighted">
         <div class="card-header text-center">
           Proffesional
         </div>
@@ -849,7 +1052,7 @@
           Folder
         </a>
           <div class="item-info">
-            10 Files
+            <span class="label label-danger">NEW</span>
           </div>
         </div>
       </li>

@@ -9,38 +9,6 @@ COMPONENTS
   @include transition(all 0.5s ease);
 }
 
-menu,
-ol,
-ul {
-  padding: 0;
-}
-
-ul.indent {
-  padding: 0 30px;
-}
-
-input,
-button,
-button:active,
-button:focus,
-button:active:focus,
-.btn:active,
-.btn:active:focus,
-.btn:focus {
-  border: none;
-  outline: none;
-  box-shadow: none;
-}
-
-h6 {
-  text-transform: uppercase;
-  font-weight: 300;
-}
-
-footer {
-  overflow: hidden;
-}
-
 .modal {
   z-index: 9999;
 }
@@ -54,9 +22,9 @@ footer {
 
 
 /*
- * Row with equal height columns
- * --------------------------------------------------
- */
+* Row with equal height columns
+* --------------------------------------------------
+*/
 
 .row-flexbox {
   display: -webkit-box;
@@ -207,39 +175,14 @@ NAVBAR
     width: 0;
     background-color: $color-bgrey-900;
     @include transition(width 0.5s ease);
-    @include prefixer(box-shadow, -4px 0 8px 0 rgba(0, 0, 0, .6), webkit moz spec);
+    .sidebar-nav {
+      @include sidebar-template;
+    }
     .navbar-nav {
+      @include sidebar-template;
       margin: 10px 0;
       li {
-        display: block;
-        overflow: hidden;
-        padding: 0;
-        &:before {
-          background-color: rgba(0, 0, 0, 0.1);
-          content: '';
-          height: 100%;
-          left: 0;
-          position: absolute;
-          top: 0;
-          transition: width .2s ease-in;
-          width: 0;
-          z-index: -1;
-        }
-        &:hover {
-          &:before {
-            transition: width .2s ease-in;
-            width: 100%;
-          }
-        }
         &.active {
-          background-color: rgba(255, 255, 255, 0.1);
-          &:hover {
-            background: transparent;
-            color: $gray-lighter;
-          }
-          &:before {
-            background-color: rgba(0, 0, 0, 0.1);
-          }
           &>a {
             color: $brand-primary;
           }
@@ -247,60 +190,14 @@ NAVBAR
         a {
           display: block;
           padding: 0;
-          padding-left: 25px;
-          line-height: 50px;
-          height: 50px;
-          @include transition(all 0.3s ease);
-          i {
-            line-height: 28px;
-            width: 24px;
-            //padding-right: 10px;
-          }
+          padding-left: 15px;
+          line-height: 48px;
+          //height: 50px;
         }
         button {
           margin: 11px 0;
         }
       }
-      .sidebar-dropdown {
-        &.active {
-          background-color: transparent;
-          &:hover {
-            color: $gray-lighter;
-          }
-        }
-        .sidebar-dropdown-menu {
-          display: none;
-          //@include transition(height 0.9s ease);
-          li {
-            line-height: 20px;
-            &:hover {
-              &:before {
-                width: 0;
-              }
-            }
-            a {
-              padding: 10px 15px 10px 30px;
-              color: $gray-light;
-              &:hover {
-                color: $gray-lighter;
-              }
-            }
-          }
-          &.open {
-            display: block;
-          }
-        }
-      }
-    }
-    .navbar-nav li a:hover,
-    .navbar-nav li a:active,
-    .navbar-nav li a:focus,
-    .navbar-nav li.open a:hover,
-    .navbar-nav li.open a:active,
-    .navbar-nav li.open a:focus {
-      background-color: transparent;
-      color: #ffffff;
-      text-decoration: none;
     }
   }
   .mobile-sidebar.toggled {
@@ -323,16 +220,16 @@ NAVBAR
   }
 }
 
-//=============================
-//  NAVBAR COLORS
-.navbar-teal {
-  @include navbar-color($color-teal-500, $color-teal-800);
-}
-
 @media (min-width: $screen-sm) {
   nav .btn-toggle {
     display: none;
   }
+}
+
+//=============================
+//  NAVBAR COLORS
+.navbar-teal {
+  @include navbar-color($color-teal-500, $color-teal-800);
 }
 
 
@@ -404,114 +301,11 @@ SIDEBAR
   z-index: 1999;
   background-color: $color-teal-500;
   .sidebar-nav {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    li {
-      overflow: hidden;
-      display: block;
-      line-height: 28px;
-      position: relative;
-      width: 100%;
-      &:before {
-        background-color: rgba(0, 0, 0, 0.1);
-        content: '';
-        height: 100%;
-        left: 0;
-        position: absolute;
-        top: 0;
-        transition: width .2s ease-in;
-        width: 0;
-        z-index: -1;
-      }
-      &:hover {
-        &:before {
-          transition: width .2s ease-in;
-          width: 100%;
-        }
-      }
-      &.active {
-        background-color: rgba(255, 255, 255, 0.1);
-        &:hover {
-          background: transparent;
-          //color: $gray-lighter;
-        }
-        &:before {
-          background-color: rgba(0, 0, 0, 0.1);
-        }
-        &>a {
-          color: rgba(0, 0, 0, 0.6);
-        }
-      }
-      a {
-        color: $gray-lighter;
-        display: block;
-        padding: 10px 15px 10px 20px;
-        text-decoration: none;
-        font-size: 16px;
-        i {
-          line-height: 28px;
-          width: 24px;
-          //padding-right: 10px;
-        }
-      }
-      &.sidebar-brand {
-        height: 64px;
-        line-height: 44px;
-        &:before {
-          background-color: rgba(0, 0, 0, 0.2);
-          width: 100%;
-        }
-        a {
-          font-size: 18px;
-          font-weight: 300;
-        }
-      }
-    }
-    .sidebar-dropdown {
-      &.active {
-        background-color: transparent;
-        &:hover {
-          color: $gray-lighter;
-        }
-      }
-      .sidebar-dropdown-menu {
-        display: none;
-        //@include transition(height 0.9s ease);
-        li {
-          line-height: 20px;
-          &:hover {
-            &:before {
-              width: 0;
-            }
-          }
-          a {
-            padding: 10px 15px 10px 30px;
-            color: $gray-light;
-            &:hover {
-              color: $gray-lighter;
-            }
-          }
-        }
-        &.open {
-          display: block;
-        }
-      }
-    }
-  }
-  .sidebar-nav li a:hover,
-  .sidebar-nav li a:active,
-  .sidebar-nav li a:focus,
-  .sidebar-nav li.open a:hover,
-  .sidebar-nav li.open a:active,
-  .sidebar-nav li.open a:focus {
-    background-color: transparent;
-    color: #ffffff;
-    text-decoration: none;
+    @include sidebar-template;
   }
 }
 
+// Admin Page Sidebar
 #sidebar-wrapper.bg-admin {
   background-color: $db-primary;
   color: $gray-light;
@@ -522,6 +316,9 @@ SIDEBAR
         &:hover {
           color: $gray-lighter;
         }
+        &:before {
+          background-color: rgba(0, 0, 0, 0.2);
+        }
       }
       &.active {
         background-color: $color-teal-500;
@@ -531,9 +328,6 @@ SIDEBAR
         &>a {
           color: $gray-lighter;
         }
-      }
-      &:before {
-        background-color: rgba(0, 0, 0, 0.15);
       }
     }
     .sidebar-dropdown {
@@ -629,7 +423,7 @@ CARDS
   margin-bottom: 1.2rem;
   @extend %mt-shadow-2;
   .card-image {
-    border-radius: 2px 2px 0 0;
+    // border-radius: 2px 2px 0 0;
     width: 100%;
     height: 260px;
     overflow: hidden;
@@ -667,7 +461,7 @@ CARDS
         }
       }
     }
-    .img-fluid {
+    img {
       width: 100%;
       height: auto;
       min-height: 260px;
@@ -679,24 +473,32 @@ CARDS
       color: $gray-light;
     }
   }
-  .card-header {
-    border-radius: 2px 2px 0 0;
-    line-height: 30px;
-    font-size: 1.2rem;
-    padding: 10px 15px;
-    background-color: $color-teal-500;
-    color: $gray-lighter;
-  }
   .card-block {
+    position: relative;
     padding: 1.1rem;
-    margin-bottom: 40px;
-    overflow: auto;
-    zoom: 1;
+    &.block-center {
+      padding: 1.1rem;
+      height: 100%;
+      justify-content: center;
+      /* align horizontal */
+      align-items: center;
+      /* align vertical */
+      display: flex;
+    }
+    .card-header {
+      .card-title {
+        width: calc(100% - 30px);
+        display: inline-block;
+      }
+      .dropdown {
+        //display: inline-block;
+        float: right;
+      }
+    }
     .card-title {
       margin-bottom: 0.7rem;
       margin-top: 0;
-      font-weight: 400;
-      //font-size: 1.35rem;
+      font-weight: 500;
       a {
         text-decoration: none;
         color: inherit;
@@ -706,50 +508,139 @@ CARDS
       }
     }
     .card-text {
-      margin-bottom: 1.5rem;
+      margin: 0;
+      color: $color-grey-600;
+      font-size: 0.9rem;
+    }
+    .card-info {
+      list-style: none;
+      display: inline-block;
+      margin-bottom: 10px;
+      li {
+        display: inline-block;
+        padding-right: 10px;
+        font-size: 0.8rem;
+        color: $gray-light;
+      }
+      i {
+        font-size: 1rem;
+      }
     }
   }
   .card-footer {
-    position: absolute;
-    bottom: 0;
+    position: relative;
     padding: 1.1rem;
     padding-top: 0;
     width: 100%;
+    overflow: hidden;
+    zoom: 1;
+    hr {
+      margin: 0;
+      margin-bottom: 10px;
+    }
   }
-  .card-list {
+  .card-action-list {
     list-style: none;
+    display: inline;
     li {
-      float: right;
-      padding: 0 10px;
-      display: block;
+      padding: 0;
+      padding-right: 10px;
+      display: inline-block;
       font-size: 0.8rem;
-      color: $gray
+      color: $color-grey-600;
+      margin-right: 5px;
+      &.rounded {
+        background-color: rgba(0, 0, 0, .05);
+        border-radius: 15px;
+        padding: 5px 10px;
+      }
     }
     a {
-      text-decoration: none;
+      //text-decoration: none;
       display: block;
       font-size: 0.8rem;
-      color: $gray-light
+      color: $color-grey-600;
     }
-    .fa {
+    i {
       font-size: 0.9rem;
+    }
+    &.right li {
+      float: right;
     }
   }
 }
 
-.card-full {
-  @extend .card;
+// Card Styles
+.card.card-teal {
+  @include card-color($color-teal-500);
+}
+
+.card.card-blue {
+  @include card-color($color-blue-500);
+}
+
+.card.card-orange {
+  @include card-color($color-orange-500);
+}
+
+.card.card-red {
+  @include card-color($color-red-500);
+}
+
+//==========================
+//  Flex card
+// .card.flex-card {
+//   .card-block {
+//     padding-bottom: 75px;
+//   }
+//   .card-footer {
+//     position: absolute;
+//     bottom: 0;
+//     padding-top: 5px;
+//   }
+// }
+
+.card.flex-card {
+  display: flex;
+  flex-flow: column wrap;
+  // justify-content: center;
+  // align-content: flex-end;
+  // align-items: flex-end;
   .card-block {
-    height: 100%;
+    // align-self: flex-start;
+    flex-grow: 1;
   }
-  .card-block-center {
-    padding: 1.1rem;
-    height: 100%;
-    justify-content: center;
-    /* align horizontal */
-    align-items: center;
-    /* align vertical */
+  .card-footer {
+    align-self: flex-end;
+    
+  }
+}
+
+//==========================
+//  Horizontal card
+.card.horizontal-card {
+  display: flex;
+  flex-flow: row no-wrap;
+  .card-image {
+    flex: 0 0 300px;
+    height: auto;
+    min-height: 220px;
+    .img-fluid {
+      min-height: 220px;
+    }
+  }
+}
+
+@media (max-width: $screen-xs) {
+  .card.horizontal-card {
     display: flex;
+    flex-flow: column wrap;
+    .card-image {
+      flex: 0 0 260px;
+      .img-fluid {
+        min-height: 260px;
+      }
+    }
   }
 }
 
@@ -776,6 +667,56 @@ CARDS
 }
 
 //==========================
+//  Image card
+.image-card {
+  .card-image {
+    height: 320px;
+    .img-overlay {
+      background-color: rgba(0, 0, 0, .55);
+      height: 100%;
+    }
+    .img-fluid {
+      min-height: 320px;
+    }
+  }
+  .card-block {
+    position: absolute;
+    z-index: 1001;
+    bottom: 0;
+    left: 0;
+    margin: 0;
+    padding-bottom: 10px;
+    width: 100%;
+    height: auto;
+    background-color: transparent;
+    color: #fff;
+    .card-info li {
+      color: $color-grey-500;
+    }
+    .card-text {
+      margin-bottom: 15px;
+      color: $gray-lighter;
+      font-size: 0.85rem;
+      text-overflow: ellipsis;
+      /* Required for text-overflow to do anything */
+      white-space: nowrap;
+      overflow: hidden;
+    }
+    .card-action-list {
+      li {
+        color: $color-grey-500;
+        &.rounded {
+          background-color: rgba(0, 0, 0, .25);
+        }
+      }
+      a {
+        color: $color-grey-500;
+      }
+    }
+  }
+}
+
+//==========================
 //  Price table
 .price-table {
   margin: 15px 0;
@@ -784,6 +725,8 @@ CARDS
     padding: 10px 15px 60px 15px;
     font-size: 1.5rem;
     color: #fff;
+    border-radius: 2px 2px 0 0;
+    background-color: $color-teal-500;
   }
   .card-price {
     border-radius: 50%;
@@ -891,8 +834,8 @@ BUTTONS
 
 .btn {
   border-radius: 2px;
-  font-size: 1rem;
-  padding: 6px 1.1rem;
+  font-size: 0.9rem;
+  padding: 6px 20px;
   @include transition(all .2s cubic-bezier(.25, .8, .25, 1));
 }
 
@@ -1028,19 +971,26 @@ BUTTONS
 .rounded-warning {
   @include rounded-button($brand-warning, 50px);
 }
+
 .rounded-danger {
   @include rounded-button($brand-danger, 50px);
 }
+
 .rounded-success {
   @include rounded-button($brand-success, 50px);
 }
-
 
 // Floating button
 .floating-btn,
 .floating-btn-hover {
   width: 60px;
   @include rounded-button($color-red-500, 60px);
+  &>i {
+    @extend %mt-shadow-2;
+    &:hover {
+      @extend %mt-shadow-2-hover;
+    }
+  }
   ul {
     padding: 50px 10px 0 10px;
     margin: 0;
@@ -1697,6 +1647,143 @@ PANELS
     border-top-left-radius: 0;
     i {
       padding-right: 10px;
+    }
+  }
+}
+
+
+/*======================================
+LABEL
+======================================*/
+
+.label {
+  font-size: inherit;
+  padding: 2px 5px;
+  border-radius: 2px;
+  line-height: 1rem;
+  vertical-align: middle;
+  @extend %mt-shadow-1;
+  &.label-small {
+    font-size: 0.8rem;
+  }
+}
+
+
+/*======================================
+DROPDOWN LIST
+======================================*/
+
+.mt-dropdown {
+  button {
+    background: transparent;
+    color: rgba(0, 0, 0, .5);
+    width: 30px;
+    height: 30px;
+    vertical-align: top;
+    i {
+      font-size: 22px;
+    }
+  }
+  .dropdown-menu {
+    z-index: 1009;
+    background-color: #fff;
+    padding: 15px 0;
+    margin: 0;
+    border: 1px solid $color-grey-300;
+    border-radius: 2px;
+    top: 115%;
+    min-width: 200px;
+    @extend %mt-shadow-2;
+    // open position
+    left: inherit;
+    right: -30px;
+    li {
+      padding: 0 15px;
+      @extend .ellipsis;
+      a {
+        line-height: 45px;
+        font-size: 0.85rem;
+        padding: 0 5px;
+        color: $color-grey-600;
+        // border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        i {
+          vertical-align: middle;
+          font-size: 24px;
+          width: 30px;
+          margin-right: 10px;
+        }
+        &:hover {
+          background: transparent;
+          color: $color-grey-800;
+        }
+      }
+      &:hover {
+        background: $color-grey-100;
+      }
+    }
+    &.open-bottom-right {
+      left: -30px;
+      right: inherit;
+    }
+    .arrow-up-right {
+      @include triangle-arrow(10px, #fff, -8px, 34px, inherit, inherit);
+    }
+    .arrow-up-left {
+      @include triangle-arrow(10px, #fff, -8px, inherit, inherit, 34px);
+    }
+  }
+  .dropdown-menu.mt-menu {
+    width: 310px;
+    padding: 24px;
+    li {
+      display: inline-block;
+      width: 84px;
+      text-align: center;
+      padding: 10px 2px;
+      border: 1px solid transparent;
+      border-radius: 2px;
+      a {
+        height: 85px;
+        padding: 0;
+        font-size: 12px;
+        border: none;
+        line-height: inherit;
+        i {
+          display: block;
+          margin: 0 auto;
+          font-size: 38px;
+          width: 64px;
+          height: 64px;
+          line-height: 64px;
+        }
+        &:hover {
+          background: transparent;
+        }
+      }
+      &:hover {
+        background: transparent;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+      }
+    }
+  }
+}
+
+@media (max-width: $screen-xs) {
+  .mt-dropdown {
+    .dropdown-menu {
+      @include center-block;
+      .arrow-up-right,
+      .arrow-up-left {
+        display: none;
+      }
+      &.open-bottom-right {
+        left: 50%;
+        right: inherit;
+      }
+    }
+    .dropdown-menu.mt-menu {
+      width: 290px;
+      padding: 14px;
     }
   }
 }
