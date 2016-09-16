@@ -1,0 +1,234 @@
+.list-view {
+  list-style: none;
+  padding: 0 15px;
+  position: relative;
+  .list-view-item {
+    position: relative;
+    padding: 0;
+    padding-left: 10px;
+    display: block;
+    height: 4rem;
+    width: 100%;
+    overflow: hidden;
+    &:hover {
+      background-color: $gray-lighter;
+    }
+    .img-wrapper {
+      color: rgba(0, 0, 0, 0.15);
+      position: absolute;
+      width: 3rem;
+      height: 3rem;
+      line-height: 3rem;
+      margin: 0.5rem 0;
+      text-align: center;
+      font-size: 1.5rem;
+      overflow: hidden;
+      &.circle {
+        border-radius: 50%;
+        background-color: $gray-lighter;
+        &.primary {
+          background-color: $brand-primary;
+          color: #fff;
+        }
+      }
+      img {
+        width: 100%;
+        height: 4rem;
+        vertical-align: inherit;
+      }
+    }
+    .item-content {
+      position: relative;
+      height: 100%;
+      padding: 0;
+      margin-left: 4rem;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    }
+    .item-title {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      padding: 10px 0;
+      padding-right: 8.5rem;
+      text-decoration: none;
+      color: $gray;
+    }
+    .item-info {
+      position: absolute;
+      right: 0;
+      width: 8rem;
+      height: 100%;
+      padding: 10px 0;
+      text-align: center;
+      font-size: 0.8rem;
+      ul {
+        list-style: none;
+        li {
+          padding-bottom: 5px;
+        }
+      }
+    }
+    p {
+      margin: 0;
+    }
+  }
+}
+
+.list-view.product {
+  padding: 15px;
+  &>li {
+    background-color: #fff;
+    width: 100%;
+    //padding: 0 15px;
+    overflow: hidden;
+    zoom: 1;
+  }
+  .list-view-item {
+    height: 8rem;
+    padding-left: 10px;
+    .img-wrapper {
+      background-color: $gray-lighter;
+      width: 7rem;
+      height: 7rem;
+      line-height: 7rem;
+      margin: 0.5rem 0;
+      font-size: 3rem;
+      img {
+        width: 100%;
+        height: 7rem;
+      }
+    }
+    .item-content {
+      margin-left: 8rem;
+      overflow: hidden;
+    }
+    .item-title {
+      padding-right: 18rem;
+    }
+    .item-price {
+      position: absolute;
+      right: 8rem;
+      width: 9rem;
+      padding: 10px 0;
+      color: $color-red-500;
+      .price {
+        font-weight: bold;
+      }
+      .credit {
+        font-size: 0.8rem;
+        font-weight: 300;
+      }
+      .shipping {
+        font-size: 0.9rem;
+        font-weight: 300;
+        color: $brand-success;
+      }
+    }
+  }
+}
+
+@mixin product-column () {
+  &>li {
+    background-color: transparent;
+    padding: 15px;
+    float: left;
+  }
+  .list-view-item {
+    float: left;
+    padding: 0;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+    height: 342px;
+    //overflow: hidden;
+    &:hover {
+      background-color: initial;
+      .item-content {
+        position: absolute;
+        bottom: 0;
+        height: 75%;
+        box-shadow: 0px -1px 6px 0 rgba(0, 0, 0, .35);
+        transition: (all 0.5s ease);
+      }
+      .item-title {
+        white-space: normal;
+      }
+      .item-info {
+        display: block;
+      }
+    }
+    .img-wrapper {
+      position: relative;
+      background-color: $gray-lighter;
+      width: auto;
+      height: 200px;
+      line-height: 200px;
+      margin: 0;
+      font-size: 4rem;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+    .item-content {
+      padding: 15px;
+      margin-left: 0;
+      height: 140px;
+      width: 100%;
+      overflow: hidden;
+      background-color: #fff;
+    }
+    .item-title {
+      font-size: 0.95rem;
+      position: relative;
+      padding: 0;
+      padding-bottom: 10px;
+      height: auto;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+    .item-price {
+      position: relative;
+      right: auto;
+      width: 100%;
+      padding: 0;
+      padding-bottom: 10px;
+      text-align: left;
+      color: $color-red-500;
+      .price {
+        font-weight: bold;
+      }
+      .credit {
+        font-size: 0.8rem;
+        font-weight: 300;
+      }
+    }
+    .item-info {
+      position: relative;
+      width: auto;
+      height: auto;
+      padding: 0;
+      text-align: left;
+      font-size: 0.8rem;
+      display: none;
+      transition: (height 0.7s ease);
+    }
+  }
+}
+
+@media (min-width: $screen-md) {
+  .list-view.product.column {
+    @include product-column;
+    &>li {
+      width: 25%;
+      padding: 5px;
+      float: left;
+    }
+  }
+}
+
+@media (max-width: $screen-sm) {
+  .list-view.product {
+    @include product-column;
+  }
+}

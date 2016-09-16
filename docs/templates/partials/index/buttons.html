@@ -12,6 +12,16 @@
       <button type="button" class="btn btn-warning">Warning</button>
       <button type="button" class="btn btn-danger">Danger</button>
       <button type="button" class="btn btn-success">Success</button>
+      <div class="spacer"></div>
+      <h6>Sizes</h6>
+      <p>Class:
+        <span class="text-danger">.btn-xs</span>
+        <span class="text-danger">.btn-sm</span>
+        <span class="text-danger">.btn-lg</span></p>
+      <button type="button" class="btn btn-xs btn-success">Success</button>
+      <button type="button" class="btn btn-sm btn-success">Success</button>
+      <button type="button" class="btn btn-success">Success</button>
+      <button type="button" class="btn btn-lg btn-success">Success</button>
 
       <div class="spacer"></div>
       <button class="btn link-default btn-block" type="button" data-toggle="collapse" data-target="#buttonsRW" aria-expanded="false" aria-controls="buttonsRW">
@@ -40,6 +50,7 @@
       <button type="button" class="btn outline-warning">Warning</button>
       <button type="button" class="btn outline-danger">Danger</button>
       <button type="button" class="btn outline-success">Success</button>
+      <button type="button" class="btn outline-white">White</button>
 
       <div class="spacer"></div>
       <button class="btn link-default btn-block" type="button" data-toggle="collapse" data-target="#buttonsOutline" aria-expanded="false" aria-controls="buttonsOutline">
@@ -75,15 +86,15 @@
       <div class="spacer"></div>
       <div class="collapse" id="buttonsLink">
         <pre class="prettyprint">
-    <xmp>
-    <button type="button" class="btn link-default">Primary</button>
-    <button type="button" class="btn link-primary">Primary</button>
-    <button type="button" class="btn link-info">Info</button>
-    <button type="button" class="btn link-warning">Warning</button>
-    <button type="button" class="btn link-danger">Danger</button>
-    <button type="button" class="btn link-success">Success</button>
-    </xmp>
-    </pre>
+        <xmp>
+        <button type="button" class="btn link-default">Primary</button>
+        <button type="button" class="btn link-primary">Primary</button>
+        <button type="button" class="btn link-info">Info</button>
+        <button type="button" class="btn link-warning">Warning</button>
+        <button type="button" class="btn link-danger">Danger</button>
+        <button type="button" class="btn link-success">Success</button>
+        </xmp>
+        </pre>
       </div>
 
       <hr>
@@ -115,39 +126,92 @@
 
       <hr>
 
-      <h6>Rounded buttons</h6>
-      <button type="button" class="btn rounded-default">
+      <h6>Rounded buttons / Social</h6>
+      <p><span class="text-danger">.rounded-*</span> facebook twitter gplus wapp linkedin yahoo instagram skype pinterest youtube</p>
+      <button type="button" class="btn rounded-facebook">
+        <i class="fa fa-facebook" aria-hidden="true"></i>
+      </button>
+      <button type="button" class="btn rounded-twitter">
+        <i class="fa fa-twitter" aria-hidden="true"></i>
+      </button>
+      <button type="button" class="btn rounded-gplus">
+        <i class="fa fa-google" aria-hidden="true"></i>
+      </button>
+      <button type="button" class="btn rounded-wapp">
+        <i class="fa fa-whatsapp" aria-hidden="true"></i>
+      </button>
+
+
+      <div class="spacer"></div>
+      <pre class="prettyprint">
+        <xmp>
+        <button type="button" class="btn rounded-facebook">
+          <i class="fa fa-facebook" aria-hidden="true"></i>
+        </button>
+        </xmp>
+        </pre>
+
+
+      <div class="spacer"></div>
+      <h6>Rounded outline buttons / Social</h6>
+      <p><span class="text-danger">.rounded-outline-*</span></p>
+      <button type="button" class="btn rounded-outline-facebook">
+        <i class="fa fa-facebook" aria-hidden="true"></i>
+      </button>
+      <button type="button" class="btn rounded-outline-twitter">
+        <i class="fa fa-twitter" aria-hidden="true"></i>
+      </button>
+      <button type="button" class="btn rounded-outline-gplus">
+        <i class="fa fa-google" aria-hidden="true"></i>
+      </button>
+      <button type="button" class="btn rounded-outline-wapp">
+        <i class="fa fa-whatsapp" aria-hidden="true"></i>
+      </button>
+
+      <div class="spacer"></div>
+      <pre class="prettyprint">
+        <xmp>
+        <button type="button" class="btn rounded-outline-facebook">
+          <i class="fa fa-facebook" aria-hidden="true"></i>
+        </button>
+        </xmp>
+        </pre>
+
+      <hr>
+
+      <h6>floating buttons</h6>
+      <button type="button" class="btn floating-default">
         <i class="material-icons">expand_more</i>
       </button>
-      <button type="button" class="btn rounded-primary">
+      <button type="button" class="btn floating-primary">
         <i class="material-icons">file_download</i>
       </button>
-      <button type="button" class="btn rounded-info">
+      <button type="button" class="btn floating-info">
         <i class="material-icons">info_outline</i>
       </button>
-      <button type="button" class="btn rounded-warning">
+      <button type="button" class="btn floating-warning">
         <i class="material-icons">create</i>
       </button>
-      <button type="button" class="btn rounded-danger">
+      <button type="button" class="btn floating-danger">
         <i class="material-icons">delete</i>
       </button>
-      <button type="button" class="btn rounded-success">
+      <button type="button" class="btn floating-success">
         <i class="fa">A</i>
       </button>
       <div class="spacer"></div>
-      <button class="btn link-default btn-block" type="button" data-toggle="collapse" data-target="#roundedButtons" aria-expanded="false" aria-controls="roundedButtons">
+      <button class="btn link-default btn-block" type="button" data-toggle="collapse" data-target="#floatingButtons" aria-expanded="false" aria-controls="floatingButtons">
       View Code
       </button>
       <div class="spacer"></div>
-      <div class="collapse" id="roundedButtons">
+      <div class="collapse" id="floatingButtons">
         <pre class="prettyprint">
         <xmp>
-        //.rounded-default/.rounded-primary/.rounded-warning
-        <button type="button" class="btn rounded-danger">
+        //.floating-default/.floating-primary/.floating-warning
+        <button type="button" class="btn floating-danger">
         <i class="material-icons">delete</i>
         </button>
         //letter
-        <button type="button" class="btn rounded-success">
+        <button type="button" class="btn floating-success">
           <i class="fa">A</i>
         </button>
         </xmp>
@@ -156,11 +220,11 @@
 
       <hr>
 
-      <h6>Floating button</h6>
+      <h6>Floating List button</h6>
       <p>Types available:</p>
       <ul class='indent text-danger'>
-        <li>.floating-btn</li>
-        <li>.floating-btn-hover</li>
+        <li>.floating-list</li>
+        <li>.floating-list-hover</li>
       </ul>
       <p>Position available:</p>
       <ul class='indent text-danger'>
@@ -172,7 +236,7 @@
         <li>.horizontal right</li>
         <li>.horizontal left</li>
       </ul>
-      <div class="floating-btn fixed-bottom-right">
+      <div class="floating-list fixed-bottom-right">
         <i class="material-icons">menu</i>
         <ul>
           <li>
@@ -198,7 +262,7 @@
           </li>
         </ul>
       </div>
-      <div class="floating-btn-hover horizontal">
+      <div class="floating-list-hover horizontal">
         <i class="material-icons">menu</i>
         <ul>
           <li>
@@ -223,7 +287,7 @@
         <pre class="prettyprint">
     <xmp>
     // example on bottom-right corner
-    <div class="floating-btn fixed-bottom-right">
+    <div class="floating-list fixed-bottom-right">
       <i class="fa fa-bars" aria-hidden="true"></i>
       <ul>
         <li>

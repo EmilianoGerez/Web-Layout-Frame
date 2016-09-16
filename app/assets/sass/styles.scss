@@ -2,9 +2,6 @@
   Custom Styles - Web Frame Layout
 */
 
-// Bourbon Lib
-@import "../components/bourbon/app/assets/stylesheets/bourbon";
-
 // Bootstrap
 @import "variables";
 @import "../components/bootstrap-sass/assets/stylesheets/bootstrap";
@@ -20,9 +17,6 @@
 
 // Forms
 @import "forms";
-
-// Admin page
-@import "admin";
 
 // Generals styles
 @import "generals";

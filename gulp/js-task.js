@@ -5,7 +5,7 @@ module.exports = function (gulp, plugins, path) {
             .pipe(plugins.sourcemaps.init())
             .pipe(plugins.concat('scripts.min.js'))
             .pipe(plugins.uglify())
-            .pipe(gulp.dest(path.assetsDist))
-            .pipe(plugins.sourcemaps.write('./maps'));
+            .pipe(plugins.sourcemaps.write('.'))
+            .pipe(gulp.dest(path.assetsDist));
     };
 };

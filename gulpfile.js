@@ -5,6 +5,7 @@ plugins.minifyCss = require('gulp-minify-css');
 plugins.browserSync = browserSync;
 plugins.nunjucksRender = require('gulp-nunjucks-render');
 plugins.sourcemaps = require('gulp-sourcemaps');
+plugins.autoprefixer = require('gulp-autoprefixer');
 
 var path = require('./gulp/gulp-path');
 

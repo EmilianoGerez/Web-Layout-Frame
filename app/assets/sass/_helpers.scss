@@ -27,6 +27,7 @@ MISC
 
 
 /* new clearfix */
+
 .clearfix:after {
   visibility: hidden;
   display: block;
@@ -35,14 +36,30 @@ MISC
   clear: both;
   height: 0;
 }
+
 * html .clearfix {
   zoom: 1;
 }
-/* IE6 */
 *:first-child+html .clearfix {
   zoom: 1;
 }
-/* IE7 */
+
+// Text wrap
+.ellipsis {
+  text-overflow: ellipsis;
+  /* Required for text-overflow to do anything */
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+
+/*======================================
+EASING
+======================================*/
+
+@mixin easeOutQuint ($property, $duration) {
+  transition: $property $duration cubic-bezier(0.23, 1, 0.32, 1);
+}
 
 
 /*======================================
@@ -55,7 +72,7 @@ MATERIAL SHADOWS
 }
 
 %mt-shadow-hover {
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22) !important;
 }
 
 %mt-shadow-2 {
@@ -136,12 +153,46 @@ BUTTONS - MIXIN
   }
 }
 
+@mixin btn-rounded ($bg-color, $font-color, $outline: false) {
+  @if($outline) {
+    background: transparent;
+  }
+  @else {
+    background-color: $bg-color;
+  }
+  color:$font-color;
+  border: 2px solid $bg-color;
+  border-radius: 50%;
+  padding: 0;
+  height: 50px;
+  width: 50px;
+  line-height: 46px;
+  font-size: 24px;
+  font-weight: bold;
+  i {
+    line-height: 46px;
+  }
+  &:hover,
+  &:active,
+  &:focus {
+    @if($outline) {
+      background-color: transparent;
+      color: darken($font-color, 10%);
+    }
+    @else {
+      background-color: darken($bg-color, 10%);
+    }
+    border: 2px solid darken($bg-color, 10%);
+  }
+}
+
 @mixin btn-link($color, $hover-color) {
   background-color: transparent;
   color: $color;
   border: 1px solid transparent;
   &:hover,
   &:active,
+  &:active:focus,
   &:focus {
     color: #fff;
     background-color: $hover-color;
@@ -155,7 +206,8 @@ BUTTONS - MIXIN
   @extend %mt-shadow-2;
   &:hover,
   &:active,
-  {
+  &:active:focus,
+  &:focus {
     color: #fff;
     background-color: $color;
     @extend %mt-shadow-2-hover;
@@ -163,13 +215,13 @@ BUTTONS - MIXIN
   }
 }
 
-@mixin rounded-button($color, $size) {
+@mixin floating-button($color, $size) {
   position: inherit;
   z-index: 1009;
   background-color: transparent;
   padding: 0 5px;
-  &> i {
-    @include transition(all .2s cubic-bezier(.25, .8, .25, 1));
+  &>i {
+    transition: all .2s cubic-bezier(.25, .8, .25, 1);
     text-align: center;
     width: $size;
     line-height: $size;
@@ -178,7 +230,10 @@ BUTTONS - MIXIN
     font-size: 1.5rem;
     color: #fff;
     @extend %mt-shadow-1;
-    &:hover {
+    &:hover,
+    &:active,
+    &:active:focus,
+    &:focus {
       cursor: pointer;
       @extend %mt-shadow-2;
       transform: translateY(-2px);
@@ -194,10 +249,10 @@ NAVBAR
 @mixin navbar-color ($bg-color, $active-color) {
   background-color: $bg-color;
   .navbar-nav {
-    &> .active> a {
+    &>.active>a {
       color: $active-color;
     }
-    &> li> a {
+    &>li>a {
       &:hover,
       &:focus {
         color: $active-color;

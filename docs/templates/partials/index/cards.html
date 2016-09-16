@@ -3,10 +3,12 @@
     <div class="col-xs-12">
       <h2>Cards</h2>
       <hr>
-      <h6>Cards</h6>
+      <h6>Simple Cards</h6>
     </div>
   </div>
-  <div class="row">
+
+  <!--siple cards-->
+  <div class="row center-xs middle-xs">
     <div class="col-xs-12 col-sm-6 col-md-4">
       <!--card-->
       <div class="card">
@@ -18,8 +20,8 @@
               <button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="">
                 <i class="fa fa-share-alt" aria-hidden="true"></i>
               </button>
-              <ul class="dropdown-menu mt-menu open-bottom-right" aria-labelledby="dLabel">
-                <div class="arrow-up-left"></div>
+              <ul class="dropdown-menu mt-menu" aria-labelledby="dLabel">
+                <div class="arrow-up"></div>
                 <h6 class="text-center">Shared</h6>
                 <hr>
                 <li><a href=""><i class="fa fa-twitter twitter-color" aria-hidden="true"></i>Twitter</a></li>
@@ -61,12 +63,41 @@
       </div>
       <!--/card-->
     </div>
+
+    <!--View code-->
+    <div class="col-xs-12">
+      <pre class="prettyprint">
+      <xmp>
+      <!--Card Container-->
+      <div class="card">
+        <!--Card content-->
+        <div class="card-block">
+          <!--Title-->
+          <h4 class="card-title"><a href="">Card title</a></h4>
+          <hr>
+          <!--Text-->
+          <p class="card-text">...</p>
+        </div>
+        <!--/.Card content-->
+        <!--Card Footer-->
+        <div class="card-footer">
+          <ul class="card-action-list">
+            ...
+          </ul>
+        </div>
+        <!--/Card Footer-->
+      </div>
+      <!--/.Card container-->
+    </xmp>
+    </pre>
+    </div>
+    <!--/view code-->
+
   </div>
+  <!--/simple cards-->
 
 
-
-
-
+  <!--flex cards-->
   <div class="row">
     <div class="col-xs-12">
       <hr>
@@ -102,7 +133,6 @@
       </div>
       <!--/card-->
     </div>
-
     <div class="col-xs-12 col-sm-6 col-md-4">
       <!--Card Container-->
       <div class="card flex-card">
@@ -124,7 +154,6 @@
           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
         </div>
         <!--/.Card content-->
-
         <!--Card Footer-->
         <div class="card-footer">
           <ul class="card-action-list">
@@ -142,21 +171,43 @@
           </ul>
         </div>
         <!--/Card Footer-->
-
       </div>
       <!--/.Card container-->
     </div>
+
+    <!--horizontal card-->
+    <div class="col-xs-12">
+      <h6>Horizontal position</h6>
+      <!--card-->
+      <div class="card horizontal-card">
+        <!--Card image-->
+        <div class="card-image">
+          <img class="img-fluid" src="http://24.media.tumblr.com/tumblr_lnin5gPIkH1qc76t1o1_500.jpg" alt="">
+        </div>
+        <!--/.Card image-->
+        <!--Card content-->
+        <div class="card-block">
+          <!--Title-->
+          <h4 class="card-title">Card title</h4>
+          <ul class="card-info">
+            <li><i class="material-icons">create</i> by Woody</li>
+            <li><i class="fa fa-calendar" aria-hidden="true"></i> Today</li>
+          </ul>
+          <!--Text-->
+          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat illum animi, tempora. Exercitationem earum minima impedit officiis sint molestiae.</p>
+        </div>
+        <!--/.Card content-->
+      </div>
+      <!--/card-->
+    </div>
+    <!--/horizontal position-->
+
     <!--View code-->
     <div class="col-xs-12">
-      <div class="spacer"></div>
-      <button class="btn link-default btn-block" type="button" data-toggle="collapse" data-target="#cards" aria-expanded="false" aria-controls="cards">
-  View Code
-  </button>
-      <div class="spacer"></div>
-      <div class="collapse" id="cards">
-        <pre class="prettyprint">
-    <xmp>
+      <pre class="prettyprint">
+      <xmp>
       <!--Card Container-->
+      // use .horizontal-card for horizontal position
       <div class="card">
         <!--Card image-->
         <div class="card-image">
@@ -188,43 +239,37 @@
       <!--/.Card container-->
     </xmp>
     </pre>
-      </div>
     </div>
     <!--/view code-->
+
   </div>
+  <!--/flex cards-->
 
-
+  <!--NOTIFICATION CARD-->
   <div class="row">
     <div class="col-xs-12">
-      <!--card-->
-      <div class="card horizontal-card">
-        <!--Card image-->
+      <hr>
+      <h6>Notificaton card</h6>
+      <p>Example working with notify.js library</p>
+      <div class="card notification-card warning">
+        <i class="material-icons notification-close">close</i>
         <div class="card-image">
-          
+          <i class="material-icons">error</i>
         </div>
-        <!--/.Card image-->
-        <!--Card content-->
         <div class="card-block">
-          <!--Title-->
-          <h4 class="card-title">Card title</h4>
-          <ul class="card-info">
-            <li><i class="material-icons">create</i> by Woody</li>
-            <li><i class="fa fa-calendar" aria-hidden="true"></i> Today</li>
-          </ul>
-          <!--Text-->
-          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat illum animi, tempora. Exercitationem earum minima impedit officiis sint molestiae.</p>
+          <h6 class="card-title">Notification</h6>
+          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque minima, libero et perspiciatis temporibus veniam tenetur veritatis qui asperiores eos a quisquam optio error, minus cumque doloremque incidunt. Quia, aliquid.</p>
         </div>
-        <!--/.Card content-->
       </div>
-      <!--/card-->
+    </div>
+    <div class="col-xs-12">
+      <button class="btn btn-primary" id="notifyError">Example</button>
     </div>
   </div>
 
 
 
-
-
-  <!--/row cards-->
+  <!--USER cards-->
   <div class="row">
     <div class="col-xs-12">
       <hr>
@@ -293,8 +338,9 @@
     </div>
     <!--/view code-->
   </div>
+  <!--/row user cards-->
 
-  <!--imgae card-->
+  <!--IMAGE card-->
   <div class="row">
     <div class="col-xs-12">
       <hr>
@@ -375,5 +421,45 @@
       </div>
       <!--/image card-->
     </div>
+
+
+    <!--View code-->
+    <div class="col-xs-12">
+      <pre class="prettyprint">
+      <xmp>
+      <!--image card-->
+      <div class="card image-card">
+        <!--Card image-->
+        <div class="card-image">
+          <img class="img-fluid" src="">
+          <div class="img-overlay"></div>
+        </div>
+        <!--Card content-->
+        <div class="card-block">
+          <!--Title-->
+          <h4 class="card-title"><a href="">Card title</a></h4>
+          <!--post info-->
+          <ul class="card-info">
+            ...
+          </ul>
+          <!--Text-->
+          <p class="card-text">...</p>
+          <ul class="card-action-list right">
+            ..
+          </ul>
+          <ul class="card-action-list">
+            <li><span class="label label-small label-warning">HOT</span></li>
+          </ul>
+        </div>
+        <!--/.Card content-->
+        <!--/.Card image-->
+      </div>
+      <!--/image card-->
+      </xmp>
+      </pre>
+    </div>
+    <!--/view code-->
+
+
   </div>
 </div>

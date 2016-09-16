@@ -1,25 +1,57 @@
 (function() {
+
+  // ////////////////////////////////
+  // Configs
+  // ////////////////////////////////
+  // Notify default override
+  $.notify.defaults({
+    autoHide: false,
+    position: 'right bottom',
+    showDuration: 0
+  });
+  // Notification template
+  $.notify.addStyle('card', {
+    html: '<div>' +
+      "<div class='card notification-card'>" +
+      "<i class='material-icons notification-close'>close</i>" +
+      "<div class='card-image'>" +
+      "<i class='material-icons' data-notify-text='icon'></i>" +
+      '</div>' +
+      "<div class='card-block'>" +
+      "<h6 class='card-title' data-notify-text='title'>Cancel</h6>" +
+      "<p class='card-text' data-notify-text='message'></p>" +
+      '</div>' +
+      '</div>' +
+      '</div>'
+  });
+
+  // ////////////////////////////////
   // DOM Cache
+  // ////////////////////////////////
   var $transparentNavbar = $('#transparent-navbar');
-  //var mobileSidebar = $('#mobile-sidebar');
-  var $floatingBtn = $('.floating-btn, .floating-btn-hover');
+  // var mobileSidebar = $('#mobile-sidebar')
+  var $floatingList = $('.floating-list, .floating-list-hover');
   var $btnToggleSidebar = $('#btn-toggle-sidebar');
   var $btnMobileSidebar = $('#btn-mobile-sidebar');
-
+  // ////////////////////////////////
   // Events
-  //////////////////////////////////
-  $(window).scroll(navTransparent);
+  // ////////////////////////////////
+  $(window)
+    .scroll(navTransparent);
   $btnToggleSidebar.click(toggleSidebar);
   $btnMobileSidebar.click(toggleMobileSidebar);
-  $floatingBtn.click(openfloatingBtn);
-  $('a.sidebar-dropdown-toggle').click(openDropdown);
-  $(".nav a").on("click", toggleActiveLink);
-
+  $floatingList.click(openfloatingList)
+  $('a.sidebar-dropdown-toggle')
+    .click(openDropdown);
+  $('.nav a')
+    .on('click', toggleActiveLink);
+  // ////////////////////////////////
   // Methods
-  //////////////////////////////////
+  // ////////////////////////////////
 
   function navTransparent() {
-    if ($(window).scrollTop() < 400) /*height in pixels when the navbar becomes non opaque*/ {
+    if ($(window)
+      .scrollTop() < 400) /*height in pixels when the navbar becomes non opaque*/ {
       $transparentNavbar.addClass('navbar-transparent');
     } else {
       $transparentNavbar.removeClass('navbar-transparent');
@@ -27,77 +59,146 @@
   }
 
   function toggleSidebar() {
-    $('#main-wrapper').toggleClass('toggled');
+    $('#main-wrapper')
+      .toggleClass('toggled');
   }
 
   function toggleMobileSidebar() {
     $btnMobileSidebar.toggleClass('toggled');
-    $btnMobileSidebar.parent("div").parent("div").parent("nav").toggleClass('toggled');
+    $btnMobileSidebar.parent('div')
+      .parent('div')
+      .parent('nav')
+      .toggleClass('toggled');
   }
 
-  function openfloatingBtn() {
-    $(this).children("ul").toggleClass('open');
+  function openfloatingList() {
+    $(this)
+      .children('ul')
+      .toggleClass('open');
   }
 
   function openDropdown() {
-    $(this).next('.sidebar-dropdown-menu').toggleClass('open');
+    $(this)
+      .next('.sidebar-dropdown-menu')
+      .toggleClass('open');
   }
 
   function toggleActiveLink() {
-    $(".nav").find(".active").removeClass("active");
-    $(this).parent().addClass("active");
+    $('.nav')
+      .find('.active')
+      .removeClass('active');
+    $(this)
+      .parent()
+      .addClass('active');
   }
+
+  // set and emit notify.js
 
 })();
 
 // Revealing components
 var _componentExposed = function() {
 
-  // Private methods
-  //////////////////////////////////
+  // Revealing
+  // ////////////////////////////////
+  return {
+    carouselAnimated: carouselAnimated,
+    notify: {
+      error: notifyError,
+      success: notifySuccess,
+      warning: notifyWarning,
+      info: notifyInfo
+    }
+  };
 
-  //Function to animate slider captions 
+  // Private methods
+  // ////////////////////////////////
+
+  // Function to animate slider captions 
   function doAnimations(elems) {
-    //Cache the animationend event in a variable
+    // Cache the animationend event in a variable
     var animEndEv = 'webkitAnimationEnd animationend';
 
     elems.each(function() {
       var $this = $(this);
       var $animationType = $this.data('animation');
-      $this.addClass($animationType).one(animEndEv, function() {
-        $this.removeClass($animationType);
-      });
+      $this.addClass($animationType)
+        .one(animEndEv, function() {
+          $this.removeClass($animationType);
+        });
     });
   }
 
   // Public Methods
-  //////////////////////////////////
+  // ////////////////////////////////
 
-  //Variables on page load 
+  // Variables on page load 
   function carouselAnimated(config) {
-    var $firstAnimatingElems = config.carouselId.find('.item:first').find("[data-animation ^= 'animated']");
+    var $firstAnimatingElems = config.carouselId.find('.item:first')
+      .find("[data-animation ^= 'animated']");
 
-    //Initialize carousel 
+    // Initialize carousel 
     config.carouselId.carousel({
       interval: config.interval
     });
 
-    //Animate captions in first slide on page load 
+    // Animate captions in first slide on page load 
     doAnimations($firstAnimatingElems);
 
-    //Pause carousel  
-    //config.carouselId.carousel('pause');
+    // Pause carousel  
+    // config.carouselId.carousel('pause')
 
-    //Other slides to be animated on carousel slide event 
+    // Other slides to be animated on carousel slide event 
     config.carouselId.on('slide.bs.carousel', function(e) {
-      var $animatingElems = $(e.relatedTarget).find("[data-animation ^= 'animated']");
+      var $animatingElems = $(e.relatedTarget)
+        .find("[data-animation ^= 'animated']");
       doAnimations($animatingElems);
     });
   }
 
-  // Revealing
-  //////////////////////////////////
-  return {
-    carouselAnimated: carouselAnimated
-  };
+  // Notify error
+  function notifyError(title, message) {
+    $.notify({
+      icon: 'error',
+      title: title,
+      message: message
+    }, {
+      style: 'card',
+      className: 'error'
+    });
+  }
+  // Notify success
+  function notifySuccess(title, message) {
+    $.notify({
+      icon: 'check_circle',
+      title: title,
+      message: message
+    }, {
+      style: 'card',
+      className: 'success'
+    });
+  }
+  // Notify earning
+  function notifyWarning(title, message) {
+    $.notify({
+      icon: 'warning',
+      title: title,
+      message: message
+    }, {
+      style: 'card',
+      className: 'warning'
+    });
+  }
+  // Notify info
+  function notifyInfo(title, message) {
+    $.notify({
+      icon: 'info',
+      title: title,
+      message: message
+    }, {
+      style: 'card',
+      className: 'info'
+    });
+  }
+
 }();

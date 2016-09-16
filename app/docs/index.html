@@ -13,11 +13,12 @@
   <!-- Place favicon.ico in the root directory -->
 
   <!-- CSS Libs-->
-  <!--<link rel="stylesheet" href="../assets/components/bootstrap/dist/css/bootstrap.min.css">-->
+  <!--<link rel="stylesheet" href="../assets/dist/bootstrap.min.css">-->
   <link rel="stylesheet" href="../assets/components/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" href="../assets/components/animate.css/animate.min.css">
   <link rel="stylesheet" href="../assets/components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
   <link rel="stylesheet" href="https://cdn.rawgit.com/google/code-prettify/master/styles/desert.css">
+  <link rel="stylesheet" type="" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 
 
   <!-- Fonts -->
@@ -29,7 +30,10 @@
   
   <!-- Custom CSS Styles-->
   <!-- files for development environment -->
+  <link rel="stylesheet" href="../assets/components/flexboxgrid/dist/flexboxgrid.min.css">
   <link rel="stylesheet" href="../assets/css/styles.css">
+
+  
 
   <!-- Activate on production (after run gulp build), all css files on gulp-path[cssbuild] are concat and minify -->
   <!--<link rel="stylesheet" href="../assets/dist/styles.min.css">-->
@@ -47,12 +51,18 @@
 <nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
   <ul class="nav sidebar-nav">
     <li class="sidebar-brand">
-      <a href="#">
+      <a href="/docs">
           Web Layout Frame
       </a>
     </li>
     <li>
-      <a href="#"><i class="fa fa-user-plus" aria-hidden="true"></i> Home</a>
+      <a href="/docs"><i class="fa  fa-file-text" aria-hidden="true"></i> WLF Docs</a>
+    </li>
+    <li>
+      <a href="/docs/home-example.html"><i class="fa fa-home" aria-hidden="true"></i> Home Example</a>
+    </li>
+    <li>
+      <a href="/docs/admin.html"><i class="fa fa-tachometer" aria-hidden="true"></i> Admin Example</a>
     </li>
     <li class="divider">UI Kit</li>
     <li><a href="#buttons-section">Buttons</a></li>
@@ -93,8 +103,8 @@
       </div>
       <div class="soft-filter-black">
         <div class="container">
-          <div class="header">Bootstrap 3 UI Kit</div>
-          <button class="btn btn-info outline-info">GitHub</button>
+          <div class="header">WEB LAYOUT FRAME</div>
+          <button class="btn outline-info pill">GitHub</button>
         </div>
       </div>
     </section>
@@ -115,6 +125,16 @@
       <button type="button" class="btn btn-warning">Warning</button>
       <button type="button" class="btn btn-danger">Danger</button>
       <button type="button" class="btn btn-success">Success</button>
+      <div class="spacer"></div>
+      <h6>Sizes</h6>
+      <p>Class:
+        <span class="text-danger">.btn-xs</span>
+        <span class="text-danger">.btn-sm</span>
+        <span class="text-danger">.btn-lg</span></p>
+      <button type="button" class="btn btn-xs btn-success">Success</button>
+      <button type="button" class="btn btn-sm btn-success">Success</button>
+      <button type="button" class="btn btn-success">Success</button>
+      <button type="button" class="btn btn-lg btn-success">Success</button>
 
       <div class="spacer"></div>
       <button class="btn link-default btn-block" type="button" data-toggle="collapse" data-target="#buttonsRW" aria-expanded="false" aria-controls="buttonsRW">
@@ -143,6 +163,7 @@
       <button type="button" class="btn outline-warning">Warning</button>
       <button type="button" class="btn outline-danger">Danger</button>
       <button type="button" class="btn outline-success">Success</button>
+      <button type="button" class="btn outline-white">White</button>
 
       <div class="spacer"></div>
       <button class="btn link-default btn-block" type="button" data-toggle="collapse" data-target="#buttonsOutline" aria-expanded="false" aria-controls="buttonsOutline">
@@ -178,15 +199,15 @@
       <div class="spacer"></div>
       <div class="collapse" id="buttonsLink">
         <pre class="prettyprint">
-    <xmp>
-    <button type="button" class="btn link-default">Primary</button>
-    <button type="button" class="btn link-primary">Primary</button>
-    <button type="button" class="btn link-info">Info</button>
-    <button type="button" class="btn link-warning">Warning</button>
-    <button type="button" class="btn link-danger">Danger</button>
-    <button type="button" class="btn link-success">Success</button>
-    </xmp>
-    </pre>
+        <xmp>
+        <button type="button" class="btn link-default">Primary</button>
+        <button type="button" class="btn link-primary">Primary</button>
+        <button type="button" class="btn link-info">Info</button>
+        <button type="button" class="btn link-warning">Warning</button>
+        <button type="button" class="btn link-danger">Danger</button>
+        <button type="button" class="btn link-success">Success</button>
+        </xmp>
+        </pre>
       </div>
 
       <hr>
@@ -218,39 +239,92 @@
 
       <hr>
 
-      <h6>Rounded buttons</h6>
-      <button type="button" class="btn rounded-default">
+      <h6>Rounded buttons / Social</h6>
+      <p><span class="text-danger">.rounded-*</span> facebook twitter gplus wapp linkedin yahoo instagram skype pinterest youtube</p>
+      <button type="button" class="btn rounded-facebook">
+        <i class="fa fa-facebook" aria-hidden="true"></i>
+      </button>
+      <button type="button" class="btn rounded-twitter">
+        <i class="fa fa-twitter" aria-hidden="true"></i>
+      </button>
+      <button type="button" class="btn rounded-gplus">
+        <i class="fa fa-google" aria-hidden="true"></i>
+      </button>
+      <button type="button" class="btn rounded-wapp">
+        <i class="fa fa-whatsapp" aria-hidden="true"></i>
+      </button>
+
+
+      <div class="spacer"></div>
+      <pre class="prettyprint">
+        <xmp>
+        <button type="button" class="btn rounded-facebook">
+          <i class="fa fa-facebook" aria-hidden="true"></i>
+        </button>
+        </xmp>
+        </pre>
+
+
+      <div class="spacer"></div>
+      <h6>Rounded outline buttons / Social</h6>
+      <p><span class="text-danger">.rounded-outline-*</span></p>
+      <button type="button" class="btn rounded-outline-facebook">
+        <i class="fa fa-facebook" aria-hidden="true"></i>
+      </button>
+      <button type="button" class="btn rounded-outline-twitter">
+        <i class="fa fa-twitter" aria-hidden="true"></i>
+      </button>
+      <button type="button" class="btn rounded-outline-gplus">
+        <i class="fa fa-google" aria-hidden="true"></i>
+      </button>
+      <button type="button" class="btn rounded-outline-wapp">
+        <i class="fa fa-whatsapp" aria-hidden="true"></i>
+      </button>
+
+      <div class="spacer"></div>
+      <pre class="prettyprint">
+        <xmp>
+        <button type="button" class="btn rounded-outline-facebook">
+          <i class="fa fa-facebook" aria-hidden="true"></i>
+        </button>
+        </xmp>
+        </pre>
+
+      <hr>
+
+      <h6>floating buttons</h6>
+      <button type="button" class="btn floating-default">
         <i class="material-icons">expand_more</i>
       </button>
-      <button type="button" class="btn rounded-primary">
+      <button type="button" class="btn floating-primary">
         <i class="material-icons">file_download</i>
       </button>
-      <button type="button" class="btn rounded-info">
+      <button type="button" class="btn floating-info">
         <i class="material-icons">info_outline</i>
       </button>
-      <button type="button" class="btn rounded-warning">
+      <button type="button" class="btn floating-warning">
         <i class="material-icons">create</i>
       </button>
-      <button type="button" class="btn rounded-danger">
+      <button type="button" class="btn floating-danger">
         <i class="material-icons">delete</i>
       </button>
-      <button type="button" class="btn rounded-success">
+      <button type="button" class="btn floating-success">
         <i class="fa">A</i>
       </button>
       <div class="spacer"></div>
-      <button class="btn link-default btn-block" type="button" data-toggle="collapse" data-target="#roundedButtons" aria-expanded="false" aria-controls="roundedButtons">
+      <button class="btn link-default btn-block" type="button" data-toggle="collapse" data-target="#floatingButtons" aria-expanded="false" aria-controls="floatingButtons">
       View Code
       </button>
       <div class="spacer"></div>
-      <div class="collapse" id="roundedButtons">
+      <div class="collapse" id="floatingButtons">
         <pre class="prettyprint">
         <xmp>
-        //.rounded-default/.rounded-primary/.rounded-warning
-        <button type="button" class="btn rounded-danger">
+        //.floating-default/.floating-primary/.floating-warning
+        <button type="button" class="btn floating-danger">
         <i class="material-icons">delete</i>
         </button>
         //letter
-        <button type="button" class="btn rounded-success">
+        <button type="button" class="btn floating-success">
           <i class="fa">A</i>
         </button>
         </xmp>
@@ -259,11 +333,11 @@
 
       <hr>
 
-      <h6>Floating button</h6>
+      <h6>Floating List button</h6>
       <p>Types available:</p>
       <ul class='indent text-danger'>
-        <li>.floating-btn</li>
-        <li>.floating-btn-hover</li>
+        <li>.floating-list</li>
+        <li>.floating-list-hover</li>
       </ul>
       <p>Position available:</p>
       <ul class='indent text-danger'>
@@ -275,7 +349,7 @@
         <li>.horizontal right</li>
         <li>.horizontal left</li>
       </ul>
-      <div class="floating-btn fixed-bottom-right">
+      <div class="floating-list fixed-bottom-right">
         <i class="material-icons">menu</i>
         <ul>
           <li>
@@ -301,7 +375,7 @@
           </li>
         </ul>
       </div>
-      <div class="floating-btn-hover horizontal">
+      <div class="floating-list-hover horizontal">
         <i class="material-icons">menu</i>
         <ul>
           <li>
@@ -326,7 +400,7 @@
         <pre class="prettyprint">
     <xmp>
     // example on bottom-right corner
-    <div class="floating-btn fixed-bottom-right">
+    <div class="floating-list fixed-bottom-right">
       <i class="fa fa-bars" aria-hidden="true"></i>
       <ul>
         <li>
@@ -351,10 +425,12 @@
     <div class="col-xs-12">
       <h2>Cards</h2>
       <hr>
-      <h6>Cards</h6>
+      <h6>Simple Cards</h6>
     </div>
   </div>
-  <div class="row">
+
+  <!--siple cards-->
+  <div class="row center-xs middle-xs">
     <div class="col-xs-12 col-sm-6 col-md-4">
       <!--card-->
       <div class="card">
@@ -366,8 +442,8 @@
               <button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="">
                 <i class="fa fa-share-alt" aria-hidden="true"></i>
               </button>
-              <ul class="dropdown-menu mt-menu open-bottom-right" aria-labelledby="dLabel">
-                <div class="arrow-up-left"></div>
+              <ul class="dropdown-menu mt-menu" aria-labelledby="dLabel">
+                <div class="arrow-up"></div>
                 <h6 class="text-center">Shared</h6>
                 <hr>
                 <li><a href=""><i class="fa fa-twitter twitter-color" aria-hidden="true"></i>Twitter</a></li>
@@ -409,12 +485,41 @@
       </div>
       <!--/card-->
     </div>
+
+    <!--View code-->
+    <div class="col-xs-12">
+      <pre class="prettyprint">
+      <xmp>
+      <!--Card Container-->
+      <div class="card">
+        <!--Card content-->
+        <div class="card-block">
+          <!--Title-->
+          <h4 class="card-title"><a href="">Card title</a></h4>
+          <hr>
+          <!--Text-->
+          <p class="card-text">...</p>
+        </div>
+        <!--/.Card content-->
+        <!--Card Footer-->
+        <div class="card-footer">
+          <ul class="card-action-list">
+            ...
+          </ul>
+        </div>
+        <!--/Card Footer-->
+      </div>
+      <!--/.Card container-->
+    </xmp>
+    </pre>
+    </div>
+    <!--/view code-->
+
   </div>
+  <!--/simple cards-->
 
 
-
-
-
+  <!--flex cards-->
   <div class="row">
     <div class="col-xs-12">
       <hr>
@@ -450,7 +555,6 @@
       </div>
       <!--/card-->
     </div>
-
     <div class="col-xs-12 col-sm-6 col-md-4">
       <!--Card Container-->
       <div class="card flex-card">
@@ -472,7 +576,6 @@
           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
         </div>
         <!--/.Card content-->
-
         <!--Card Footer-->
         <div class="card-footer">
           <ul class="card-action-list">
@@ -490,21 +593,43 @@
           </ul>
         </div>
         <!--/Card Footer-->
-
       </div>
       <!--/.Card container-->
     </div>
+
+    <!--horizontal card-->
+    <div class="col-xs-12">
+      <h6>Horizontal position</h6>
+      <!--card-->
+      <div class="card horizontal-card">
+        <!--Card image-->
+        <div class="card-image">
+          <img class="img-fluid" src="http://24.media.tumblr.com/tumblr_lnin5gPIkH1qc76t1o1_500.jpg" alt="">
+        </div>
+        <!--/.Card image-->
+        <!--Card content-->
+        <div class="card-block">
+          <!--Title-->
+          <h4 class="card-title">Card title</h4>
+          <ul class="card-info">
+            <li><i class="material-icons">create</i> by Woody</li>
+            <li><i class="fa fa-calendar" aria-hidden="true"></i> Today</li>
+          </ul>
+          <!--Text-->
+          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat illum animi, tempora. Exercitationem earum minima impedit officiis sint molestiae.</p>
+        </div>
+        <!--/.Card content-->
+      </div>
+      <!--/card-->
+    </div>
+    <!--/horizontal position-->
+
     <!--View code-->
     <div class="col-xs-12">
-      <div class="spacer"></div>
-      <button class="btn link-default btn-block" type="button" data-toggle="collapse" data-target="#cards" aria-expanded="false" aria-controls="cards">
-  View Code
-  </button>
-      <div class="spacer"></div>
-      <div class="collapse" id="cards">
-        <pre class="prettyprint">
-    <xmp>
+      <pre class="prettyprint">
+      <xmp>
       <!--Card Container-->
+      // use .horizontal-card for horizontal position
       <div class="card">
         <!--Card image-->
         <div class="card-image">
@@ -536,43 +661,37 @@
       <!--/.Card container-->
     </xmp>
     </pre>
-      </div>
     </div>
     <!--/view code-->
+
   </div>
+  <!--/flex cards-->
 
-
+  <!--NOTIFICATION CARD-->
   <div class="row">
     <div class="col-xs-12">
-      <!--card-->
-      <div class="card horizontal-card">
-        <!--Card image-->
+      <hr>
+      <h6>Notificaton card</h6>
+      <p>Example working with notify.js library</p>
+      <div class="card notification-card warning">
+        <i class="material-icons notification-close">close</i>
         <div class="card-image">
-          
+          <i class="material-icons">error</i>
         </div>
-        <!--/.Card image-->
-        <!--Card content-->
         <div class="card-block">
-          <!--Title-->
-          <h4 class="card-title">Card title</h4>
-          <ul class="card-info">
-            <li><i class="material-icons">create</i> by Woody</li>
-            <li><i class="fa fa-calendar" aria-hidden="true"></i> Today</li>
-          </ul>
-          <!--Text-->
-          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat illum animi, tempora. Exercitationem earum minima impedit officiis sint molestiae.</p>
+          <h6 class="card-title">Notification</h6>
+          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque minima, libero et perspiciatis temporibus veniam tenetur veritatis qui asperiores eos a quisquam optio error, minus cumque doloremque incidunt. Quia, aliquid.</p>
         </div>
-        <!--/.Card content-->
       </div>
-      <!--/card-->
+    </div>
+    <div class="col-xs-12">
+      <button class="btn btn-primary" id="notifyError">Example</button>
     </div>
   </div>
 
 
 
-
-
-  <!--/row cards-->
+  <!--USER cards-->
   <div class="row">
     <div class="col-xs-12">
       <hr>
@@ -641,8 +760,9 @@
     </div>
     <!--/view code-->
   </div>
+  <!--/row user cards-->
 
-  <!--imgae card-->
+  <!--IMAGE card-->
   <div class="row">
     <div class="col-xs-12">
       <hr>
@@ -723,6 +843,46 @@
       </div>
       <!--/image card-->
     </div>
+
+
+    <!--View code-->
+    <div class="col-xs-12">
+      <pre class="prettyprint">
+      <xmp>
+      <!--image card-->
+      <div class="card image-card">
+        <!--Card image-->
+        <div class="card-image">
+          <img class="img-fluid" src="">
+          <div class="img-overlay"></div>
+        </div>
+        <!--Card content-->
+        <div class="card-block">
+          <!--Title-->
+          <h4 class="card-title"><a href="">Card title</a></h4>
+          <!--post info-->
+          <ul class="card-info">
+            ...
+          </ul>
+          <!--Text-->
+          <p class="card-text">...</p>
+          <ul class="card-action-list right">
+            ..
+          </ul>
+          <ul class="card-action-list">
+            <li><span class="label label-small label-warning">HOT</span></li>
+          </ul>
+        </div>
+        <!--/.Card content-->
+        <!--/.Card image-->
+      </div>
+      <!--/image card-->
+      </xmp>
+      </pre>
+    </div>
+    <!--/view code-->
+
+
   </div>
 </div>
     </section>
@@ -888,7 +1048,7 @@
     </div>
   </div>
   <!--row-flexbox-->
-  <div class="row row-flexbox">
+  <div class="row">
     <div class="col-xs-12 col-sm-6 col-md-4">
       <!--Card-->
       <div class="card flex-card price-table blue">
@@ -982,6 +1142,138 @@
     </div>
     <!--/view code-->
   </div>
+
+  <!--FLAT PRICE-->
+  <div class="row">
+    <div class="col-xs-12">
+      <h6>Flat price table</h6>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+      <!--flat price-->
+      <div class="flat-price-table bg-white">
+        <!-- header content-->
+        <div class="header">
+          <h3 class="title">Standard</h3>
+          <h2 class="price">$200</h2>
+        </div>
+        <!--/ header-->
+        <!--content-->
+        <div class="content">
+          <table class="table">
+            <tbody>
+              <tr>
+                <td>5GB disk storage</td>
+                <td>$150</td>
+              </tr>
+              <tr>
+                <td>1GB ram memory</td>
+                <td>$150</td>
+              </tr>
+              <tr>
+                <td>1TB data transfer</td>
+                <td>$150</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!--/content-->
+        <!--footer content-->
+        <div class="footer">
+          <button class="btn outline-primary">Sign Up</button>
+        </div>
+        <!--/footer-->
+      </div>
+      <!--/flat price-->
+    </div>
+    <div class="col-xs-12 col-sm-4">
+      <!--flat price-->
+      <div class="flat-price-table highlighted bg-white">
+        <!-- header content-->
+        <div class="header">
+          <h3 class="title">Proffesional</h3>
+          <h2 class="price">$200</h2>
+        </div>
+        <!--/ header-->
+        <!--content-->
+        <div class="content">
+          <table class="table">
+            <tbody>
+              <tr>
+                <td>5GB disk storage</td>
+                <td>$150</td>
+              </tr>
+              <tr>
+                <td>1GB ram memory</td>
+                <td>$150</td>
+              </tr>
+              <tr>
+                <td>1TB data transfer</td>
+                <td>$150</td>
+              </tr>
+              <tr>
+                <td>1TB data transfer</td>
+                <td>$150</td>
+              </tr>
+              <tr>
+                <td>1TB data transfer</td>
+                <td>$150</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!--/content-->
+        <!--footer content-->
+        <div class="footer">
+          <button class="btn outline-primary">Sign Up</button>
+        </div>
+        <!--/footer-->
+      </div>
+      <!--/flat price-->
+    </div>
+
+    <!--View Code-->
+    <div class="col-xs-12">
+      <div class="spacer"></div>
+      <button class="btn link-default btn-block" type="button" data-toggle="collapse" data-target="#flatpriceTable" aria-expanded="false" aria-controls="flatpriceTable">
+      View Code
+      </button>
+      <div class="spacer"></div>
+      <div class="collapse" id="flatpriceTable">
+        <pre class="prettyprint">
+        <xmp>
+        <!--flat price-->
+        <div class="flat-price-table highlighted bg-white">
+          <!-- header content-->
+          <div class="header">
+            <h3 class="title">..</h3>
+            <h4 class="subtitle">..</h4>
+            <h2 class="price">..</h2>
+          </div>
+          <!--/ header-->
+          <!--content-->
+          <div class="content">
+            <table class="table">
+              <tbody>
+                ....
+              </tbody>
+            </table>
+          </div>
+          <!--/content-->
+          <!--footer content-->
+          <div class="footer">
+            <button class="btn outline-primary">Sign Up</button>
+          </div>
+          <!--/footer-->
+        </div>
+        <!--/flat price-->
+        </xmp>
+        </pre>
+      </div>
+    </div>
+    <!--/view code-->
+
+
+  </div>
 </div>
     </section>
     <!--Service section-->
@@ -989,7 +1281,7 @@
       <div class="container">
   <div class="row">
     <div class="col-xs-12">
-      <h2>Service features</h2>
+      <h2>Features</h2>
       <hr>
     </div>
     <div class="col-xs-12 col-md-3">
@@ -1002,7 +1294,7 @@
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit!</p>
       </div>
     </div>
-    <div class="col-xs-12 col-md-3 gradient-blue-green">
+    <div class="col-xs-12 col-md-3 bg-blue">
       <div class="service">
         <div class="circle-wrapper">
           <i class="fa fa-rocket" aria-hidden="true"></i>
@@ -1144,7 +1436,7 @@
     </section>
     <!--panels section-->
     <section class="index-section" id='panels-section'>
-      <div class="container bg-white">
+      <div class="container">
   <div class="row">
     <div class="col-xs-12">
       <h2>Panels</h2>
@@ -1526,12 +1818,13 @@
 <!-- Footer -->
 
 <!-- JS Libs-->
-<script src="../assets/components/jquery/dist/jquery.min.js"></script>
-<script src="../assets/components/bootstrap-sass/assets/javascripts/bootstrap.js"></script>
+<script type="text/javascript" 
+src="../assets/components/jquery/jquery.min.js"></script>
 <script type="text/javascript" src="../assets/components/moment/min/moment.min.js"></script>
 <script type="text/javascript" src="../assets/components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+<script src="../assets/components/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
-
+<script src="../assets/components/notify/notify.min.js"></script>
 
 <!-- My scripts -->
 <script src="../assets/dist/scripts.min.js"></script>

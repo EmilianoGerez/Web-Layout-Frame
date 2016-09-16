@@ -13,11 +13,12 @@
   <!-- Place favicon.ico in the root directory -->
 
   <!-- CSS Libs-->
-  <!--<link rel="stylesheet" href="../assets/components/bootstrap/dist/css/bootstrap.min.css">-->
+  <!--<link rel="stylesheet" href="../assets/dist/bootstrap.min.css">-->
   <link rel="stylesheet" href="../assets/components/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" href="../assets/components/animate.css/animate.min.css">
   <link rel="stylesheet" href="../assets/components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
   <link rel="stylesheet" href="https://cdn.rawgit.com/google/code-prettify/master/styles/desert.css">
+  <link rel="stylesheet" type="" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 
 
   <!-- Fonts -->
@@ -29,7 +30,10 @@
   
   <!-- Custom CSS Styles-->
   <!-- files for development environment -->
+  <link rel="stylesheet" href="../assets/components/flexboxgrid/dist/flexboxgrid.min.css">
   <link rel="stylesheet" href="../assets/css/styles.css">
+
+  
 
   <!-- Activate on production (after run gulp build), all css files on gulp-path[cssbuild] are concat and minify -->
   <!--<link rel="stylesheet" href="../assets/dist/styles.min.css">-->
@@ -40,64 +44,62 @@
 
 <!-- Page content -->
 
-<div class="form-wrapper">
-  <div class="container-fluid">
-    <div class="row-fluid">
-      <div class="col-xs-12 col-sm-8 col-md-6 vcenter">
-        <div class="card">
-          <div class="card-block">
-            <form>
-              <h3 class="text-center">Signup</h3>
-              <hr>
-              <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" class="mt-control" id="exampleInputEmail1" placeholder="Email">
-              </div>
-              <div class="form-mt-group">
-                <label for="">Date</label>
-                <div class='input-group date' id='datetimepicker1'>
-                  <span class="input-group-addon">
+<div class="container-fluid container-full">
+  <div class="row center-xs middle-xs">
+    <div class="col-xs-12 col-sm-8 col-md-6">
+      <div class="card">
+        <div class="card-block">
+          <form>
+            <h3 class="text-center">Signup</h3>
+            <hr>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" class="mt-control" id="exampleInputEmail1" placeholder="Email">
+            </div>
+            <div class="form-mt-group">
+              <label for="">Date</label>
+              <div class='input-group date' id='datetimepicker1'>
+                <span class="input-group-addon">
                         <i class="fa fa-calendar" aria-hidden="true"></i>
                   </span>
-                  <input type='text' class="mt-control" />
-                </div>
+                <input type='text' class="mt-control" />
               </div>
-              <div class="form-group">
-                <label for="">About you</label>
-                <textarea class="mt-control" rows="3"></textarea>
-              </div>
-              <div class="form-group">
-                <label for="">City</label>
-                <select class="mt-control">
+            </div>
+            <div class="form-group">
+              <label for="">About you</label>
+              <textarea class="mt-control" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+              <label for="">City</label>
+              <select class="mt-control">
                   <option>Atlanta</option>
                   <option>New York</option>
                   <option>New Jersey</option>
                 </select>
-              </div>
+            </div>
 
-              <div class="form-group">
-                <label for="radio">Sex type</label>
-                <label class="control control--radio">Male
+            <div class="form-group">
+              <label for="radio">Sex type</label>
+              <label class="control control--radio">Male
                   <input type="radio" name="radio" checked="checked"/>
                   <div class="control__indicator"></div>
                 </label>
-                <label class="control control--radio">Female
+              <label class="control control--radio">Female
                   <input type="radio" name="radio"/>
                   <div class="control__indicator"></div>
                 </label>
-              </div>
+            </div>
 
-              <div class="form-group">
-                <label for="terms">Terms & Conditions</label>
-                <label class="control control--checkbox">I Agree
+            <div class="form-group">
+              <label for="terms">Terms & Conditions</label>
+              <label class="control control--checkbox">I Agree
                   <input type="checkbox" checked="checked"/>
                   <div class="control__indicator"></div>
                 </label>
-              </div>
+            </div>
 
-              <button type="submit" class="btn material-primary btn-block">Submit</button>
-            </form>
-          </div>
+            <button type="submit" class="btn material-primary btn-block">Submit</button>
+          </form>
         </div>
       </div>
     </div>
@@ -109,12 +111,13 @@
 <!-- Footer -->
 
 <!-- JS Libs-->
-<script src="../assets/components/jquery/dist/jquery.min.js"></script>
-<script src="../assets/components/bootstrap-sass/assets/javascripts/bootstrap.js"></script>
+<script type="text/javascript" 
+src="../assets/components/jquery/jquery.min.js"></script>
 <script type="text/javascript" src="../assets/components/moment/min/moment.min.js"></script>
 <script type="text/javascript" src="../assets/components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+<script src="../assets/components/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
-
+<script src="../assets/components/notify/notify.min.js"></script>
 
 <!-- My scripts -->
 <script src="../assets/dist/scripts.min.js"></script>

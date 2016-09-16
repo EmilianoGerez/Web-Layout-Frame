@@ -1,0 +1,371 @@
+// global style
+.btn {
+  border-radius: 2px;
+  font-size: 0.9rem;
+  padding: 6px 1.2rem;
+  transition: (all .2s cubic-bezier(.25, .8, .25, 1));
+}
+
+// sizes
+.btn-lg {
+  padding: 0.6rem 2rem;
+  font-size: 1.1rem;
+}
+
+.btn-sm {
+  padding: 4px 0.9rem;
+  font-size: 0.85rem;
+}
+
+.btn-xs {
+  padding: 2px 8px;
+  font-size: 0.85rem;
+}
+
+// rounded class
+.btn.pill {
+  border-radius: 50px;
+}
+
+// default overwrite
+.btn-default {
+  background-color: $color-grey-100;
+  color: $gray;
+  border-color: $color-grey-300;
+  &:hover,
+  &:active,
+  &:focus {
+    color: $gray;
+    background-color: $color-grey-300;
+    border-color: $color-grey-300;
+  }
+}
+
+// Outlines Buttons
+.btn.outline-default {
+  @include btn-outline($gray, $gray-lighter);
+  &:hover,
+  &:active,
+  &:focus {
+    color: $gray;
+  }
+}
+
+.btn.outline-primary {
+  @include btn-outline($brand-primary, $brand-primary);
+}
+
+.btn.outline-info {
+  @include btn-outline($brand-info, $brand-info);
+}
+
+.btn.outline-success {
+  @include btn-outline($brand-success, $brand-success);
+}
+
+.btn.outline-warning {
+  @include btn-outline($brand-warning, $brand-warning);
+}
+
+.btn.outline-danger {
+  @include btn-outline($brand-danger, $brand-danger);
+}
+
+.btn.outline-white {
+  @include btn-outline(#fff, rgba(255, 255, 255, 0.1));
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+// Rounded Buttons
+.btn.rounded-facebook {
+  @include btn-rounded($facebook-color, #fff);
+}
+
+.btn.rounded-twitter {
+  @include btn-rounded($twitter-color, #fff);
+}
+
+.btn.rounded-linkedin {
+  @include btn-rounded($linkedin-color, #fff);
+}
+
+.btn.rounded-yahoo {
+  @include btn-rounded($yahoo-color, #fff);
+}
+
+.btn.rounded-instagram {
+  @include btn-rounded($instag-color, #fff);
+}
+
+.btn.rounded-skype {
+  @include btn-rounded($skype-color, #fff);
+}
+
+.btn.rounded-gplus {
+  @include btn-rounded($gplus-color, #fff);
+}
+
+.btn.rounded-pinterest {
+  @include btn-rounded($pinterest-color, #fff);
+}
+
+.btn.rounded-youtube {
+  @include btn-rounded($youtube-color, #fff);
+}
+
+.btn.rounded-wapp {
+  @include btn-rounded($wapp-color, #fff);
+}
+
+// Rounded Outline Buttons
+.btn.rounded-outline-facebook {
+  @include btn-rounded($facebook-color, $facebook-color, true);
+}
+
+.btn.rounded-outline-twitter {
+  @include btn-rounded($twitter-color, $twitter-color, true);
+}
+
+.btn.rounded-outline-linkedin {
+  @include btn-rounded($linkedin-color, $linkedin-color, true);
+}
+
+.btn.rounded-outline-yahoo {
+  @include btn-rounded($yahoo-color, $yahoo-color, true);
+}
+
+.btn.rounded-outline-instagram {
+  @include btn-rounded($instag-color, $instag-color, true);
+}
+
+.btn.rounded-outline-skype {
+  @include btn-rounded($skype-color, $skype-color, true);
+}
+
+.btn.rounded-outline-gplus {
+  @include btn-rounded($gplus-color, $gplus-color, true);
+}
+
+.btn.rounded-outline-pinterest {
+  @include btn-rounded($pinterest-color, $pinterest-color, true);
+}
+
+.btn.rounded-outline-youtube {
+  @include btn-rounded($youtube-color, $youtube-color, true);
+}
+
+.btn.rounded-outline-wapp {
+  @include btn-rounded($wapp-color, $wapp-color, true);
+}
+
+// Link Buttons
+.btn.link-default {
+  @include btn-link($gray, $gray-lighter);
+  &:hover,
+  &:active,
+  &:focus {
+    color: $gray;
+  }
+}
+
+.btn.link-primary {
+  @include btn-link($brand-primary, $brand-primary);
+}
+
+.btn.link-info {
+  @include btn-link($brand-info, $brand-info);
+}
+
+.btn.link-success {
+  @include btn-link($brand-success, $brand-success);
+}
+
+.btn.link-warning {
+  @include btn-link($brand-warning, $brand-warning);
+}
+
+.btn.link-danger {
+  @include btn-link($brand-danger, $brand-danger);
+}
+
+// Material buttons
+.btn.material-default {
+  @include btn-material(#FFF);
+  color: $gray;
+  &:hover,
+  &:active,
+  &:focus {
+    color: $gray;
+  }
+}
+
+.btn.material-info {
+  @include btn-material($brand-info);
+}
+
+.btn.material-warning {
+  @include btn-material($brand-warning);
+}
+
+.btn.material-danger {
+  @include btn-material($brand-danger);
+}
+
+.btn.btn.material-success {
+  @include btn-material($brand-success);
+}
+
+.btn.material-primary {
+  @include btn-material($brand-primary);
+}
+
+// Rounded button
+////////////////////
+.floating-default {
+  @include floating-button($gray-lighter, 50px);
+  &> i {
+    color: $gray;
+  }
+}
+
+.floating-primary {
+  @include floating-button($brand-primary, 50px);
+}
+
+.floating-info {
+  @include floating-button($brand-info, 50px);
+}
+
+.floating-warning {
+  @include floating-button($brand-warning, 50px);
+}
+
+.floating-danger {
+  @include floating-button($brand-danger, 50px);
+}
+
+.floating-success {
+  @include floating-button($brand-success, 50px);
+}
+
+// Floating button
+.floating-list,
+.floating-list-hover {
+  width: 60px;
+  @include floating-button($color-red-500, 60px);
+  &>i {
+    @extend %mt-shadow-2;
+    &:hover {
+      @extend %mt-shadow-2-hover;
+    }
+  }
+  ul {
+    padding: 50px 10px 0 10px;
+    margin: 0;
+    position: absolute;
+    z-index: 1000;
+    bottom: 62px;
+    display: none;
+    list-style: none;
+    overflow: hidden;
+    li {
+      padding-bottom: 15px;
+    }
+    a {
+      text-decoration: none;
+      color: $gray-dark;
+      text-shadow: 0 2px 5px rgba(0, 0, 0, .35);
+      i {
+        padding-left: 0.6rem;
+        padding-right: 0.6rem;
+        text-align: center;
+        width: 40px;
+        line-height: 40px;
+        background-color: $color-red-500;
+        border-radius: 50%;
+        font-size: 0.9rem;
+        color: #fff;
+        text-shadow: none;
+        @extend %mt-shadow-2;
+      }
+      &:hover,
+      &:active,
+      {
+        i {
+          cursor: pointer;
+          @extend %mt-shadow-2-hover;
+          transform: translate3d(0, -2px, 0);
+        }
+      }
+    }
+    &:hover,
+    &.open {
+      display: block;
+      li:nth-child(1) {
+        animation: zoomInUp 1.25s;
+      }
+      li:nth-child(2) {
+        animation: zoomInUp 1s;
+      }
+      li:nth-child(3) {
+        animation: zoomInUp 0.75s;
+      }
+      li:nth-child(4) {
+        animation: zoomInUp .5s;
+      }
+    }
+  }
+  // variants
+  &.fixed-bottom-right {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+  }
+  &.fixed-bottom-left {
+    position: fixed;
+    bottom: 40px;
+    left: 40px;
+  }
+  &.horizontal {
+    ul {
+      width: 300px;
+      padding: 10px 50px 10px 0px;
+      bottom: -10px;
+      left: 60px;
+      li {
+        float: left;
+        padding: 0;
+        padding-left: 15px;
+        a {
+          line-height: 60px;
+        }
+      }
+    }
+    &:hover ul,
+    & ul.open {
+      display: block;
+      li:nth-child(4) {
+        animation: zoomInLeft 1.25s;
+      }
+      li:nth-child(3) {
+        animation: zoomInLeft 1s;
+      }
+      li:nth-child(2) {
+        animation: zoomInLeft 0.75s;
+      }
+      li:nth-child(1) {
+        animation: zoomInLeft .5s;
+      }
+    }
+  }
+}
+
+// disable hover effect
+.floating-btn {
+  &:hover ul {
+    display: none;
+  }
+  &:hover ul.open {
+    display: initial;
+  }
+}

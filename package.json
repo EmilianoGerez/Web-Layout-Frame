@@ -12,7 +12,7 @@
     "browser-sync": "^2.12.5",
     "connect-history-api-fallback": "^1.2.0",
     "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^3.1.0",
+    "gulp-autoprefixer": "^3.1.1",
     "gulp-concat": "^2.6.0",
     "gulp-data": "^1.2.1",
     "gulp-jshint": "^2.0.1",

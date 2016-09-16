@@ -17,8 +17,10 @@
   "dependencies": {
     "font-awesome": "fontawesome#^4.6.3",
     "animate.css": "^3.5.2",
-    "bourbon": "^4.2.7",
-    "bootstrap-sass": "^3.3.6",
-    "eonasdan-bootstrap-datetimepicker": "^4.17.37"
+    "eonasdan-bootstrap-datetimepicker": "^4.17.37",
+    "flexboxgrid": "^6.3.2",
+    "bootstrap": "^3.3.7",
+    "jquery": "1.9.1",
+    "bootstrap-sass": "^3.3.7"
   }
 }

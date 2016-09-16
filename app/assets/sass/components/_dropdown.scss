@@ -1,0 +1,114 @@
+.mt-dropdown {
+  button {
+    background: transparent;
+    color: rgba(0, 0, 0, .5);
+    width: 30px;
+    height: 30px;
+    vertical-align: top;
+    i {
+      font-size: 22px;
+    }
+  }
+  .dropdown-menu {
+    z-index: 1009;
+    background-color: #fff;
+    padding: 15px 0;
+    margin: 0;
+    border: 1px solid $color-grey-300;
+    border-radius: 2px;
+    top: 115%;
+    min-width: 200px;
+    @extend %mt-shadow-2;
+    // open position
+    left: inherit;
+    right: -20px;
+    li {
+      padding: 0 15px;
+      @extend .ellipsis;
+      a {
+        line-height: 45px;
+        font-size: 0.85rem;
+        padding: 0 5px;
+        color: $color-grey-600;
+        // border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        i {
+          vertical-align: middle;
+          font-size: 24px;
+          width: 30px;
+          margin-right: 10px;
+        }
+        &:hover {
+          background: transparent;
+          color: $color-grey-800;
+        }
+      }
+      &:hover {
+        background: $color-grey-100;
+      }
+    }
+    &.open-right {
+      left: -20px;
+      right: inherit;
+      .arrow-up {
+        @include triangle-arrow(10px, #fff, -8px, inherit, inherit, 24px);
+      }
+    }
+    .arrow-up {
+      @include triangle-arrow(10px, #fff, -8px, 24px, inherit, inherit);
+    }
+  }
+  .dropdown-menu.mt-menu {
+    width: 310px;
+    padding: 24px;
+    li {
+      display: inline-block;
+      width: 84px;
+      text-align: center;
+      padding: 10px 2px;
+      border: 1px solid transparent;
+      border-radius: 2px;
+      a {
+        height: 85px;
+        padding: 0;
+        font-size: 12px;
+        border: none;
+        line-height: inherit;
+        i {
+          display: block;
+          margin: 0 auto;
+          font-size: 38px;
+          width: 64px;
+          height: 64px;
+          line-height: 64px;
+        }
+        &:hover {
+          background: transparent;
+        }
+      }
+      &:hover {
+        background: transparent;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+      }
+    }
+  }
+}
+
+@media (max-width: $screen-xs) {
+  .mt-dropdown {
+    .dropdown-menu {
+      @include center-block;
+      .arrow-up-right,
+      .arrow-up-left {
+        display: none;
+      }
+      &.open-bottom-right {
+        left: 50%;
+        right: inherit;
+      }
+    }
+    .dropdown-menu.mt-menu {
+      width: 290px;
+      padding: 14px;
+    }
+  }
+}

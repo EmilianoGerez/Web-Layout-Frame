@@ -1,6 +1,9 @@
 /*=========================================
     BOOTSTRAP FORM/INPUTS
 =========================================*/
+form {
+  text-align: left;
+}
 .form-group, .form-mt-group {
   label {
     font-size: 0.9rem;
@@ -57,73 +60,6 @@ textarea.mt-control {
   width: 100%;
 }
 
-
-/*=========================================
-    LOGIN/SIGNUP FORM
-=========================================*/
-
-.form-wrapper {
-  background: $body-bg;
-  /* fallback for old browsers */
-  // @include linear-gradient(45deg, #FF8F00, #E64A19);
-  @include animation(change-bg 20s linear infinite);
-  @keyframes change-bg {
-    0% {
-      @include linear-gradient(90deg, #C62828, #FF9800);
-    }
-    25% {
-      @include linear-gradient(90deg, #6A1B9A, #E91E63);
-    }
-    50% {
-      @include linear-gradient(90deg, #303F9F, #2196F3);
-    }
-    75% {
-      @include linear-gradient(90deg, #00695C, #4CAF50);
-    }
-    100% {
-      @include linear-gradient(90deg, #33691E, #CDDC39);
-    }
-  }
-  height: 100%;
-  .container-fluid {
-    height: 100%;
-    display: table;
-    width: 100%;
-    padding: 0;
-  }
-  .row-fluid {
-    height: 100%;
-    display: table-cell;
-    vertical-align: middle;
-  }
-  .vcenter {
-    float: none;
-    margin: 0 auto;
-  }
-  form {
-    padding: 1rem;
-    // @include prefixer(box-shadow, 0 1px 4px rgba(0, 0, 0, 0.23), webkit moz spec);
-    h3 {
-      margin-top: 0;
-    }
-    .user-avatar {
-      font-size: 80px;
-      i {
-        background-color: $gray-lighter;
-        color: $gray-light;
-        height: 100px;
-        width: 100px;
-        border-radius: 50%;
-        overflow: hidden;
-      }
-      .fa {
-        padding-top: 25px;
-      }
-    }
-  }
-}
-
-
 /*=========================================
     Radio / Checkbox
     Credits: https://codepen.io/KenanYusuf/pen/PZKEKd
@@ -135,7 +71,7 @@ textarea.mt-control {
   background: #fff;
   text-align: left;
   //box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-  @include prefixer(box-shadow, 0 1px 2px rgba(0, 0, 0, 0.1), webkit moz spec);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   padding: 30px;
   width: 200px;
   height: 210px;

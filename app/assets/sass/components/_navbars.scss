@@ -1,0 +1,364 @@
+.navbar,
+.navbar-default,
+.navbar-inverse {
+  border-radius: 0;
+  border: inherit;
+}
+
+.navbar-custom {
+  margin-bottom: 0;
+  @include easeOutQuint(all, 0.7s);
+  background-color: $color-bgrey-900;
+  .navbar-nav {
+    &> .active> a {
+      background-color: transparent;
+      color: $brand-primary;
+      font-weight: 400;
+    }
+    &> li> a {
+      padding: 0 10px;
+      margin: 0;
+      line-height: 60px;
+      font-family: Roboto, Helvetica;
+      font-weight: 300;
+      color: $gray-lighter;
+      &:hover,
+      &:focus {
+        background-color: transparent;
+        color: $brand-primary;
+      }
+    }
+    li> button {
+      margin: 11px 8px;
+      line-height: 24px;
+    }
+    .open> a {
+      background-color: transparent;
+      &:hover,
+      &:focus {
+        background-color: transparent;
+      }
+    }
+  }
+  .navbar-brand {
+    padding: 0 10px;
+    margin: 0;
+    min-width: 230px;
+    line-height: 60px;
+    font-family: Roboto, Helvetica;
+    font-weight: 300;
+    text-align: center;
+    color: $gray-lighter;
+    transition: (all 0.3s linear);
+  }
+  .btn-toggle {
+    position: relative;
+    float: right;
+    background-color: transparent;
+    background-image: none;
+    margin: 0;
+    padding: 0 15px;
+    border: none;
+    color: $gray-light;
+    @include easeOutQuint(all, 0.7s);
+    &:hover,
+    &:focus {
+      background-color: transparent;
+      outline: none;
+    }
+    i {
+      line-height: 60px;
+      font-size: 38px;
+    }
+    i:first-child {
+      display: initial;
+    }
+    i:last-child {
+      display: none;
+    }
+  }
+  .btn-toggle.toggled {
+    @include easeOutQuint(all, 0.7s);
+    transform: translateX(-250px);
+    i:first-child {
+      display: none;
+    }
+    i:last-child {
+      display: initial;
+    }
+  }
+}
+
+.navbar-transparent {
+  @include easeOutQuint(all, 0.7s);
+  padding-top: 15px;
+  background-color: rgba(0, 0, 0, 0);
+  .navbar-brand {
+    font-size: 1.3rem;
+  }
+  .navbar-nav {
+    &> .active> a {
+      border-bottom: 0;
+    }
+    &> li> a {
+      line-height: 60px;
+      color: $gray-lighter;
+    }
+  }
+}
+
+@media (max-width: $screen-sm) {
+  .navbar-custom,
+  .navbar-transparent {
+    background-color: $color-bgrey-900;
+    .navbar-brand {
+      min-width: 0;
+    }
+  }
+  //=============================
+  //  MOBILE SIDEBAR
+  .mobile-sidebar .navbar-sidebar {
+    position: fixed;
+    z-index: 1999;
+    top: 0;
+    right: 0;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    margin: 0;
+    width: 0;
+    background-color: $color-bgrey-900;
+    @include easeOutQuint(all, 0.7s);
+    .sidebar-nav {
+      @include sidebar-template;
+    }
+    .navbar-nav {
+      @include sidebar-template;
+      margin: 10px 0;
+      li {
+        &.active {
+          &>a {
+            color: $brand-primary;
+          }
+        }
+        a {
+          display: block;
+          padding: 0;
+          padding-left: 15px;
+          line-height: 48px;
+          //height: 50px;
+        }
+        button {
+          margin: 11px 0;
+        }
+      }
+    }
+  }
+  .mobile-sidebar.toggled {
+    .container-fluid {
+      position: fixed;
+      top: 0;
+      z-index: 1099;
+      height: 100%;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.7);
+    }
+    .navbar-brand {
+      pointer-events: none;
+      cursor: default;
+      opacity: 0.1;
+    }
+    .navbar-sidebar {
+      width: 250px;
+    }
+  }
+}
+
+@media (min-width: $screen-sm) {
+  nav .btn-toggle {
+    display: none;
+  }
+}
+
+//=============================
+//  NAVBAR COLORS
+.navbar-teal {
+  @include navbar-color($color-teal-500, $color-teal-800);
+}
+
+
+/*======================================
+SIDEBAR
+======================================*/
+
+#main-wrapper.toggled {
+  padding-left: 250px;
+  #sidebar-wrapper {
+    left: 250px;
+  }
+  #page-content-wrapper {
+    .container {
+      width: auto;
+      padding: 0 30px;
+    }
+    .btn-toggle-sidebar {
+      left: 250px;
+      i:first-child {
+        display: none;
+      }
+      i:last-child {
+        display: initial;
+      }
+    }
+  }
+}
+
+@media (max-width: $screen-sm) {
+  #main-wrapper.toggled {
+    padding-left: 0;
+    .wrapper-overlay {
+      position: fixed;
+      top: 0;
+      z-index: 1099;
+      height: 100%;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.7);
+    }
+  }
+  .admin-wrapper {
+    #page-content-wrapper .notification-bar .navbar-nav {
+      float: right !important;
+      .dropdown .dropdown-menu {
+        position: absolute;
+        left: auto;
+        right: 0;
+        background-color: #fff;
+        border: 1px solid rgba(0, 0, 0, 0.15);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+      }
+    }
+  }
+}
+
+#sidebar-wrapper {
+  @include easeOutQuint(all, 0.7s);
+  position: fixed;
+  height: 100%;
+  left: 0;
+  //width: 0;
+  width: 250px;
+  margin: 0;
+  padding: 0;
+  margin-left: -250px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  z-index: 1999;
+  background-color: $color-teal-500;
+  .sidebar-nav {
+    @include sidebar-template;
+  }
+}
+
+// Admin Page Sidebar
+#sidebar-wrapper.bg-admin {
+  background-color: $db-primary;
+  color: $gray-light;
+  .sidebar-nav {
+    li {
+      a {
+        color: $gray-light;
+        &:hover {
+          color: $gray-lighter;
+        }
+        &:before {
+          background-color: rgba(0, 0, 0, 0.2);
+        }
+      }
+      &.active {
+        background-color: $color-teal-500;
+        &:hover {
+          color: $gray-lighter;
+        }
+        &>a {
+          color: $gray-lighter;
+        }
+      }
+    }
+    .sidebar-dropdown {
+      &.active {
+        background-color: transparent;
+      }
+      .sidebar-dropdown-menu {
+        li {
+          &.active:hover {
+            color: $gray-lighter;
+          }
+          &:hover {
+            color: $color-teal-500;
+          }
+        }
+      }
+    }
+  }
+}
+
+#page-content-wrapper {
+  padding-top: 50px;
+  width: 100%;
+  .btn-toggle-sidebar {
+    text-decoration: none;
+    position: fixed;
+    z-index: 1999;
+    width: auto;
+    font-size: 32px;
+    padding: 0 15px;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .4);
+    // transition: (left 0.5s ease-in-out);
+    @include easeOutQuint(left, 0.7s);
+    color: rgba(255, 255, 255, 0.7);
+    &:hover {
+      color: rgba(255, 255, 255, 0.8);
+    }
+    i {
+      font-size: 38px;
+      line-height: 64px;
+    }
+    i:first-child {
+      display: initial;
+    }
+    i:last-child {
+      display: none;
+    }
+    &.darker {
+      color: rgba(0, 0, 0, 0.5);
+      &:hover {
+        color: rgba(0, 0, 0, 0.65);
+      }
+    }
+  }
+}
+
+.admin-wrapper {
+  #page-content-wrapper {
+    padding-top: 0;
+    .notification-bar {
+      height: 64px;
+      padding: 0 20px 0 60px;
+      margin-bottom: 30px;
+      .navbar-nav {
+        margin: 0;
+        &>li {
+          display: inline-block;
+          height: 64px;
+          &>a {
+            line-height: 44px;
+            padding: 10px 15px;
+            color: $gray;
+          }
+        }
+      }
+    }
+  }
+}

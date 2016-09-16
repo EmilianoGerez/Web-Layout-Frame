@@ -2,9 +2,10 @@
     GENERALS
 ======================================*/
 
+// set font-size for use scale in "rem" 
 html,
 body {
-  font-size: $font-size-base;
+  font-size: 14px;
   height: 100% !important;
 }
 
@@ -22,6 +23,55 @@ body {
   }
 }
 
+// Overwrite Boostrap grid [for use flexboxgrid]
+div[class*='col-'] {
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 15px;
+}
+
+.row[class*='center-'], .row[class*='end-'] {
+  text-align: left;
+}
+
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.container,
+.container-fluid {
+  &.container-full {
+    height: 100%;
+    .row {
+      height: 100%;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+// @media (min-width: 768px) {
+//   .container {
+//     width: 750px;
+//   }
+// }
+// @media (min-width: 992px) {
+//   .container {
+//     width: 970px;
+//   }
+// }
+// @media (min-width: 1200px) {
+//   .container {
+//     width: 1170px;
+//   }
+// }
 footer {
   color: #fff;
   padding: 2.5rem 0;
@@ -47,8 +97,8 @@ h6 {
 
 hr {
   margin: 15px 0;
-  border-top: 1px solid rgba(0,0,0,0.1);
-  box-shadow: 0 2px 2px rgba(255,255,255,0.1);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 2px rgba(255, 255, 255, 0.1);
 }
 
 small {
@@ -66,10 +116,7 @@ ul.indent {
 }
 
 input,
-button,
-button:active,
-button:focus,
-button:active:focus {
+button {
   border: none;
   outline: none;
   box-shadow: none;
@@ -79,7 +126,7 @@ button:active:focus {
 .btn:active:focus,
 .btn:focus {
   outline: none;
-  //border: none;
+  box-shadow: none;
 }
 
 // material icons
@@ -88,6 +135,7 @@ button:active:focus {
   font-size: inherit;
   vertical-align: middle;
 }
+
 .btn .material-icons {
   vertical-align: top;
 }

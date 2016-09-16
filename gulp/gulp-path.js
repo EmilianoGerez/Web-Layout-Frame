@@ -6,7 +6,7 @@ module.exports = {
     docstemplateDir: './docs/templates',
     docstemplateFiles: './docs/templates/**/*.html',
     outputDir: './app',
-    sassFiles: './app/assets/sass/**.scss',
+    sassFiles: './app/assets/sass/**/*.scss',
     sassInput: './app/assets/sass/styles.scss',
     cssDir: './app/assets/css',
     assetsDist: './app/assets/dist',
