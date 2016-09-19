@@ -4,13 +4,19 @@
 
 // Bootstrap
 @import "variables";
-@import "../components/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "../../../app/assets/components/bootstrap-sass/assets/stylesheets/bootstrap";
+
+// Material colors lib
+@import '../../../app/assets/components/material-color/material-color';
 
 // Mixins, Functions, Helpers
 @import 'helpers';
 
 // My Colors palette
 @import 'colors';
+
+// Typo and Font styles
+@import "font";
 
 // My components
 @import "components";
@@ -20,6 +26,3 @@
 
 // Generals styles
 @import "generals";
-
-// Example styles (remove this)
-@import "example";

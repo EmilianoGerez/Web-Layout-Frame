@@ -95,7 +95,7 @@
     }
     .card-text {
       margin: 0;
-      color: $color-grey-600;
+      color: $clr-grey-600;
       font-size: 0.9rem;
     }
     .card-info {
@@ -132,7 +132,7 @@
       padding-right: 10px;
       display: inline-block;
       font-size: 0.8rem;
-      color: $color-grey-600;
+      color: $clr-grey-600;
       margin-right: 5px;
       &.rounded {
         background-color: rgba(0, 0, 0, .05);
@@ -144,7 +144,7 @@
       //text-decoration: none;
       display: block;
       font-size: 0.8rem;
-      color: $color-grey-600;
+      color: $clr-grey-600;
     }
     i {
       font-size: 0.9rem;
@@ -157,19 +157,19 @@
 
 // Card Styles
 .card.card-teal {
-  @include card-color($color-teal-500);
+  @include card-color($clr-teal-500);
 }
 
 .card.card-blue {
-  @include card-color($color-blue-500);
+  @include card-color($clr-blue-500);
 }
 
 .card.card-orange {
-  @include card-color($color-orange-500);
+  @include card-color($clr-orange-500);
 }
 
 .card.card-red {
-  @include card-color($color-red-500);
+  @include card-color($clr-red-500);
 }
 
 //==========================
@@ -234,11 +234,11 @@
     width: 20px;
     line-height: 20px;
     z-index: 1010;
-    color: $color-grey-500;
+    color: $clr-grey-500;
     text-align: center;
     &:hover {
       cursor: pointer;
-      color: $color-grey-800;
+      color: $clr-grey-800;
     }
   }
   .card-image {
@@ -333,7 +333,7 @@
   .card-header {
     overflow: hidden;
     height: 150px;
-    background-color: $color-teal-500;
+    background-color: $clr-teal-500;
   }
   .avatar {
     border-radius: 50%;
@@ -374,7 +374,7 @@
     background-color: transparent;
     color: #fff;
     .card-info li {
-      color: $color-grey-500;
+      color: $clr-grey-500;
     }
     .card-text {
       margin-bottom: 15px;
@@ -387,13 +387,13 @@
     }
     .card-action-list {
       li {
-        color: $color-grey-500;
+        color: $clr-grey-500;
         &.rounded {
           background-color: rgba(0, 0, 0, .25);
         }
       }
       a {
-        color: $color-grey-500;
+        color: $clr-grey-500;
       }
     }
   }
@@ -409,7 +409,7 @@
     font-size: 1.5rem;
     color: #fff;
     border-radius: 2px 2px 0 0;
-    background-color: $color-teal-500;
+    background-color: $clr-teal-500;
   }
   .card-price {
     border-radius: 50%;
@@ -421,7 +421,7 @@
     overflow: hidden;
     text-align: center;
     border: 4px $gray-lighter solid;
-    background-color: $color-teal-500;
+    background-color: $clr-teal-500;
     font-size: 2.2rem;
     font-weight: 300;
     color: #fff;
@@ -432,7 +432,7 @@
     p {
       margin: 0;
       padding: 10px;
-      border-bottom: 1px solid $color-grey-500;
+      border-bottom: 1px solid $clr-grey-500;
       color: #000;
     }
   }
@@ -450,6 +450,6 @@
 .price-table.blue {
   .card-header,
   .card-price {
-    background-color: $color-blue-500;
+    background-color: $clr-blue-500;
   }
 }

@@ -1,7 +1,7 @@
-section.parallax, div.parallax {
+section.parallax,
+div.parallax {
   position: relative;
-  height: 600px;
-  margin-top: -70px;
+  height: 400px;
   background-position: 100% auto;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -14,10 +14,14 @@ section.parallax, div.parallax {
     bottom: 0;
     left: 0;
     right: 0;
-    width: 80%;
-    height: 70%;
+    // width: 80%;
+    // height: 70%;
+    height: 100%;
     margin: auto;
     text-align: center;
+    .row {
+      height: 100%;
+    }
     .header {
       font-size: 3rem;
       color: rgba(255, 255, 255, 0.9);
@@ -40,11 +44,22 @@ section.parallax, div.parallax {
   .filter-black {
     height: 100%;
     width: 100%;
-    background-color: rgba(0, 0, 0, .65);
+    background-color: rgba(0, 0, 0, .45);
   }
   .soft-filter-black {
     height: 100%;
     width: 100%;
     background-color: rgba(0, 0, 0, .25);
   }
+  .hard-filter-black {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, .75);
+  }
+}
+
+section.parallax.header,
+div.parallax.header {
+  height: 600px;
+  margin-top: -70px;
 }

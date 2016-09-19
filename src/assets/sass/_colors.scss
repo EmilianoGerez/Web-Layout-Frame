@@ -1,0 +1,101 @@
+// Admin Dashboard
+///////////////////////////
+$db-primary: #2c3e50;
+$db-primary-light: #34495e;
+// Background colors
+///////////////////////////
+.bg-white {
+  background-color: #fff !important;
+}
+
+.bg-teal {
+  @include bg-color($clr-teal-500);
+}
+
+.bg-red {
+  @include bg-color($clr-red-500);
+}
+
+.bg-orange {
+  @include bg-color($clr-orange-500);
+}
+
+.bg-blue {
+  @include bg-color($clr-blue-500);
+}
+
+.bg-bgrey-800 {
+  @include bg-color($clr-blue-grey-800);
+}
+
+// Gradients colors
+///////////////////////////
+.gradient-blue-grey {
+  background: linear-gradient(90deg, $clr-blue-grey-500, $clr-blue-grey-900);
+}
+// Overlay colors
+///////////////////////////
+.black-overlay {
+  @include color-overlay(0.65, #000);
+}
+
+.blue-overlay {
+  @include color-overlay(0.5, $clr-blue-500);
+}
+
+.purple-gradient-overlay {
+  @include color-overlay(0.5, $clr-purple-500, $clr-blue-500, 135deg);
+}
+
+// Social colors
+///////////////////////////
+$facebook-color: #3b5999;
+$twitter-color: #55acee;
+$linkedin-color: #0077B5;
+$yahoo-color:#410093;
+$instag-color:#3f729b;
+$skype-color:#00AFF0;
+$gplus-color:#dd4b39;
+$pinterest-color:#bd081c;
+$youtube-color:#cd201f;
+$wapp-color:#25D366;
+
+.fb-color {
+  color: #3b5999;
+}
+
+.twitter-color {
+  color: #55acee;
+}
+
+.linkedin-color {
+  color: #0077B5;
+}
+
+.yahoo-color {
+  color: #410093;
+}
+
+.instag-color {
+  color: #3f729b;
+}
+
+.skype-color {
+  color: #00AFF0;
+}
+
+.gplus-color {
+  color: #dd4b39;
+}
+
+.pinterest-color {
+  color: #bd081c;
+}
+
+.youtube-color {
+  color: #cd201f;
+}
+
+.wapp-color {
+  color: #25D366;
+}

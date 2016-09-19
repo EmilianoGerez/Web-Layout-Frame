@@ -1,0 +1,136 @@
+/*======================================
+    Embed Font
+======================================*/
+
+@import 'https://fonts.googleapis.com/css?family=Lato';
+@import 'https://fonts.googleapis.com/css?family=Playball';
+
+/*======================================
+    FONT CLASS
+======================================*/
+
+.font-lato {
+  font-family: 'Lato', 'Roboto', Helvetica, sans-serif !important;
+}
+.font-lato-light {
+  font-family: 'Lato', 'Roboto', Helvetica, sans-serif !important;
+  font-weight: 300;
+}
+
+.font-playball {
+  font-family: 'Playball', 'Roboto', Helvetica, sans-serif !important;
+}
+
+/*======================================
+    FONT COLOR
+======================================*/
+.font-white {
+  color: #fff !important;
+}
+
+/*======================================
+    FONT SIZE
+======================================*/
+.font-2x {
+  font-size: 2rem !important;
+}
+.font-3x {
+  font-size: 3rem !important;
+}
+.font-4x {
+  font-size: 4rem !important;
+}
+
+
+/*======================================
+    FONT HEADER STYLES
+======================================*/
+
+h6 {
+  text-transform: uppercase;
+  font-weight: 300;
+}
+
+// Decorators
+.title-line-decorator {
+  text-align: center;
+  overflow: hidden;
+  & span {
+    display: inline-block;
+    position: relative;
+    line-height: 2rem;
+  }
+  & span:before,
+  & span:after {
+    content: "";
+    position: absolute;
+    height: 1.1rem;
+    border-bottom: 3px solid rgba(0, 0, 0, 0.5);
+    box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);
+    top: 0;
+    width: 8rem;
+  }
+  & span:before {
+    right: 100%;
+    margin-right: 15px;
+  }
+  & span:after {
+    left: 100%;
+    margin-left: 15px;
+  }
+}
+
+.title-line-decorator.light {
+  & span:before,
+  & span:after {
+    border-bottom: 3px solid rgba(255, 255, 255, 0.6);
+    box-shadow: none;
+  }
+}
+
+
+/*======================================
+    MATERIAL ICONS
+======================================*/
+
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../components/material-design-icons/iconfont/MaterialIcons-Regular.eot);
+  /* For IE6-8 */
+  src: local('Material Icons'), local('MaterialIcons-Regular'), url(../components/material-design-icons/iconfont/MaterialIcons-Regular.woff2) format('woff2'), url(../components/material-design-icons/iconfont/MaterialIcons-Regular.woff) format('woff'), url(../components/material-design-icons/iconfont/MaterialIcons-Regular.ttf) format('truetype');
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+.material-icons {
+  line-height: inherit;
+  font-size: inherit;
+  // vertical-align: middle;
+}
+
+.btn .material-icons {
+  vertical-align: top;
+}

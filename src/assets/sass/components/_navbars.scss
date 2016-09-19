@@ -8,7 +8,7 @@
 .navbar-custom {
   margin-bottom: 0;
   @include easeOutQuint(all, 0.7s);
-  background-color: $color-bgrey-900;
+  background-color: $clr-blue-grey-900;
   .navbar-nav {
     &> .active> a {
       background-color: transparent;
@@ -110,7 +110,7 @@
 @media (max-width: $screen-sm) {
   .navbar-custom,
   .navbar-transparent {
-    background-color: $color-bgrey-900;
+    background-color: $clr-blue-grey-900;
     .navbar-brand {
       min-width: 0;
     }
@@ -127,7 +127,7 @@
     overflow-y: auto;
     margin: 0;
     width: 0;
-    background-color: $color-bgrey-900;
+    background-color: $clr-blue-grey-900;
     @include easeOutQuint(all, 0.7s);
     .sidebar-nav {
       @include sidebar-template;
@@ -183,7 +183,7 @@
 //=============================
 //  NAVBAR COLORS
 .navbar-teal {
-  @include navbar-color($color-teal-500, $color-teal-800);
+  @include navbar-color($clr-teal-500, $clr-teal-800);
 }
 
 
@@ -253,7 +253,7 @@ SIDEBAR
   overflow-x: hidden;
   overflow-y: auto;
   z-index: 1999;
-  background-color: $color-teal-500;
+  background-color: $clr-teal-500;
   .sidebar-nav {
     @include sidebar-template;
   }
@@ -275,7 +275,7 @@ SIDEBAR
         }
       }
       &.active {
-        background-color: $color-teal-500;
+        background-color: $clr-teal-500;
         &:hover {
           color: $gray-lighter;
         }
@@ -294,7 +294,7 @@ SIDEBAR
             color: $gray-lighter;
           }
           &:hover {
-            color: $color-teal-500;
+            color: $clr-teal-500;
           }
         }
       }
@@ -309,19 +309,20 @@ SIDEBAR
     text-decoration: none;
     position: fixed;
     z-index: 1999;
-    width: auto;
+    width: 64px;
     font-size: 32px;
-    padding: 0 15px;
+    padding: 0;
     top: 0;
     left: 0;
     background-color: rgba(0, 0, 0, .4);
-    // transition: (left 0.5s ease-in-out);
     @include easeOutQuint(left, 0.7s);
     color: rgba(255, 255, 255, 0.7);
     &:hover {
       color: rgba(255, 255, 255, 0.8);
     }
     i {
+      height: 64px;
+      width: 38px;
       font-size: 38px;
       line-height: 64px;
     }

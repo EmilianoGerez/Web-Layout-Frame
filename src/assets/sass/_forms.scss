@@ -128,7 +128,7 @@ label.control {
 }
 
 .control input:checked~ .control__indicator {
-  background: $color-teal-300;
+  background: $clr-teal-300;
 }
 
 .control:hover input:not([disabled]):checked~ .control__indicator,

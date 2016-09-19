@@ -27,7 +27,7 @@ body {
 div[class*='col-'] {
   padding-left: 10px;
   padding-right: 10px;
-  padding-bottom: 15px;
+  margin-bottom: 15px;
 }
 
 .row[class*='center-'], .row[class*='end-'] {
@@ -57,43 +57,12 @@ div[class*='col-'] {
     padding-right: 20px;
   }
 }
-// @media (min-width: 768px) {
-//   .container {
-//     width: 750px;
-//   }
-// }
-// @media (min-width: 992px) {
-//   .container {
-//     width: 970px;
-//   }
-// }
-// @media (min-width: 1200px) {
-//   .container {
-//     width: 1170px;
-//   }
-// }
+
 footer {
-  color: #fff;
   padding: 2.5rem 0;
   overflow: hidden;
-  ul {
-    list-style: none;
-    padding-left: 0.5rem;
-  }
-  a {
-    text-decoration: none;
-    color: #fff;
-    &:hover {
-      color: $gray-light;
-      text-decoration: none;
-    }
-  }
 }
 
-h6 {
-  text-transform: uppercase;
-  font-weight: 300;
-}
 
 hr {
   margin: 15px 0;
@@ -105,6 +74,7 @@ small {
   font-size: 0.85rem;
 }
 
+// list reset
 menu,
 ol,
 ul {
@@ -115,6 +85,7 @@ ul.indent {
   padding: 0 30px;
 }
 
+// input button resets
 input,
 button {
   border: none;
@@ -127,15 +98,4 @@ button {
 .btn:focus {
   outline: none;
   box-shadow: none;
-}
-
-// material icons
-.material-icons {
-  line-height: inherit;
-  font-size: inherit;
-  vertical-align: middle;
-}
-
-.btn .material-icons {
-  vertical-align: top;
 }

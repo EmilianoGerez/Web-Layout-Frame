@@ -20,6 +20,8 @@
     "eonasdan-bootstrap-datetimepicker": "^4.17.37",
     "flexboxgrid": "^6.3.2",
     "jquery": "1.9.1",
-    "bootstrap-sass": "^3.3.7"
+    "bootstrap-sass": "^3.3.7",
+    "material-design-icons": "^3.0.1",
+    "material-color": "^2.3.1"
   }
 }

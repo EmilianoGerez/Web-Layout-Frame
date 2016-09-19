@@ -265,6 +265,51 @@
     <div class="col-xs-12">
       <button class="btn btn-primary" id="notifyError">Example</button>
     </div>
+    <div class="col-xs-12">
+          <!--View code-->
+    <div class="col-xs-12">
+      <button class="btn link-default btn-block" type="button" data-toggle="collapse" data-target="#notify" aria-expanded="false" aria-controls="notify">
+      View Code
+      </button>
+      <div class="spacer"></div>
+      <div class="collapse" id="notify">
+        <pre class="prettyprint">
+        <xmp>
+          // Add this code in your JS for set notification card
+
+          // Notify default override
+          $.notify.defaults({
+            autoHide: false,
+            position: 'right bottom',
+            showDuration: 0
+          });
+          // Notification template
+          $.notify.addStyle('card', {
+            html: '<div>' +
+              "<div class='card notification-card'>" +
+              "<i class='material-icons notification-close'>close</i>" +
+              "<div class='card-image'>" +
+              "<i class='material-icons' data-notify-text='icon'></i>" +
+              '</div>' +
+              "<div class='card-block'>" +
+              "<h6 class='card-title' data-notify-text='title'>Cancel</h6>" +
+              "<p class='card-text' data-notify-text='message'></p>" +
+              '</div>' +
+              '</div>' +
+              '</div>'
+          });
+
+          // throw the notification
+          _componentExposed.notify.error('Error', 'Error message');
+          _componentExposed.notify.success('Success', 'Success message');
+          _componentExposed.notify.warning('Warning', 'Warning message');
+          _componentExposed.notify.info('Info', 'Info Message');
+        </xmp>
+        </pre>
+      </div>
+    </div>
+    <!--/view code-->
+    </div>
   </div>
 
 
@@ -313,27 +358,27 @@
       <div class="spacer"></div>
       <div class="collapse" id="usercard">
         <pre class="prettyprint">
-    <xmp>
-      <!--Card-->
-      <div class="card testimonial-card">
-        <!--Bacground color-->
-        <div class="card-up default-color-dark"></div>
-        <!--Avatar-->
-        <div class="avatar"><img src="" class="img-circle img-responsive">
-        </div>
-        <div class="card-block">
-          <!--Name-->
-          <h4 class="card-title text-center">Anna Doe</h4>
-          <hr>
-          <!--Quotation-->
-          <address>
-            ...
-        </address>
-        </div>
-      </div>
-      <!--/.Card-->
-    </xmp>
-    </pre>
+        <xmp>
+          <!--Card-->
+          <div class="card testimonial-card">
+            <!--Bacground color-->
+            <div class="card-up default-color-dark"></div>
+            <!--Avatar-->
+            <div class="avatar"><img src="" class="img-circle img-responsive">
+            </div>
+            <div class="card-block">
+              <!--Name-->
+              <h4 class="card-title text-center">Anna Doe</h4>
+              <hr>
+              <!--Quotation-->
+              <address>
+                ...
+            </address>
+            </div>
+          </div>
+          <!--/.Card-->
+        </xmp>
+        </pre>
       </div>
     </div>
     <!--/view code-->

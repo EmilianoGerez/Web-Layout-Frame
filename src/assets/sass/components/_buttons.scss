@@ -8,17 +8,17 @@
 
 // sizes
 .btn-lg {
-  padding: 0.6rem 2rem;
+  padding: 0.8rem 2rem !important;
   font-size: 1.1rem;
 }
 
 .btn-sm {
-  padding: 4px 0.9rem;
+  padding: 4px 0.8rem !important;
   font-size: 0.85rem;
 }
 
 .btn-xs {
-  padding: 2px 8px;
+  padding: 2px 5px !important;
   font-size: 0.85rem;
 }
 
@@ -29,15 +29,15 @@
 
 // default overwrite
 .btn-default {
-  background-color: $color-grey-100;
+  background-color: $clr-grey-100;
   color: $gray;
-  border-color: $color-grey-300;
+  border-color: $clr-grey-300;
   &:hover,
   &:active,
   &:focus {
     color: $gray;
-    background-color: $color-grey-300;
-    border-color: $color-grey-300;
+    background-color: $clr-grey-300;
+    border-color: $clr-grey-300;
   }
 }
 
@@ -252,7 +252,7 @@
 .floating-list,
 .floating-list-hover {
   width: 60px;
-  @include floating-button($color-red-500, 60px);
+  @include floating-button($clr-red-500, 60px);
   &>i {
     @extend %mt-shadow-2;
     &:hover {
@@ -281,7 +281,7 @@
         text-align: center;
         width: 40px;
         line-height: 40px;
-        background-color: $color-red-500;
+        background-color: $clr-red-500;
         border-radius: 50%;
         font-size: 0.9rem;
         color: #fff;

@@ -9,29 +9,25 @@
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!--<link rel="apple-touch-icon" href="apple-touch-icon.png">-->
+  <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png">
   <!-- Place favicon.ico in the root directory -->
 
   <!-- CSS Libs-->
-  <!--<link rel="stylesheet" href="../assets/dist/bootstrap.min.css">-->
   <link rel="stylesheet" href="../assets/components/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" href="../assets/components/animate.css/animate.min.css">
   <link rel="stylesheet" href="../assets/components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
-  <link rel="stylesheet" href="https://cdn.rawgit.com/google/code-prettify/master/styles/desert.css">
-  <link rel="stylesheet" type="" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+  <link rel="stylesheet" href="../assets/components/flexboxgrid/dist/flexboxgrid.min.css">
 
+  <!--Code syntax style-->
+  <link rel="stylesheet" href="https://cdn.rawgit.com/google/code-prettify/master/styles/desert.css">
 
   <!-- Fonts -->
   <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,700,900' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,900,300' rel='stylesheet' type='text/css'>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
-
   
   <!-- Custom CSS Styles-->
   <!-- files for development environment -->
-  <link rel="stylesheet" href="../assets/components/flexboxgrid/dist/flexboxgrid.min.css">
   <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="stylesheet" href="../assets/css/example.css">
 
   
 
@@ -97,14 +93,18 @@
       <i class="material-icons">close</i>
     </button>
 
-    <section class="parallax gradient-red">
+    <section class="parallax header gradient-blue-grey">
       <div class="background-shape">
         <i class="material-icons">settings</i>
       </div>
       <div class="soft-filter-black">
         <div class="container">
-          <div class="header">WEB LAYOUT FRAME</div>
-          <button class="btn outline-info pill">GitHub</button>
+          <div class="row middle-xs">
+            <div class="col-xs-12">
+              <div class="header">WEB LAYOUT FRAME</div>
+              <button class="btn outline-info pill">GitHub</button>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -687,6 +687,51 @@
     <div class="col-xs-12">
       <button class="btn btn-primary" id="notifyError">Example</button>
     </div>
+    <div class="col-xs-12">
+          <!--View code-->
+    <div class="col-xs-12">
+      <button class="btn link-default btn-block" type="button" data-toggle="collapse" data-target="#notify" aria-expanded="false" aria-controls="notify">
+      View Code
+      </button>
+      <div class="spacer"></div>
+      <div class="collapse" id="notify">
+        <pre class="prettyprint">
+        <xmp>
+          // Add this code in your JS for set notification card
+
+          // Notify default override
+          $.notify.defaults({
+            autoHide: false,
+            position: 'right bottom',
+            showDuration: 0
+          });
+          // Notification template
+          $.notify.addStyle('card', {
+            html: '<div>' +
+              "<div class='card notification-card'>" +
+              "<i class='material-icons notification-close'>close</i>" +
+              "<div class='card-image'>" +
+              "<i class='material-icons' data-notify-text='icon'></i>" +
+              '</div>' +
+              "<div class='card-block'>" +
+              "<h6 class='card-title' data-notify-text='title'>Cancel</h6>" +
+              "<p class='card-text' data-notify-text='message'></p>" +
+              '</div>' +
+              '</div>' +
+              '</div>'
+          });
+
+          // throw the notification
+          _componentExposed.notify.error('Error', 'Error message');
+          _componentExposed.notify.success('Success', 'Success message');
+          _componentExposed.notify.warning('Warning', 'Warning message');
+          _componentExposed.notify.info('Info', 'Info Message');
+        </xmp>
+        </pre>
+      </div>
+    </div>
+    <!--/view code-->
+    </div>
   </div>
 
 
@@ -735,27 +780,27 @@
       <div class="spacer"></div>
       <div class="collapse" id="usercard">
         <pre class="prettyprint">
-    <xmp>
-      <!--Card-->
-      <div class="card testimonial-card">
-        <!--Bacground color-->
-        <div class="card-up default-color-dark"></div>
-        <!--Avatar-->
-        <div class="avatar"><img src="" class="img-circle img-responsive">
-        </div>
-        <div class="card-block">
-          <!--Name-->
-          <h4 class="card-title text-center">Anna Doe</h4>
-          <hr>
-          <!--Quotation-->
-          <address>
-            ...
-        </address>
-        </div>
-      </div>
-      <!--/.Card-->
-    </xmp>
-    </pre>
+        <xmp>
+          <!--Card-->
+          <div class="card testimonial-card">
+            <!--Bacground color-->
+            <div class="card-up default-color-dark"></div>
+            <!--Avatar-->
+            <div class="avatar"><img src="" class="img-circle img-responsive">
+            </div>
+            <div class="card-block">
+              <!--Name-->
+              <h4 class="card-title text-center">Anna Doe</h4>
+              <hr>
+              <!--Quotation-->
+              <address>
+                ...
+            </address>
+            </div>
+          </div>
+          <!--/.Card-->
+        </xmp>
+        </pre>
       </div>
     </div>
     <!--/view code-->
@@ -1284,24 +1329,94 @@
       <h2>Features</h2>
       <hr>
     </div>
-    <div class="col-xs-12 col-md-3">
-      <div class="service dark">
-        <div class="circle-wrapper primary">
+    <div class="col-xs-12 col-md-4">
+      <div class="feature-item dark">
+        <div class="icon-wrapper primary">
           <i class="fa fa-rocket" aria-hidden="true"></i>
         </div>
         <hr>
-        <h3>Landing Page</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit!</p>
+        <h3 class="title">Landing Page</h3>
+        <div class="content">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit!</p>
+        </div>
       </div>
     </div>
-    <div class="col-xs-12 col-md-3 bg-blue">
-      <div class="service">
-        <div class="circle-wrapper">
-          <i class="fa fa-rocket" aria-hidden="true"></i>
+    <div class="col-xs-12 col-md-4 bg-blue">
+      <div class="feature-item">
+        <div class="icon-wrapper">
+          <i class="material-icons">close</i>
         </div>
         <hr>
-        <h3>Landing Page</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit!</p>
+        <h3 class="title">Landing Page</h3>
+        <div class="content">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--HORIZONTAL-->
+  <div class="row">
+    <div class="col-xs-12 col-sm-6">
+      <!--featured horizontal-->
+      <div class="feature-horizontal">
+        <div class="icon-wrapper">
+          <i class="material-icons">close</i>
+        </div>
+        <div class="content">
+          <h4 class="title">Landig Page</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos dolores, consequatur! Maxime inventore eaque, fugit vero, ratione vitae, id et a ex eligendi ut. Distinctio, enim laboriosam blanditiis unde perspiciatis.</p>
+        </div>
+      </div>
+      <!--/featured horizontal-->
+    </div>
+    <div class="col-xs-12 col-sm-6">
+      <!--featured horizontal-->
+      <div class="feature-horizontal">
+        <div class="icon-wrapper">
+          <i class="material-icons">close</i>
+        </div>
+        <div class="content">
+          <h4 class="title">Landig Page</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos dolores, consequatur! Maxime inventore eaque, fugit vero, ratione vitae, id et a ex eligendi ut. Distinctio, enim laboriosam blanditiis unde perspiciatis.</p>
+        </div>
+      </div>
+      <!--/featured horizontal-->
+    </div>
+  </div>
+
+</div>
+
+<div class="parallax" style="background-image: url( http://nmd.mtdemo.wpengine.com/wp-content/uploads/sites/34/2016/06/trees.jpg); height: 400px">
+  <div class="filter-black">
+    <div class="container">
+      <div class="row middle-xs center-xs">
+        <div class="col-xs-4">
+          <!--feature item 2-->
+          <div class="feature-item-2 darker">
+            <div class="icon-wrapper primary">
+              <i class="fa fa-rocket" aria-hidden="true"></i>
+            </div>
+            <h3 class="title">Landing Page</h3>
+            <div class="content">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit!</p>
+            </div>
+          </div>
+          <!--/feature item 2-->
+        </div>
+        <div class="col-xs-4">
+          <!--feature item 2-->
+          <div class="feature-item-2">
+            <div class="icon-wrapper primary">
+              <i class="fa fa-rocket" aria-hidden="true"></i>
+            </div>
+            <h3 class="title">Landing Page</h3>
+            <div class="content">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit!</p>
+            </div>
+          </div>
+          <!--/feature item 2-->
+        </div>
       </div>
     </div>
   </div>
@@ -1312,7 +1427,7 @@
       <div class="container">
   <div class="row">
     <div class="col-xs-12">
-      <h2>List view</h2>
+      <h2><span>List View</span></h2>
       <hr>
     </div>
   </div>
@@ -1320,7 +1435,7 @@
     <div class="col-xs-12">
       <h6>Default List</h6>
     </div>
-    <ul class="col-xs-12 col-md-6 col-md-offset-3 list-view">
+    <ul class="col-xs-12 col-md-6  list-view">
       <li class="list-view-item">
         <div class="img-wrapper circle">
           <img src="http://yeux.com.mx/ColumnaUniversitaria/wp-content/uploads/2014/06/selfie-1.jpg">
@@ -1531,6 +1646,23 @@
   </div>
 </div>
     </section>
+    <!--Ribbon section-->
+    <section class="index-section" id='ribbon-section'>
+      <div class="container">
+  <div class="row center-xs">
+    <div class="col-xs-12">
+      <h2>Ribbons</h2>
+    </div>
+    <div class="col-xs-10 col-md-8">
+      <div class="ribbon-red font-playball">
+        <div class="ribbon-stitches-top"></div>
+        <strong class="ribbon-content"><h1>Events</h1></strong>
+        <div class="ribbon-stitches-bottom"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    </section>
     <!--Parallax section-->
     <section class="index-section" id='parallax-section'>
       <div class="container">
@@ -1599,7 +1731,7 @@
     <div class="col-xs-12">
       <h6>Inputs / Textarea</h6>
     </div>
-    <div class="col-xs-12 col-md-6 col-md-offset-3 bg-white">
+    <div class="col-xs-12 col-md-6  bg-white">
       <form>
         <div class="form-group">
           <label for="email">Email</label>
@@ -1640,7 +1772,7 @@
     <div class="col-xs-12">
       <h6>Select</h6>
     </div>
-    <div class="col-xs-12 col-md-6 col-md-offset-3 bg-white">
+    <div class="col-xs-12 col-md-6  bg-white">
       <div class="form-group">
         <label for="">City</label>
         <select class="mt-control">
@@ -1675,7 +1807,7 @@
     <div class="col-xs-12">
       <h6>Radio / Checkbox</h6>
     </div>
-    <div class="col-xs-12 col-md-6 col-md-offset-3 bg-white">
+    <div class="col-xs-12 col-md-6  bg-white">
       <div class="form-group">
         <label for="radio">Sex type</label>
         <label class="control control--radio">Male
@@ -1735,7 +1867,7 @@
     <div class="col-xs-12">
       <h6>Date</h6>
     </div>
-    <div class="col-xs-12 col-md-6 col-md-offset-3 bg-white">
+    <div class="col-xs-12 col-md-6  bg-white">
       <div class="form-mt-group">
         <label for="">Date</label>
         <div class='input-group date' id='datetimepicker1'>
@@ -1755,6 +1887,10 @@
       <div class="collapse" id="date">
         <pre class="prettyprint">
         <xmp>
+        // JS
+        $('#datetimepicker1').datetimepicker();
+        
+        // HTML
         <div class="form-mt-group">
           <label for="">Date</label>
           <div class='input-group date' id='datetimepicker1'>
@@ -1776,39 +1912,37 @@
 
     <!--Footer-->
     <footer class="bg-blue">
-      <div class="filter-black">
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-xs-12 col-md-4">
-              <h3>Logo</h3>
-              <p>Suspendisse hendrerit tellus laoreet luctus pharetra. Aliquam porttitor vitae orci nec ultricies. Curabitur vehicula, libero eget faucibus faucibus, purus erat eleifend enim, porta pellentesque ex mi ut sem.</p>
-              <p>© 2014 BS3 UI Kit, All rights reserved</p>
-            </div>
-            <div class="col-xs-12 col-md-3">
-              <h3>Follow Us</h3>
-              <ul>
-                <li><a href="#">Facebook</a></li>
-                <li><a href="#">Twitter</a></li>
-                <li><a href="#">Instagram</a></li>
-                <li><a href="#">RSS</a></li>
-              </ul>
-            </div>
-            <div class="col-xs-12 col-md-5">
-              <h3>Newsletter</h3>
-              <p>A rover wearing a fuzzy suit doesn’t alarm the real penguins</p>
-              <div class="form-group">
-                <div class='input-group'>
-                  <span class="input-group-addon">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-md-4">
+            <h3>Title</h3>
+            <p>Suspendisse hendrerit tellus laoreet luctus pharetra. Aliquam porttitor vitae orci nec ultricies. Curabitur vehicula, libero eget faucibus faucibus, purus erat eleifend enim, porta pellentesque ex mi ut sem.</p>
+          </div>
+          <div class="col-xs-12 col-md-3">
+            <h3>Follow Us</h3>
+            <ul class="indent">
+              <li><a href="#">Facebook</a></li>
+              <li><a href="#">Twitter</a></li>
+              <li><a href="#">Instagram</a></li>
+              <li><a href="#">RSS</a></li>
+            </ul>
+          </div>
+          <div class="col-xs-12 col-md-5">
+            <h3>Newsletter</h3>
+            <p>A rover wearing a fuzzy suit doesn’t alarm the real penguins</p>
+            <div class="form-group">
+              <div class='input-group'>
+                <span class="input-group-addon">
                         <i class="fa fa-envelope" aria-hidden="true"></i>
                   </span>
-                  <input type='email' class="form-control" placeholder="Email" />
-                </div>
+                <input type='email' class="form-control" placeholder="Email" />
               </div>
             </div>
           </div>
         </div>
       </div>
     </footer>
+
   </div>
   <!--/page content-->
 </div>
@@ -1822,12 +1956,15 @@
 src="../assets/components/jquery/jquery.min.js"></script>
 <script type="text/javascript" src="../assets/components/moment/min/moment.min.js"></script>
 <script type="text/javascript" src="../assets/components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
-<script src="../assets/components/bootstrap/dist/js/bootstrap.min.js"></script>
-<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+<script src="../assets/components/bootstrap-sass/assets/javascripts/bootstrap.min.js"></script>
 <script src="../assets/components/notify/notify.min.js"></script>
 
+<!--Conde Syntax prettify-->
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+
 <!-- My scripts -->
-<script src="../assets/dist/scripts.min.js"></script>
+<script src="../assets/js/scripts.min.js"></script>
+<script src="../assets/js/example.js"></script>
 
 <!-- Activate on production (after run gulp build), all js files on gulp-path[jsbuild] are concat and minify -->
 <!--<script src="../assets/dist/js-bundle.min.js"></script>-->

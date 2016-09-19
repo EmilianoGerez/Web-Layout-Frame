@@ -6,11 +6,11 @@ module.exports = {
     docstemplateDir: './docs/templates',
     docstemplateFiles: './docs/templates/**/*.html',
     outputDir: './app',
-    sassFiles: './app/assets/sass/**/*.scss',
-    sassInput: './app/assets/sass/styles.scss',
+    sassFiles: './src/assets/sass/**/*.scss',
+    sassInput: './src/assets/sass/styles.scss',
     cssDir: './app/assets/css',
-    assetsDist: './app/assets/dist',
-    jsFiles: './app/assets/js/**/*.js',
+    assetsDist: './app/assets/js',
+    jsFiles: './src/assets/js/**/*.js',
     cssBuild: [
         './app/assets/components/animate.css/animate.css',
         './app/assets/css/**/*.css'

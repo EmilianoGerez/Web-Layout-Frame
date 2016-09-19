@@ -15,8 +15,8 @@ MISC
   height: 15px;
   background: $color;
   transform: rotate(45deg);
-  border-top: 1px solid $color-grey-300;
-  border-left: 1px solid $color-grey-300;
+  border-top: 1px solid $clr-grey-300;
+  border-left: 1px solid $clr-grey-300;
   // triangle position
   position: absolute;
   top: $top;
@@ -52,6 +52,10 @@ MISC
   overflow: hidden;
 }
 
+// Full height
+.full-height {
+  height: 100% !important;
+}
 
 /*======================================
 EASING
@@ -420,7 +424,7 @@ CARDS
     }
     .dropdown button {
       i {
-        color: $color-grey-200;
+        color: $clr-grey-200;
       }
     }
   }
